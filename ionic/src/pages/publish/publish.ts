@@ -34,8 +34,8 @@ export class PublishPage {
       icon:'assets/publish/mht.jpg',name:'Pony Ma',
       pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！'
     },{
-      icon:'assets/publish/mht.jpg',name:'Pony Ma',
-      pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！'
+      icon:'assets/publish/my.jpg',name:'Jack Ma',
+      pic:'assets/publish/alibaba.jpg',article:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！'
     }
   ]
 

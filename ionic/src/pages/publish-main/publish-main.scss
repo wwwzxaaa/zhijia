@@ -6,11 +6,18 @@ page-publish-main {
             margin-left: 0;
             margin-right: 0;
             box-shadow: none;
+            margin-top: 0; 
         }
         ion-card{
             .main_img{
                 padding-left: 16px;
                 padding-right: 16px;
+            }
+        }
+        
+        ion-segment{
+            ion-segment-button{
+                
             }
         }
     }

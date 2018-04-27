@@ -29,4 +29,5 @@ export class PublishMainPage {
     }
   ]
 
+  card = 'com';
 }
