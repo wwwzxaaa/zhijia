@@ -5,7 +5,8 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { PublishPage } from '../pages/publish/publish';
-import { PublishNewPage} from '../pages/publish-new/publish-new'
+import { PublishNewPage} from '../pages/publish-new/publish-new';
+import { PublishMainPage } from '../pages/publish-main/publish-main';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -21,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     PublishPage,
-    PublishNewPage
+    PublishNewPage,
+    PublishMainPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     PublishPage,
-    PublishNewPage
+    PublishNewPage,
+    PublishMainPage
   ],
   providers: [
     StatusBar,
