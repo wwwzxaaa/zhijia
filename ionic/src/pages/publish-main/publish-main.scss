@@ -1,0 +1,31 @@
+page-publish-main {
+    ion-content{
+        background-color: #eee!important;
+        .card-ios{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            box-shadow: none;
+        }
+        ion-card{
+            .main_img{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    }
+    ion-footer{
+        ion-buttons{
+            text-align: center;
+            ion-icon{
+                font-size: 24px;
+            }
+        }
+        ion-toolbar{
+            ion-grid{
+                padding: 0!important;
+            }
+        }
+        
+    }
+}

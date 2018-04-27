@@ -1,0 +1,95 @@
+<!--
+  Generated template for the PublishMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color=zhijia>
+    <ion-title>详情页</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- 内容详情 -->
+  <ion-card *ngFor="let item of publish_main;let id = index;">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{item.icon}}">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>2018年4月26日</p>
+    </ion-item>
+    <img class="main_img" src="{{item.pic}}">
+    <ion-card-content>
+      <p>{{item.article}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- 转发、评论、点赞切换按钮 -->
+  <ion-segment [(ngModel)]="card">
+    <ion-segment-button value="trans">转发</ion-segment-button>
+    <ion-segment-button value="com">评论</ion-segment-button>
+    <ion-segment-button value="good">点赞</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="card">
+    <ion-card *ngSwitchCase="'trans'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/publish/mht.jpg">
+        </ion-avatar>
+        <h2>Jack Ma</h2>
+      </ion-item>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'com'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/publish/mht.jpg">
+        </ion-avatar>
+        <h2>Jack Ma</h2>
+      </ion-item>
+      <ion-card-content>
+        <p>我对钱没有兴趣！</p>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card *ngSwitchCase="'good'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/publish/mht.jpg">
+        </ion-avatar>
+        <h2>Jack Ma</h2>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-buttons>
+            <button color=zhijia ion-button><ion-icon name="ios-share-alt-outline"></ion-icon>&nbsp;转发</button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <ion-buttons>
+            <button color=zhijia ion-button><ion-icon name="text"></ion-icon>&nbsp;评论</button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col>
+          <ion-buttons>
+            <button color=zhijia ion-button><ion-icon name="thumbs-up"></ion-icon>&nbsp;点赞</button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>
+    
+  </ion-toolbar>
+</ion-footer>

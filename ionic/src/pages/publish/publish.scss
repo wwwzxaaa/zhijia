@@ -1,0 +1,15 @@
+page-publish {
+    ion-title{
+        color: #fff;
+    }
+    ion-navbar{
+        .button-ios{
+            height: 1.8em;
+        }
+    }
+    ion-row{
+        ion-note{
+            line-height: 32px;
+        }
+    }
+}
