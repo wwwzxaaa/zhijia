@@ -10,6 +10,7 @@ import { PublishMainPage } from '../pages/publish-main/publish-main';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SettingPage } from '../pages/setting/setting';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     PublishPage,
     PublishNewPage,
-    PublishMainPage
+    PublishMainPage,
+    SettingPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     PublishPage,
     PublishNewPage,
-    PublishMainPage
+    PublishMainPage,
+    SettingPage
   ],
   providers: [
     StatusBar,
