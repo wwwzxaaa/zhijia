@@ -1,3 +1,14 @@
 page-home {
-
+    ion-slides,ion-slide{
+        height:auto;
+    }
+    #slider{
+        padding-top:15px; 
+        padding-left: 5%;
+        width: 95%;
+    }
+    #buttons button{
+        width:24%;
+        background-color: #ffff;
+    }
 }
