@@ -1,4 +1,11 @@
 page-home {
+    ion-header{
+        color:#ffff;
+    }
+    ion-navbar ion-icon{
+        float:right;
+        padding-right:5%; 
+    }
     ion-slides,ion-slide{
         height:auto;
     }
@@ -10,5 +17,11 @@ page-home {
     #buttons button{
         width:24%;
         background-color: #ffff;
+    }
+    #active img{
+        width:30%;
+    }
+    #active h1{
+        float:right;
     }
 }
