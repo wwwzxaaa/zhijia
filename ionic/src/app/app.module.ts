@@ -11,13 +11,16 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingPage } from '../pages/setting/setting';
-
+import { LoginPage } from '../pages/login/login';
+import { RegPage } from '../pages/reg/reg';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
+    RegPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -38,6 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    RegPage,
     AboutPage,
     ContactPage,
     HomePage,
