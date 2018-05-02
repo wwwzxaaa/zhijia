@@ -52,47 +52,26 @@
     </ion-card>
 
     <div *ngSwitchCase="'com'">
-      <ion-card>
+      <ion-card *ngFor="let item of segment_com;let i = index;">
         <ion-item>
           <ion-avatar item-start>
-            <img src="assets/publish/my.jpg">
+            <img src="{{item.src}}">
           </ion-avatar>
-          <h2>Jack Ma</h2>
+          <h2>{{item.name}}</h2>
         </ion-item>
         <ion-card-content>
-          <p>我对钱没有兴趣！</p>
+          <p>{{item.com}}</p>
         </ion-card-content>
       </ion-card>
-      <ion-card>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/publish/lqd.jpg">
-          </ion-avatar>
-          <h2>Richard Liu</h2>
-        </ion-item>
-        <ion-card-content>
-          <p>我不知道，我脸盲=-=！</p>
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-item>
-          <ion-avatar item-start>
-            <img src="assets/publish/ubi.jpg">
-          </ion-avatar>
-          <h2>Ubi Soft</h2>
-        </ion-item>
-        <ion-card-content>
-          <p>新鲜的土豆了解一下？</p>
-        </ion-card-content>
-      </ion-card>
+      
     </div>
      
     <ion-card *ngSwitchCase="'good'">
-      <ion-item>
+      <ion-item *ngFor="let item of isgood;let id = index;">
         <ion-avatar item-start>
-          <img src="assets/publish/my.jpg">
+          <img src="{{item.src}}">
         </ion-avatar>
-        <h2>Jack Ma</h2>
+        <h2>{{item.name}}</h2>
       </ion-item>
     </ion-card>
   </div>
@@ -114,7 +93,7 @@
         </ion-col>
         <ion-col>
           <ion-buttons>
-            <button color=zhijia ion-button><ion-icon name="thumbs-up"></ion-icon>&nbsp;点赞</button>
+            <button [color]="isSecondary ? 'zhijia' : 'gry'" (click)="isGoodSwitch()" ion-button><ion-icon name="thumbs-up"></ion-icon>&nbsp;点赞</button>
           </ion-buttons>
         </ion-col>
       </ion-row>

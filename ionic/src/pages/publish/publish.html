@@ -24,7 +24,7 @@
 
 
 <ion-content>
-
+  
   <ion-card *ngFor="let item of publish;let id = index;">
     <ion-item (tap)="pubMain()">
       <ion-avatar item-start>
@@ -39,7 +39,7 @@
     </ion-card-content>
     <ion-row>
       <ion-col>
-        <button color=zhijia (tap)="tapEvent($event)" ion-button icon-left clear small>
+        <button [color]="isGood ? 'zhijia' : 'gry'" (click)="isGoodSwitch()" (tap)="tapEvent($event)" ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>{{tap}} 赞</div>
         </button>
