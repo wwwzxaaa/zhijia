@@ -52,7 +52,9 @@ export class PublishPage {
   }
 
   pubMain(){
-    this.app.getRootNav().push(PublishMainPage);
+    this.app.getRootNav().push(PublishMainPage,{
+      publish:this.publish[0]
+    });
   }
 
   public tap:number=0;
