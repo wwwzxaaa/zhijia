@@ -22,6 +22,7 @@ export class PublishMainPage {
     console.log('ionViewDidLoad PublishMainPage');
   }
 
+  // 帖子详情
   publish_main=[
     {
       icon:'assets/publish/mht.jpg',name:'Pony Ma',
@@ -29,5 +30,33 @@ export class PublishMainPage {
     }
   ]
 
+  // 点赞列表
+  isgood=[
+    {src:'assets/publish/my.jpg',name:'Jack Ma'}
+  ]
+
+  //默认segment
   card = 'com';
+  //评论列表
+  segment_com=[
+    {src:'assets/publish/my.jpg',name:'Jack Ma',com:'我对钱没有兴趣！'},
+    {src:'assets/publish/lqd.jpg',name:'Richard Liu',com:'我不知道，我脸盲=-=！'},
+    {src:'assets/publish/ubi.jpg',name:'Ubi Soft',com:'新鲜的土豆了解一下？'}
+  ]
+
+  // 点赞颜色
+  isSecondary: boolean = true;
+  num = 1;
+  isGoodSwitch(){
+    if(this.num%2 == 1){
+      this.isSecondary=false;
+      this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
+      this.num++;
+    }else{
+      this.isSecondary=true;
+      this.isgood.pop();
+      this.num++;
+    }
+  }
+  
 }

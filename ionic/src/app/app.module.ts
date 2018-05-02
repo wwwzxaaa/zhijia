@@ -15,6 +15,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegPage } from '../pages/reg/reg';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InfoPage } from '../pages/info/info';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PublishPage,
     PublishNewPage,
     PublishMainPage,
-    SettingPage
+    SettingPage,
+    InfoPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PublishPage,
     PublishNewPage,
     PublishMainPage,
-    SettingPage
+    SettingPage,
+    InfoPage
   ],
   providers: [
     StatusBar,

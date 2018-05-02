@@ -52,8 +52,13 @@ export class PublishPage {
 
   public tap:number=0;
   tapEvent(){
-    this.tap++
+    this.tap++;
   }
 
+  isGood:boolean=false;
+  isGoodSwitch(){
+    this.isGood=true;
+  }
+  
 
 }
