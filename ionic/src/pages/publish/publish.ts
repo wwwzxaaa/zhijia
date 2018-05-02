@@ -22,12 +22,7 @@ export class PublishPage {
     public navParams: NavParams,
     
     private app:App
-  ) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PublishPage');
-  }
+  ) {}
 
   publish=[
     {
@@ -56,8 +51,16 @@ export class PublishPage {
   }
 
   isGood:boolean=false;
+  
+  num = 0;
   isGoodSwitch(){
-    this.isGood=true;
+    if(this.num%2 == 1){
+      this.isGood=false;
+      this.num++;
+    }else{
+      this.isGood=true;
+      this.num++;
+    }
   }
   
 

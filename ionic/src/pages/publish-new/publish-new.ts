@@ -15,11 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PublishNewPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PublishNewPage');
   }
 
+  publishing(){
+    this.navCtrl.pop();
+  }
 }
