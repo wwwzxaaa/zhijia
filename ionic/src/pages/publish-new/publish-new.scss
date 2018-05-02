@@ -1,4 +1,15 @@
 page-publish-new {
+    ion-content{
+        .myCom{
+            width: 100%;
+            height: 80%;
+            border: none;
+            font-size: 18px;
+        }
+        .myCom::placeholder{
+            color: #ddd;
+        }
+    }
     ion-footer{
         ion-buttons{
             text-align: center;

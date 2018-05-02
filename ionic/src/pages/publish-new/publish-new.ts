@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { PublishPage } from '../publish/publish';
 
 /**
  * Generated class for the PublishNewPage page.
@@ -15,11 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PublishNewPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PublishNewPage');
   }
 
+  publishing(){
+    this.navCtrl.pop();
+  }
 }
