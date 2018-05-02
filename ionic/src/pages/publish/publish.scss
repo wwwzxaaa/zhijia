@@ -7,6 +7,22 @@ page-publish {
             height: 1.8em;
         }
     }
+    ion-content{
+        background: #eee!important;
+        .card-ios{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            box-shadow: none;
+            margin-top: 0; 
+        }
+        ion-card{
+            .main_img{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+    }
     ion-row{
         ion-note{
             line-height: 32px;
