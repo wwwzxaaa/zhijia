@@ -15,20 +15,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PublishMainPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {
+    this.publish_main[0]=navParams.get('publish');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PublishMainPage');
-  }
+  //接收数据
+  
 
   // 帖子详情
   publish_main=[
-    {
-      icon:'assets/publish/mht.jpg',name:'Pony Ma',
-      pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！'
-    }
+    // {
+    //   icon:'assets/publish/mht.jpg',name:'Pony Ma',
+    //   pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！'
+    // }
   ]
+  
 
   // 点赞列表
   isgood=[

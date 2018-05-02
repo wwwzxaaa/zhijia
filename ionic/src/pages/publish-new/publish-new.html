@@ -9,7 +9,7 @@
   <ion-navbar color=zhijia>
     <ion-title>发帖</ion-title>
     <ion-buttons end>
-      <button (click)="publishing()" ion-button>
+      <button (click)="publishing(textarea.value)" ion-button>
       发布
       </button>
     </ion-buttons>
@@ -18,7 +18,7 @@
 
 
 <ion-content padding>
-  <textarea class="myCom" placeholder="分享新鲜事..."></textarea>
+  <textarea #textarea class="myCom" placeholder="分享新鲜事..."></textarea>
 </ion-content>
 
 <ion-footer>

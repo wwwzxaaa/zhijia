@@ -25,7 +25,6 @@
 
 </ion-header>
 
-
 <ion-content>
   
   <ion-card *ngFor="let item of publish;let id = index;">
@@ -34,9 +33,9 @@
         <img src="{{item.icon}}">
       </ion-avatar>
       <h2>{{item.name}}</h2>
-      <p>2018年4月26日</p>
+      <p>{{item.time}}</p>
     </ion-item>
-    <img (tap)="pubMain()" src="{{item.pic}}">
+    <img class="main_img" (tap)="pubMain()" src="{{item.pic}}">
     <ion-card-content (tap)="pubMain()">
       <p>{{item.article}}</p>
     </ion-card-content>
@@ -50,7 +49,7 @@
       <ion-col>
         <button color=zhijia (click)="myComment()" ion-button icon-left clear small>
           <ion-icon name="text"></ion-icon>
-          <div>4 评论</div>
+          <div>0 评论</div>
         </button>
       </ion-col>
       <ion-col center text-center>
