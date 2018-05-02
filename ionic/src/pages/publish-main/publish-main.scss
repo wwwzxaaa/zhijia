@@ -16,13 +16,14 @@ page-publish-main {
         }
         
         ion-segment{
-            ion-segment-button{
-                
-            }
             
         }
         .segment-ios-whi .segment-button{
             color:#aaa;
+            border: none;
+        }
+        .segment-activated{
+            // border-bottom-color: #f00;
         }
     }
     ion-footer{

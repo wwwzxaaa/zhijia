@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
 import { PublishNewPage } from '../publish-new/publish-new';
 import { PublishMainPage } from '../publish-main/publish-main';
 
@@ -20,9 +20,15 @@ export class PublishPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    
+    public events:Events,
     private app:App
-  ) {}
+  ) {
+    // 接收发布页面数据
+    events.subscribe('user:created',(textarea,time) => {
+      console.log(textarea,time);
+      this.publish.unshift({icon:'assets/publish/zhijia.png',name:'知家官方团队',pic:'',article:textarea});
+    })
+  }
 
   publish=[
     {
@@ -62,6 +68,7 @@ export class PublishPage {
       this.num++;
     }
   }
+  
   
 
 }

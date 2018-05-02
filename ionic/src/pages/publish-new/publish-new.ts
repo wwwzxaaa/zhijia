@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
 /**
  * Generated class for the PublishNewPage page.
@@ -17,14 +17,12 @@ export class PublishNewPage {
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams
+    public navParams: NavParams,
+    public events:Events
   ) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PublishNewPage');
-  }
-
-  publishing(){
+  
+  publishing(textarea){
     this.navCtrl.pop();
+    this.events.publish('user:created',textarea,Date.now());
   }
 }
