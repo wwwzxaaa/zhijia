@@ -11,7 +11,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingPage } from '../pages/setting/setting';
-
+import { LoginPage } from '../pages/login/login';
+import { RegPage } from '../pages/reg/reg';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
@@ -19,6 +20,8 @@ import { InfoPage } from '../pages/info/info';
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
+    RegPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -40,6 +43,8 @@ import { InfoPage } from '../pages/info/info';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    RegPage,
     AboutPage,
     ContactPage,
     HomePage,

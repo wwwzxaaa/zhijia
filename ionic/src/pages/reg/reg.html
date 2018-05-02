@@ -1,0 +1,42 @@
+<!--
+  Generated template for the RegPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="zhijia">
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="list">
+        <ion-item>
+            <ion-label floating>手机号</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <div>
+          <ion-item class="yzm">
+            <ion-label floating>验证码</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <div class="btn3"><button class="btn1">获取验证码</button></div>
+        </div>
+        <ion-item>
+            <ion-label floating>密码</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>确认密码</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+    </div>
+    <div class="inp"><input type="checkbox">接受服务条款并同意知家获取用户信息</div>
+    <div class="allbtn">
+        <button class="btn" (click)="goLogin()" block>注册</button>
+    </div>
+</ion-content>
