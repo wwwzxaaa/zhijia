@@ -12,6 +12,7 @@ page-home {
     #slider{
         padding-top:15px; 
         padding-left: 5%;
+        margin-right: 5%;
         width: 95%;
     }
     #buttons{
@@ -21,12 +22,30 @@ page-home {
         width:24%;
         background-color: #ffff;
     }
+    #active-title{
+        margin-top: -20px;
+        text-align:center !important;
+        background-color: #FFbb00;
+        line-height:40px;
+        color:#ffff;
+    }
+    #active{
+        background-color: #EBEBEB;
+        padding-bottom: 1px;
+    }
+    #active ion-item{
+        margin: 10px auto;
+    }
     #active img{
         width:30%;
     }
     #active h1{
         float:right;
         line-height: 100px;
-        padding-right: 10%;
+        padding-right: 5%;
+    }
+    #active ion-icon{
+        float:right;
+        line-height: 100px;
     }
 }
