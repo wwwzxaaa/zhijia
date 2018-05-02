@@ -1,3 +1,33 @@
 page-setting {
-   
+    #set-person{
+        height:120px;
+        padding: 20px;
+        line-height: 150px;
+        border: 1px;
+        background-color: #EBEBEB;
+    }
+    #set-person img{
+        float: left;
+        width:30%;
+    }
+    #set-person h2{
+        float: left;
+        padding-left: 50px;
+    }
+    #set-person p{
+        position:relative;
+        right:50px;
+        bottom: 20px;
+    }
+   #set-list{
+    clear: both;
+   }
+   #set-list h2{
+       padding-top: 5px;
+   }
+   #set-list img{
+       float: left;
+       width: 30px;
+       margin-right: 30px;
+   }
 }

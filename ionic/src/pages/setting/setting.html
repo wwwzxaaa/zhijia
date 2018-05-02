@@ -9,31 +9,18 @@
 
 
 <ion-content padding>
- <!--
-  <div class="user_msg">
-    <button ion-button round>编辑资料</button>
-    <div class="header">
+  <div id="set-person">
+      <ion-icon name="arrow-dropright" style="float:right;line-height:100px;"></ion-icon>
       <img src="assets/imgs/user.jpg">
-    </div>
-    <h2>Ionic</h2>
-    <h3>北京资芽网络科技有限公司</h3>
+      <h2>王红红</h2>
+      <p>say hello!</p>
   </div>
-  <ion-list class="button1_3" inset>
-    <button ion-item *ngFor="let button1_3 of button1_3;let id = index" (click)="mybtn1(id)">
-      <img src="{{button1_3.src}}" alt="">
+  <ion-list id="set-list" inset>
+    <button ion-item *ngFor="let set of settings;let id = index" (click)="mybtn(id)">
+      <img src="{{set.src}}" alt="">
       <h2>
-        {{button1_3.name}}
-        <ion-icon name="arrow-forward"  style="float:right;"></ion-icon></h2>
-    </button>
-  </ion-list>
-  <ion-list class="button4_9" inset>
-    <button ion-item *ngFor="let button4_9 of button4_9;let id = index" (click)="mybtn2(id)">
-      <img src="{{button4_9.src}}" alt="">
-      <h2>
-        {{button4_9.name}}
-        <ion-icon name="arrow-forward"  style="float:right;"></ion-icon>
+        {{set.name}}
       </h2>
     </button>
   </ion-list>
--->
 </ion-content>
