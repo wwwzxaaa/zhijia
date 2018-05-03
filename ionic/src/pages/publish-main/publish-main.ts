@@ -19,11 +19,9 @@ export class PublishMainPage {
     public navCtrl: NavController, 
     public navParams: NavParams
   ) {
+    //接收数据
     this.publish_main[0]=navParams.get('publish');
   }
-
-  //接收数据
-  
 
   // 帖子详情
   publish_main=[
