@@ -30,7 +30,8 @@ export class PublishPage {
         icon:'assets/publish/zhijia.png',name:'知家官方团队',
         time:theTime,pic:'',article:textarea,good:0
       });
-      console.log(this.publish)
+      console.log(this.publish);
+      // this.isGood = isSecondary;
     })
   }
 
@@ -56,22 +57,22 @@ export class PublishPage {
   myComment(){
     this.app.getRootNav().push(PublishNewPage);
   }
-  //点击进入详情
-  pubMain(){
+  //点击进入详情,发送数据到详情页publish-main
+  pubMain(id){
     this.app.getRootNav().push(PublishMainPage,{
-      publish:this.publish[0]
+      publish:this.publish[id],isGood:this.isGood
     });
   }
 
   //点赞
-  isGood:boolean=false;
+  isGood:boolean;
   num = 0;
   isGoodSwitch(id){
-    if(this.num%2 == 1){
+    if(this.isGood==true){
       this.isGood=false;
       this.publish[id].good--;
       this.num++;
-    }else if(this.num%2 ==0){
+    }else{
       this.isGood=true;
       this.publish[id].good++;
       this.num++;

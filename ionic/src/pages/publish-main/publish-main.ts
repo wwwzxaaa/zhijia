@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
 /**
  * Generated class for the PublishMainPage page.
@@ -17,10 +17,16 @@ export class PublishMainPage {
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams
+    public navParams: NavParams,
+    public events:Events
   ) {
     //接收数据
     this.publish_main[0]=navParams.get('publish');
+    this.isSecondary=navParams.get('isGood');
+    if(this.isSecondary==true){
+      this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
+    }
+    
   }
 
   // 帖子详情
@@ -47,18 +53,19 @@ export class PublishMainPage {
   ]
 
   // 点赞颜色
-  isSecondary: boolean = true;
-  num = 1;
+  isSecondary: boolean;
+  // num = 0;
   isGoodSwitch(){
-    if(this.num%2 == 1){
-      this.isSecondary=false;
-      this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
-      this.num++;
-    }else{
+    if(this.isSecondary==false){
       this.isSecondary=true;
+      this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
+      // this.num++;
+    }else{
+      this.isSecondary=false;
       this.isgood.pop();
-      this.num++;
+      // this.num++;
     }
+    // this.events.publish('user:created',this.isSecondary);
   }
   
 }
