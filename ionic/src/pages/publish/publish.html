@@ -8,12 +8,13 @@
   
   <ion-toolbar color=zhijia>
     <ion-buttons start>
-      <button ion-button icon-only color="royal">
+      <button (click)="mySearch()" ion-button icon-only color="royal">
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>广场</ion-title>
-    <ion-buttons end>
+    <ion-searchbar *ngIf="mySea" placeholder="搜索..."></ion-searchbar>
+    <ion-title *ngIf="!mySea">广场</ion-title>
+    <ion-buttons end *ngIf="!mySea">
       <button (click)="myPub()" ion-button icon-only color="royal">
         <ion-icon name="ios-create-outline"></ion-icon>
       </button>
@@ -41,7 +42,7 @@
     </ion-card-content>
     <ion-row>
       <ion-col>
-        <button [color]="isGood ? 'zhijia' : 'gry'" (click)="isGoodSwitch(id)" ion-button icon-left clear small>
+        <button [ngStyle]="goodColor" (click)="isGoodSwitch(id)" ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>{{item.good}} 赞</div>
         </button>

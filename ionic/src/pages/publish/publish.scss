@@ -2,6 +2,10 @@ page-publish {
     ion-title{
         color: #fff;
     }
+    .searchbar-ios{
+        min-height: 36px;
+        border: none;
+    }
     ion-navbar{
         .button-ios{
             height: 1.8em;

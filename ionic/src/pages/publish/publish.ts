@@ -35,8 +35,18 @@ export class PublishPage {
     })
   }
 
+  // 搜索框
+  mySea = false;
+  mySearch(){
+    if(this.mySea == false){
+      this.mySea = true;
+    }else{
+      this.mySea = false;
+    }
+    
+  }
+
   //默认帖子数据
-  
   publish=[
     {
       icon:'assets/publish/mht.jpg',name:'Pony Ma',time:'2018年5月2日',
@@ -65,19 +75,28 @@ export class PublishPage {
   }
 
   //点赞
-  isGood:boolean;
-  num = 0;
+  isGood:boolean=true;
+  goodColor = {
+    'color': this.isGood ? '#ccc' : '#FFBB00'
+  }
   isGoodSwitch(id){
     if(this.isGood==true){
+      console.log(this.isGood);
+      this.goodColor = {
+        'color': '#FFbb00'
+      }
       this.isGood=false;
-      this.publish[id].good--;
-      this.num++;
-    }else{
-      this.isGood=true;
       this.publish[id].good++;
-      this.num++;
+    }else{
+      console.log(this.isGood + 'else');
+      this.goodColor = {
+        'color': '#ccc'
+      }
+      this.isGood=true;
+      this.publish[id].good--;
     }
   }
+  
   
   //时间戳转换时间
   timestampToTime(timestamp) {
