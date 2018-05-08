@@ -1,24 +1,24 @@
-[
+{"publish":[
     {
-      "icon":"'assets/publish/mht.jpg'",
-      "name":"'Pony Ma'",
-      "time":"'2018年5月2日'",
-      "pic":"'assets/publish/main.jpg'",
-      "article":"'来充钱啊不充钱你怎么变得更强！！！'",
+      "icon":"assets/publish/mht.jpg",
+      "name":"Pony Ma",
+      "time":"2018年5月2日",
+      "pic":"assets/publish/main.jpg",
+      "article":"来充钱啊不充钱你怎么变得更强！！！",
       "good":"6"
     },{
-      "icon":"'assets/publish/my.jpg'",
-      "name":"'Jack Ma'",
-      "time":"'2018年5月2日'",
-      "pic":"'assets/publish/alibaba.jpg'",
-      "article":"'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！'",
+      "icon":"assets/publish/my.jpg",
+      "name":"Jack Ma",
+      "time":"2018年5月2日",
+      "pic":"assets/publish/alibaba.jpg",
+      "article":"我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！",
       "good":"8"
     },{
-      "icon":"'assets/publish/leijun.jpg'",
-      "name":"'R.U.OK'",
-      "time":"'2018年5月2日'",
-      "pic":"'assets/publish/xiaomi.jpg'",
-      "article":"'小米，为发烧而生！Are You OK？'",
+      "icon":"assets/publish/leijun.jpg",
+      "name":"R.U.OK",
+      "time":"2018年5月2日",
+      "pic":"assets/publish/xiaomi.jpg",
+      "article":"小米，为发烧而生！Are You OK？",
       "good":"8"
     }
-]
+]}

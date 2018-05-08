@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Http, Jsonp} from '@angular/http';
+import {Http} from '@angular/http';
 import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
 import { PublishNewPage } from '../publish-new/publish-new';
 import { PublishMainPage } from '../publish-main/publish-main';
@@ -24,8 +24,7 @@ export class PublishPage {
     public navParams: NavParams,
     public events:Events,
     private app:App,
-    public http: Http,
-    public jsonp:Jsonp
+    public http: Http
   ) {
     // 接收发布页面数据
     events.subscribe('user:created',(textarea,time) => {
@@ -47,10 +46,11 @@ export class PublishPage {
       this.mySea = false;
     } 
   }
-
+  publish =[]
   ionViewDidLoad(){
-    this.http.get('assets/json/publish.json').subscribe(data=>{
-      console.log(data);
+    this.http.get('assets/json/publish.json',{}).subscribe(data=>{
+      console.log(JSON.parse(data['_body']).publish);
+      this.publish = JSON.parse(data['_body']).publish;
     },err=>{
       console.log(err);
     });
@@ -58,21 +58,21 @@ export class PublishPage {
   
 
   //默认帖子数据
-  publish=[
-    {
-      icon:'assets/publish/mht.jpg',name:'Pony Ma',time:'2018年5月2日',
-      pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！',
-      good:6
-    },{
-      icon:'assets/publish/my.jpg',name:'Jack Ma',time:'2018年5月2日',
-      pic:'assets/publish/alibaba.jpg',article:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
-      good:8
-    },{
-      icon:'assets/publish/leijun.jpg',name:'R.U.OK',time:'2018年5月2日',
-      pic:'assets/publish/xiaomi.jpg',article:'小米，为发烧而生！Are You OK？',
-      good:8
-    }
-  ]
+  // publish=[
+    // {
+    //   icon:'assets/publish/mht.jpg',name:'Pony Ma',time:'2018年5月2日',
+    //   pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！',
+    //   good:6
+    // },{
+    //   icon:'assets/publish/my.jpg',name:'Jack Ma',time:'2018年5月2日',
+    //   pic:'assets/publish/alibaba.jpg',article:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
+    //   good:8
+    // },{
+    //   icon:'assets/publish/leijun.jpg',name:'R.U.OK',time:'2018年5月2日',
+    //   pic:'assets/publish/xiaomi.jpg',article:'小米，为发烧而生！Are You OK？',
+    //   good:8
+    // }
+  // ]
 
   //点击发布按钮
   myPub(i){
