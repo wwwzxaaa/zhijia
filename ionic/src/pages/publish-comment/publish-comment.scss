@@ -1,0 +1,27 @@
+page-publish-comment {
+    ion-content{
+        .myCom{
+            width: 100%;
+            height: 80%;
+            border: none;
+            font-size: 18px;
+        }
+        .myCom::placeholder{
+            color: #ddd;
+        }
+    }
+    ion-footer{
+        ion-buttons{
+            text-align: center;
+            ion-icon{
+                font-size: 30px;
+            }
+        }
+        ion-toolbar{
+            ion-grid{
+                padding: 0!important;
+            }
+        }
+        
+    }
+}

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import {Http, Jsonp} from '@angular/http';
 import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
 import { PublishNewPage } from '../publish-new/publish-new';
 import { PublishMainPage } from '../publish-main/publish-main';
+import { PublishCommentPage } from '../publish-comment/publish-comment';
 
 /**
  * Generated class for the PublishPage page.
@@ -21,7 +23,9 @@ export class PublishPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public events:Events,
-    private app:App
+    private app:App,
+    public http: Http,
+    public jsonp:Jsonp
   ) {
     // 接收发布页面数据
     events.subscribe('user:created',(textarea,time) => {
@@ -30,9 +34,8 @@ export class PublishPage {
         icon:'assets/publish/zhijia.png',name:'知家官方团队',
         time:theTime,pic:'',article:textarea,good:0
       });
-      console.log(this.publish);
-      // this.isGood = isSecondary;
     })
+
   }
 
   // 搜索框
@@ -42,9 +45,17 @@ export class PublishPage {
       this.mySea = true;
     }else{
       this.mySea = false;
-    }
-    
+    } 
   }
+
+  ionViewDidLoad(){
+    this.http.get('assets/json/publish.json').subscribe(data=>{
+      console.log(data);
+    },err=>{
+      console.log(err);
+    });
+  }
+  
 
   //默认帖子数据
   publish=[
@@ -56,6 +67,10 @@ export class PublishPage {
       icon:'assets/publish/my.jpg',name:'Jack Ma',time:'2018年5月2日',
       pic:'assets/publish/alibaba.jpg',article:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
       good:8
+    },{
+      icon:'assets/publish/leijun.jpg',name:'R.U.OK',time:'2018年5月2日',
+      pic:'assets/publish/xiaomi.jpg',article:'小米，为发烧而生！Are You OK？',
+      good:8
     }
   ]
 
@@ -64,8 +79,8 @@ export class PublishPage {
     this.app.getRootNav().push(PublishNewPage);
   }
   //点击评论按钮
-  myComment(){
-    this.app.getRootNav().push(PublishNewPage);
+  myComment(id){
+    this.app.getRootNav().push(PublishCommentPage);
   }
   //点击进入详情,发送数据到详情页publish-main
   pubMain(id){
@@ -77,23 +92,23 @@ export class PublishPage {
   //点赞
   isGood:boolean=true;
   goodColor = {
-    'color': this.isGood ? '#ccc' : '#FFBB00'
+    'color': '#ccc'
   }
   isGoodSwitch(id){
     if(this.isGood==true){
-      console.log(this.isGood);
       this.goodColor = {
         'color': '#FFbb00'
       }
       this.isGood=false;
       this.publish[id].good++;
     }else{
-      console.log(this.isGood + 'else');
       this.goodColor = {
         'color': '#ccc'
       }
       this.isGood=true;
-      this.publish[id].good--;
+      if(this.publish[id].good>0){
+        this.publish[id].good--;
+      }  
     }
   }
   
@@ -110,4 +125,5 @@ export class PublishPage {
     return M + D + h + m ;
   }
 
+  
 }

@@ -14,6 +14,24 @@ page-publish-main {
                 padding-left: 16px;
                 padding-right: 16px;
             }
+            ion-avatar{
+                img{
+                    height: 44px!important;
+                    width: 44px!important;
+                }
+            }
+            ion-item{
+                h2{
+                    width: 50%;
+                    display: inline;
+                }
+                p{
+                    width: 35%;
+                    display: inline;
+                    float: right;
+                    text-align: right;
+                }
+            }
         }
         
         .segment-ios-whi .segment-button{

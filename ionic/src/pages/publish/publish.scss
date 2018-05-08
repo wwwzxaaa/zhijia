@@ -25,11 +25,20 @@ page-publish {
                 padding-left: 16px;
                 padding-right: 16px;
             }
+            ion-avatar{
+                img{
+                    height: 44px!important;
+                    width: 44px!important;
+                }
+                
+            }
         }
-    }
-    ion-row{
-        ion-note{
-            line-height: 32px;
+        ion-row{
+            text-align: center;
+            .col{
+                padding: 0px;
+                border-top:1px solid #eee;
+            }
         }
     }
 }
