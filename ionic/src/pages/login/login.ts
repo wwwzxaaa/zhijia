@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App } from 'ionic-angular';
 import { RegPage } from '../reg/reg';
 import { TabsPage } from '../tabs/tabs';
 /**
@@ -16,14 +17,14 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private app:App,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
   goHome(){
-    this.navCtrl.push(TabsPage);
+    this.app.getRootNavs()[0].setRoot(TabsPage);
   }
   goReg(){
     this.navCtrl.push(RegPage);

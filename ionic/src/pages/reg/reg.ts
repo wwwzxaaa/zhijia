@@ -22,6 +22,6 @@ export class RegPage {
     console.log('ionViewDidLoad RegPage');
   }
   goLogin(){
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 }
