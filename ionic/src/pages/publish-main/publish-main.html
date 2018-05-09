@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color=zhijia>
-    <ion-title>详情页</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,13 +15,13 @@
 
 <ion-content>
   <!-- 内容详情 -->
-  <ion-card *ngFor="let item of publish_main;let id = index;">
+  <ion-card *ngFor="let item of publish_main;">
     <ion-item>
       <ion-avatar item-start>
         <img src="{{item.icon}}">
       </ion-avatar>
       <h2>{{item.name}}</h2>
-      <p>2018年4月26日</p>
+      <p>{{item.time}}</p>
     </ion-item>
     <img class="main_img" src="{{item.pic}}">
     <ion-card-content>
@@ -31,9 +31,9 @@
 
   <!-- 转发、评论、点赞切换按钮 -->
   <ion-segment [(ngModel)]="card" color=whi>
-    <ion-segment-button value="trans">转发</ion-segment-button>
-    <ion-segment-button value="com">评论</ion-segment-button>
-    <ion-segment-button value="good">点赞</ion-segment-button>
+    <ion-segment-button value="trans">转发({{trans}})</ion-segment-button>
+    <ion-segment-button value="com">评论({{com}})</ion-segment-button>
+    <ion-segment-button value="good">赞({{good}})</ion-segment-button>
   </ion-segment>
   <div [ngSwitch]="card">
     <ion-card *ngSwitchCase="'trans'">
@@ -55,12 +55,13 @@
       <ion-card *ngFor="let item of segment_com;let i = index;">
         <ion-item>
           <ion-avatar item-start>
-            <img src="{{item.src}}">
+            <img src="{{item.icon}}">
           </ion-avatar>
           <h2>{{item.name}}</h2>
+          <p>{{item.time}}</p>
         </ion-item>
         <ion-card-content>
-          <p>{{item.com}}</p>
+          <p>{{item.article}}</p>
         </ion-card-content>
       </ion-card>
       
@@ -83,17 +84,17 @@
       <ion-row>
         <ion-col>
           <ion-buttons>
-            <button color=zhijia ion-button><ion-icon name="ios-share-alt-outline"></ion-icon>&nbsp;转发</button>
+            <button color=gry ion-button><ion-icon name="ios-share-alt-outline"></ion-icon>&nbsp;转发</button>
           </ion-buttons>
         </ion-col>
         <ion-col>
           <ion-buttons>
-            <button color=zhijia ion-button><ion-icon name="text"></ion-icon>&nbsp;评论</button>
+            <button (click)="myCom()" color=gry ion-button><ion-icon name="text"></ion-icon>&nbsp;评论</button>
           </ion-buttons>
         </ion-col>
         <ion-col>
           <ion-buttons>
-            <button [color]="isSecondary ? 'zhijia' : 'gry'" (click)="isGoodSwitch()" ion-button><ion-icon name="thumbs-up"></ion-icon>&nbsp;点赞</button>
+            <button [color]="isSecondary ? 'zhijia' : 'gry'" (click)="isGoodSwitch()" ion-button><ion-icon name="thumbs-up"></ion-icon>&nbsp;赞</button>
           </ion-buttons>
         </ion-col>
       </ion-row>

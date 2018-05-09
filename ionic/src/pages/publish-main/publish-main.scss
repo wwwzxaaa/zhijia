@@ -7,22 +7,36 @@ page-publish-main {
             margin-right: 0;
             box-shadow: none;
             margin-top: 0; 
+            margin-bottom: 5px;
         }
         ion-card{
             .main_img{
                 padding-left: 16px;
                 padding-right: 16px;
             }
+            ion-avatar{
+                img{
+                    height: 44px!important;
+                    width: 44px!important;
+                }
+            }
+            ion-item{
+                h2{
+                    width: 50%;
+                    display: inline;
+                }
+                p{
+                    width: 35%;
+                    display: inline;
+                    float: right;
+                    text-align: right;
+                }
+            }
         }
         
-        ion-segment{
-            ion-segment-button{
-                
-            }
-            
-        }
         .segment-ios-whi .segment-button{
             color:#aaa;
+            border: none;
         }
     }
     ion-footer{

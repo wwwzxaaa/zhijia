@@ -8,52 +8,50 @@
   
   <ion-toolbar color=zhijia>
     <ion-buttons start>
-      <button ion-button icon-only color="royal">
+      <button (click)="mySearch()" ion-button icon-only color="dark">
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>广场</ion-title>
-    <ion-buttons end>
-      <button (click)="myPub()" ion-button icon-only color="royal">
+    <ion-searchbar *ngIf="mySea" placeholder="搜索..."></ion-searchbar>
+    <ion-title *ngIf="!mySea">广场</ion-title>
+    <ion-buttons end *ngIf="!mySea">
+      <button (click)="myPub()" ion-button icon-only color="dark">
         <ion-icon name="ios-create-outline"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
+  <!-- <ion-toolbar color="zhijia">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar> -->
 
 </ion-header>
-
 
 <ion-content>
   
   <ion-card *ngFor="let item of publish;let id = index;">
-    <ion-item (tap)="pubMain()">
+    <ion-item (tap)="pubMain(id)">
       <ion-avatar item-start>
         <img src="{{item.icon}}">
       </ion-avatar>
       <h2>{{item.name}}</h2>
-      <p>2018年4月26日</p>
+      <p>{{item.time}}</p>
     </ion-item>
-    <img (tap)="pubMain()" src="{{item.pic}}">
-    <ion-card-content (tap)="pubMain()">
+    <img class="main_img" (tap)="pubMain(id)" src="{{item.pic}}">
+    <ion-card-content (tap)="pubMain(id)">
       <p>{{item.article}}</p>
     </ion-card-content>
     <ion-row>
       <ion-col>
-        <button [color]="isGood ? 'zhijia' : 'gry'" (click)="isGoodSwitch()" (tap)="tapEvent($event)" ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>{{tap}} 赞</div>
+        <button color=zhijia (click)="myComment(id)" ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>3 评论</div>
         </button>
       </ion-col>
       <ion-col>
-        <button color=zhijia (click)="myComment()" ion-button icon-left clear small>
-          <ion-icon name="text"></ion-icon>
-          <div>4 评论</div>
+        <button [ngStyle]="goodColor" (click)="isGoodSwitch(id)" ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{item.good}} 赞</div>
         </button>
-      </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          11小时前
-        </ion-note>
       </ion-col>
     </ion-row>
   </ion-card>

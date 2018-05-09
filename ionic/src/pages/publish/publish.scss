@@ -2,14 +2,43 @@ page-publish {
     ion-title{
         color: #fff;
     }
+    .searchbar-ios{
+        min-height: 36px;
+        border: none;
+    }
     ion-navbar{
         .button-ios{
             height: 1.8em;
         }
     }
-    ion-row{
-        ion-note{
-            line-height: 32px;
+    ion-content{
+        background: #eee!important;
+        .card-ios{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            box-shadow: none;
+            margin-top: 10px; 
+        }
+        ion-card{
+            .main_img{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            ion-avatar{
+                img{
+                    height: 44px!important;
+                    width: 44px!important;
+                }
+                
+            }
+        }
+        ion-row{
+            text-align: center;
+            .col{
+                padding: 0px;
+                border-top:1px solid #eee;
+            }
         }
     }
 }

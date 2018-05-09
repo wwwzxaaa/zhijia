@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
 
 /**
- * Generated class for the PublishNewPage page.
+ * Generated class for the PublishCommentPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,24 +10,28 @@ import { IonicPage, NavController, NavParams, Events, AlertController } from 'io
 
 @IonicPage()
 @Component({
-  selector: 'page-publish-new',
-  templateUrl: 'publish-new.html',
+  selector: 'page-publish-comment',
+  templateUrl: 'publish-comment.html',
 })
-export class PublishNewPage {
+export class PublishCommentPage {
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private alertCtrl:AlertController,
     public events:Events
-  ) {}
-  
+  ) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad PublishCommentPage');
+  }
   publishing(textarea){
     if(textarea === ''){
       this.AlertWarn();
     }else{
       this.navCtrl.pop();
-      this.events.publish('user:created',textarea,Date.now());
+      this.events.publish('1',textarea,Date.now());
     }
   }
 
@@ -38,5 +42,5 @@ export class PublishNewPage {
       buttons: ['取消']  
     });  
     alert.present();  
-  }  
+  } 
 }
