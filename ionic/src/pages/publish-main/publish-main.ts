@@ -35,6 +35,7 @@ export class PublishMainPage {
         icon:'assets/publish/zhijia.png',name:'知家官方团队',
         article:textarea,time:theTime
       });
+      this.com = this.segment_com.length;
     })
   }
   
@@ -47,13 +48,11 @@ export class PublishMainPage {
   ]
   title = '';
 
-  // 点赞列表
-  isgood=[
-    {src:'assets/publish/my.jpg',name:'Jack Ma'}
-  ]
-
   //默认segment
   card = 'com';
+
+  trans = 3;
+  
 
   //评论
   myCom(){
@@ -66,8 +65,16 @@ export class PublishMainPage {
     {icon:'assets/publish/lqd.jpg',name:'Richard Liu',article:'我不知道，我脸盲=-=！',time:'5月8日'},
     {icon:'assets/publish/ubi.jpg',name:'Ubi Soft',article:'新鲜的土豆了解一下？',time:'5月6日'}
   ]
+  //评论数量
+  com = this.segment_com.length;
 
-  // 点赞颜色
+  
+  // 点赞列表
+  isgood=[
+    {src:'assets/publish/my.jpg',name:'Jack Ma'}
+  ]
+
+  // 点赞
   isSecondary: boolean=false;
   isGoodSwitch(){
     if(this.isSecondary==false){
@@ -77,8 +84,10 @@ export class PublishMainPage {
       this.isSecondary=false;
       this.isgood.pop();
     }
-    // this.events.publish('user:created',this.isSecondary);
+    this.good = this.isgood.length;
   }
+  //点赞数量
+  good = this.isgood.length;
   
   //时间戳转换时间
   timestampToTime(timestamp) {

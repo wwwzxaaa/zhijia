@@ -31,9 +31,9 @@
 
   <!-- 转发、评论、点赞切换按钮 -->
   <ion-segment [(ngModel)]="card" color=whi>
-    <ion-segment-button value="trans">转发</ion-segment-button>
-    <ion-segment-button value="com">评论</ion-segment-button>
-    <ion-segment-button value="good">赞</ion-segment-button>
+    <ion-segment-button value="trans">转发({{trans}})</ion-segment-button>
+    <ion-segment-button value="com">评论({{com}})</ion-segment-button>
+    <ion-segment-button value="good">赞({{good}})</ion-segment-button>
   </ion-segment>
   <div [ngSwitch]="card">
     <ion-card *ngSwitchCase="'trans'">

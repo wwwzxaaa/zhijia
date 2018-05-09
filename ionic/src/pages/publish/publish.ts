@@ -33,6 +33,7 @@ export class PublishPage {
         icon:'assets/publish/zhijia.png',name:'知家官方团队',
         time:theTime,pic:'',article:textarea,good:0
       });
+      window.localStorage.setItem('publish',JSON.stringify(this.publish));      
     })
 
   }
@@ -46,8 +47,9 @@ export class PublishPage {
       this.mySea = false;
     } 
   }
-  publish =[]
+  publish = [];
   ionViewDidLoad(){
+    this.publish = JSON.parse(window.localStorage.getItem('publish'));
     this.http.get('assets/json/publish.json',{}).subscribe(data=>{
       console.log(JSON.parse(data['_body']).publish);
       this.publish = JSON.parse(data['_body']).publish;
