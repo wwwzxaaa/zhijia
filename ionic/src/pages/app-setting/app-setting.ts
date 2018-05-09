@@ -25,6 +25,6 @@ export class AppSettingPage {
   }
 
   goout(){
-    this.app.getRootNav().push(LoginPage);
+    this.app.getRootNavs()[0].setRoot(LoginPage);
   }
 }
