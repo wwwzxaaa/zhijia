@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { AppSettingPage } from '../app-setting/app-setting';
+import { PersonPage } from '../person/person';
 /**
  * Generated class for the SettingPage page.
  *
@@ -29,6 +30,9 @@ export class SettingPage {
     if(i==3){
       this.app.getRootNav().push(AppSettingPage);
     }
+  }
+  myperson(){
+    this.app.getRootNav().push(PersonPage);
   }
 }
 

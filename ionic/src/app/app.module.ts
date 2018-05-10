@@ -21,6 +21,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
 import { AppSettingPage } from '../pages/app-setting/app-setting';
+import { PersonPage } from '../pages/person/person';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AppSettingPage } from '../pages/app-setting/app-setting';
     PublishCommentPage,
     SettingPage,
     InfoPage,
-    AppSettingPage
+    AppSettingPage,
+    PersonPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { AppSettingPage } from '../pages/app-setting/app-setting';
     PublishCommentPage,
     SettingPage,
     InfoPage,
-    AppSettingPage
+    AppSettingPage,
+    PersonPage
   ],
   providers: [
     StatusBar,
