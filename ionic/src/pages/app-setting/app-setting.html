@@ -5,14 +5,58 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>app-setting</ion-title>
+  <ion-navbar color="zhijia">
+    <ion-title>软件设置</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-<button (click)="goout()">退出登录</button>
+<ion-content  class="my_setting">
+    <ion-list class="setting_list">
+        <ion-item>
+          <button>
+            账号与安全
+          </button>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <button>
+              新消息提醒
+          </button>
+        </ion-item>
+          <ion-item>
+            <button>
+              勿扰模式
+            </button>
+          </ion-item>
+        <ion-item>
+            <button>
+                通用
+            </button>
+        </ion-item>
+        <ion-item>
+            <button>
+                隐私
+            </button>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+            <button>
+              关于
+            </button>
+          </ion-item>
+        <ion-item>
+          <button>
+           帮助与反馈
+          </button>
+        </ion-item>
+      </ion-list>
+     
+      <div class="login_out">
+          <button ion-button round (click)="goout()" color="zhijia">退出登录</button>
+      </div>
+
+
 </ion-content>

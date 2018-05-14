@@ -1,3 +1,23 @@
 page-app-setting {
-
+    .my_setting{
+        background-color: lightgray;
+    }
+    .login_out button{
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+    ion-list button{
+        width: 100%;
+        text-align:left;
+        font-size: 18px;
+        line-height: 25px;
+        background-color: #fff;
+    }
+    .setting_list{
+        padding-top: 10px;
+    }
+    .setting_list div{
+        padding-left: 8px; 
+    }
 }
