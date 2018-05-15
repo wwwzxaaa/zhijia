@@ -6,6 +6,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card *ngFor="let item of info;let id = index;">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{item.icon}}">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>{{item.time}}</p>
+    </ion-item>
+    <img class="main_img" src="{{item.pic}}">
+    <ion-card-content>
+      <p>{{item.article}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
