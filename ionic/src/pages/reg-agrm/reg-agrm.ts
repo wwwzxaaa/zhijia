@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the RegAgrmPage page.
  *
@@ -21,5 +21,7 @@ export class RegAgrmPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegAgrmPage');
   }
-
+  goLogin(){
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

@@ -6,13 +6,37 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>reg-agrm</ion-title>
+  <ion-navbar color="zhijia">
+    <ion-title class="title">找回密码</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div class="list">
+    <ion-item>
+        <ion-label floating>手机号</ion-label>
+        <ion-input type="text"></ion-input>
+    </ion-item>
+    <div>
+      <ion-item class="yzm">
+        <ion-label floating>验证码</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <div class="btn3"><button class="btn1">获取验证码</button></div>
+    </div>
+    <ion-item>
+        <ion-label floating>新密码</ion-label>
+        <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>确认密码</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </div>
+  <div class="allbtn">
+    <button class="btn" (click)="goLogin()" block>确定</button>
+  </div>
 </ion-content>
+

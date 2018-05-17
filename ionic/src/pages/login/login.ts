@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { RegPage } from '../reg/reg';
 import { TabsPage } from '../tabs/tabs';
+import { RegAgrmPage } from '../reg-agrm/reg-agrm';
 /**
  * Generated class for the LoginPage page.
  *
@@ -28,5 +29,8 @@ export class LoginPage {
   }
   goReg(){
     this.navCtrl.push(RegPage);
+  }
+  goFind(){
+    this.navCtrl.push(RegAgrmPage);
   }
 }
