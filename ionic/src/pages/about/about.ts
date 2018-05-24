@@ -22,10 +22,14 @@ export class AboutPage {
   ];
   ionViewDidLoad() {
     console.log('物业消息');
-    this.http.get('http://localhost:7000/api/v1/content').subscribe(data=>{
-      console.log(JSON.parse(data['_body']));
-      this.list=JSON.parse(data['_body']);
-    })
+
+    //this.http.get('http://localhost:7000/api/v1/content').subscribe(data=>{
+      //console.log(JSON.parse(data['_body']));
+      //this.list=JSON.parse(data['_body']);
+    //})
+
+    this.jsonp.get(http://localhost:7000/api/v1/content?callback=JSONP_CALLBACK.subscribe(data=>{
+      console.log(data['_body']);})
   }
   
 }
