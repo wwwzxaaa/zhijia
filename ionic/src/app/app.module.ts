@@ -1,5 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { ToastController} from 'ionic-angular';//引入toast模块
+import { ModalController} from 'ionic-angular';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -22,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
 import { AppSettingPage } from '../pages/app-setting/app-setting';
 import { PersonPage } from '../pages/person/person';
+import 'rxjs/add/operator/map';
 
 @NgModule({
   declarations: [

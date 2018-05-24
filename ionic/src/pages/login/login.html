@@ -21,17 +21,17 @@
 
       <ion-item>
         <ion-label floating>用户名</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text"#username></ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label floating>密码</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" #password></ion-input>
       </ion-item>
     
     </ion-list>
   <div class="abtn">
-      <button class="btn" (click)="goHome()" block>登录</button>
+      <button class="btn"  (click)="logIn(username, password)" block>登录</button>
   </div>
   <div class="fg">
     <a (click)="goReg()" class="reg">注册账号</a>

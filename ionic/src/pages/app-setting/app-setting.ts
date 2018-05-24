@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import {NavController, Nav} from 'ionic-angular';
+import { IonicPage,  NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { App } from 'ionic-angular';
 
@@ -16,8 +17,8 @@ import { App } from 'ionic-angular';
   templateUrl: 'app-setting.html',
 })
 export class AppSettingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app:App) {
+  @ViewChild(Nav) nav: Nav;
+  constructor(private app:App,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -25,6 +26,7 @@ export class AppSettingPage {
   }
 
   goout(){
+    localStorage.clear();
     this.app.getRootNavs()[0].setRoot(LoginPage);
   }
 }
