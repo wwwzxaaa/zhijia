@@ -3,8 +3,9 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
-import { RegAgrmPage } from '../pages/reg-agrm/reg-agrm';
-
+import { TabsPage } from '../pages/tabs/tabs';
+import { PersonPage } from '../pages/person/person';
+import { SettingPage } from '../pages/setting/setting';
 declare var $:any;
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +31,8 @@ export class MyApp {
         success: (data)=>{
           console.log(data.message);
           this.showInfo = data.message;
-          return this.showInfo;
+          this.rootPage=TabsPage;
+          return this.showInfo; 
         }
         }
       )  

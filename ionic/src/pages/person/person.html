@@ -1,19 +1,20 @@
 <ion-header>
   <ion-navbar color="zhijia">
-    <ion-title>个人中心</ion-title>
+    <ion-title>设置个人信息</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
 <div id="title">
   <img src="assets/imgs/user.jpg" alt="">
-  <h3>王红红</h3>
-  <p>Say Hello</p>
 </div>
 <div id="data">
   <p>···编辑资料···</p>
 </div>
-<div></div>
-<button ion-button color="zhijia" id="third-party">绑定第三方账号</button>
+<ion-item class="set">
+    <ion-label class="setname" stacked>昵称设置:</ion-label>
+    <ion-input #nickname type="text" placeholder="请输入昵称"></ion-input>
+</ion-item>
+<button ion-button full round color="zhijia" (click)="setting(nickname)" class="btn">提交修改</button>
 </ion-content>

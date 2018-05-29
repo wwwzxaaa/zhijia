@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { LoginPage } from '../login/login'
+import { WelcomePage } from '../welcome/welcome'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 /**
  * Generated class for the RegPage page.
@@ -20,6 +21,7 @@ export class RegPage {
   username : any;
   password : any;
   email:any;
+  name:any;
   firstIn : string;
   secondIn : string;
   isdis : boolean;
@@ -36,12 +38,20 @@ export class RegPage {
       this.username = this.loginForm.controls['username'];
       this.password = this.loginForm.controls['password'];
       this.email = this.loginForm.controls['email'];
+      this.name = this.loginForm.controls['name'];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegPage');
   }
-  toRegister(username: HTMLInputElement, password: HTMLInputElement,email: HTMLInputElement){
+  back(){
+    this.navCtrl.setRoot(LoginPage);
+  }
+  goWe(){
+    this.navCtrl.push(WelcomePage);
+  }
+  toRegister(username: HTMLInputElement, password: HTMLInputElement,email: HTMLInputElement,name: HTMLInputElement){
+    if($("#check").is(":checked")){
     //将this的指向改为正确的,一下toast组件使用
     let _this = this
     $.ajax({
@@ -72,13 +82,11 @@ export class RegPage {
               duration: 3000,
               position: 'middle'
             });
-          
             toast.onDidDismiss(() => {
               console.log('Dismissed toast');
             });
-          
+ 
             toast.present();
-            
           }else{
             alert("注册失败");
           }
@@ -86,4 +94,5 @@ export class RegPage {
       }
     });
   }
+}
 }

@@ -1,25 +1,80 @@
 
 <ion-header>
-
-  <ion-navbar color="zhijia">
-    <ion-title>设置</ion-title>
+  <ion-navbar #content color="zhijia">
+    <ion-title>我的</ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content padding id="slide-container">
+  <!-- 刷新页面 -->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="下拉刷新"
+            refreshingSpinner="circles"
+            refreshingText="刷新中...">
+        </ion-refresher-content>
+    </ion-refresher>
+  <div class="side-color"></div>
+  
+<ion-menu [content]="content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>设置</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="toSet()">
+        设置个人信息
+      </button>
+      <button ion-item (click)="toCreater()">
+        关于
+      </button>
+    </ion-list>
+    <ion-list>
+      <ion-item (click)="loginOut()">
+        <ion-icon name="md-log-out" item-start></ion-icon>
+          退出登录
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-<ion-content padding>
-  <div id="set-person" (click)="myperson()">
-      <ion-icon name="arrow-dropright" style="float:right;line-height:100px;"></ion-icon>
-      <img src="assets/imgs/user.jpg">
-      <h2>王红红</h2>
-      <p>say hello!</p>
+  <div class="slide-content">
+      <img src="assets/imgs/user.jpg" (click)="myperson()" class="slide-img"> 
+      <ion-card class="slide-head-card">
+          <ion-card-header *ngIf="showName != ''">
+              昵称:{{showName}}
+          </ion-card-header>
+          <ion-card-header *ngIf="showName == ''">
+              随机昵称-请设置后刷新页面
+          </ion-card-header>
+          <ion-card-content>
+              <p>账号:  &nbsp;&nbsp;{{userData}}</p>
+          </ion-card-content>
+      </ion-card>
   </div>
   <ion-list id="set-list" inset>
-    <button ion-item *ngFor="let set of settings;let id = index" (click)="mybtn(id)">
-      <img src="{{set.src}}" alt="">
+    <button ion-item (click)="mybtn1()">
+      <img src="assets/imgs/setting_02.png" alt="">
       <h2>
-        {{set.name}}
+        消费
+      </h2>
+    </button>
+    <button ion-item (click)="mybtn2()">
+      <img src="assets/imgs/setting_03.png" alt="">
+      <h2>
+        我的社区    
+      </h2>
+    </button>
+    <button ion-item (click)="mybtn3()">
+      <img src="assets/imgs/setting_04.png" alt="">
+      <h2>
+        软件设置
       </h2>
     </button>
   </ion-list>

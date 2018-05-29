@@ -32,12 +32,17 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  logIn(username: HTMLInputElement, password: HTMLInputElement) {   
+  logIn(username: HTMLInputElement, password: HTMLInputElement) {
+    if(username.value==null){
+        alert('用户名不能为空');
+    }else if(password.value==null){
+        alert('密码不能少于6位');
+    }  
     //let userinfo: string = '用户名：' + username.value  + '密码：' + password.value;
     $.ajax({
       url:'http://localhost:7000/api/v1/user/auth',
       type: 'POST',
-      data:{username: username.value, password: password.value },
+      data:{username: username.value, password: password.value},
       //箭头函数的this指向为当前对象
       success:(msg)=>{
         console.log(msg);
@@ -47,7 +52,7 @@ export class LoginPage {
             let toast = this.toastCtrl.create({
               message: '账号密码错误!没有账号请前往注册!',
               duration: 3000,
-              position: 'top'
+              position: 'middle'
             });
           
             toast.onDidDismiss(() => {
@@ -60,7 +65,7 @@ export class LoginPage {
             let toast = this.toastCtrl.create({
               message: '登录成功!',
               duration: 3000,
-              position: 'top'
+              position: 'middle'
             });
           
             toast.onDidDismiss(() => {
@@ -70,25 +75,22 @@ export class LoginPage {
             //保存local账号密码
             localStorage.setItem('user',username.value);
             localStorage.setItem('psw',password.value);
-          
+            localStorage.setItem('name',name);
             toast.present();
             //验证完成完成跳转
             this.navCtrl.push(TabsPage);
           }else{
             alert("登录失败");
           }
-        } 
+        }
       }
     }) 
    
   }
   //弹出注册页
-  register(){
+  goReg(){
     let modal = this.modalCtrl.create(RegPage);
     modal.present();
-  }
-  goReg(){
-    this.navCtrl.push(RegPage);
   }
   goFind(){
     this.navCtrl.push(RegAgrmPage);

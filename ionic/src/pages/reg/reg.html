@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar color="zhijia">
+      <button ion-button icon-only (click)="back()" color="zhijia">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
     <ion-title>注册</ion-title>
   </ion-navbar>
 
@@ -22,6 +25,10 @@
         <div *ngIf="(username.hasError('minlength')) && username.touched" class="error-message">* 账号由字母、数字、下划线组成，6-11位</div>      
         <div *ngIf="username.hasError('required') && username.touched" class="error-message">* 请输入用户名</div>
         <ion-item>
+          <ion-label floating>昵称</ion-label>
+          <ion-input type="text" #name></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label floating>邮箱</ion-label>
           <ion-input type="text" #email></ion-input>
         </ion-item>
@@ -34,8 +41,8 @@
           <ion-input type="password" #repassword [formControl]="password" clearInput=true [(ngModel)]="secondIn"></ion-input>
         </ion-item>
     </div>
-    <div class="inp"><input type="checkbox">接受服务条款并同意知家获取用户信息</div>
+    <div class="inp"><input type="checkbox" id="check"><a href="" (click)="goWe()">接受服务条款并同意知家获取用户信息</a></div>
     <div class="allbtn">
-        <button class="btn" (click)="toRegister(reusername, repassword,email)" block>注册</button>
+        <button class="btn" (click)="toRegister(reusername, repassword,email,name)" block>注册</button>
     </div>
 </ion-content>

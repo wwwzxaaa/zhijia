@@ -1,9 +1,7 @@
 import { Component,ViewChild } from '@angular/core';
 import {NavController, Nav} from 'ionic-angular';
 import { IonicPage,  NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
 import { App } from 'ionic-angular';
-
 /**
  * Generated class for the AppSettingPage page.
  *
@@ -24,9 +22,5 @@ export class AppSettingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppSettingPage');
   }
-
-  goout(){
-    localStorage.clear();
-    this.app.getRootNavs()[0].setRoot(LoginPage);
-  }
+  
 }

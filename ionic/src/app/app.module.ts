@@ -25,7 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
 import { AppSettingPage } from '../pages/app-setting/app-setting';
 import { PersonPage } from '../pages/person/person';
-import 'rxjs/add/operator/map';
+
 
 @NgModule({
   declarations: [

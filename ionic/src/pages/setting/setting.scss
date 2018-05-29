@@ -1,24 +1,36 @@
-page-setting {
-    #set-person{
-        height:120px;
-        padding: 20px;
-        line-height: 150px;
-        border: 1px;
-        background-color: #EBEBEB;
+#slide-container {
+    // #set-person{
+    //     height:150px;
+    //     padding: 20px;
+    //     line-height: 150px;
+    //     border: 1px;
+    //     background-color: #EBEBEB;
+    // }
+    .side-color {
+        background: -webkit-linear-gradient(left, rgba(114, 113, 109, 0.404) ,rgba(114, 113, 109, 0.404)); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, rgba(114, 113, 109, 0.404) ,rgba(114, 113, 109, 0.404)); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, rgba(114, 113, 109, 0.404) ,rgba(114, 113, 109, 0.404)); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, rgba(114, 113, 109, 0.404) ,rgba(114, 113, 109, 0.404)); /* 标准的语法 */
+        height: 200px;
+        position: relative;
     }
-    #set-person img{
-        float: left;
-        width:30%;
-    }
-    #set-person h2{
-        float: left;
-        padding-left: 50px;
-    }
-    #set-person p{
-        position:relative;
-        right:50px;
-        bottom: 20px;
-    }
+    .slide-content{
+        height: 50px;
+        .slide-head-card{
+            position: absolute;
+            left: 0;
+            top:150px;
+            border-radius: 10px;
+        }
+        .slide-img{
+            width:80px;
+            border-radius:50%; 
+            position:absolute;
+            left:40%;
+            top:50px;
+            border:5px solid #fff;
+        }
+    } 
    #set-list{
     clear: both;
    }
