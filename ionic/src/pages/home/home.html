@@ -11,19 +11,15 @@
         <ion-slide><img src="assets/imgs/home_slide2 .jpg" alt=""></ion-slide>
         <ion-slide><img src="assets/imgs/home_slide1.jpg" alt=""></ion-slide>
       </ion-slides>
-      <ion-list id="buttons">
-          <ion-item>
-             <button><img src="assets/imgs/home_01.png" alt=""></button>
-            <button><img src="assets/imgs/home_02.png" alt=""></button>
-            <button><img src="assets/imgs/home_03.png" alt=""></button>
-            <button><img src="assets/imgs/home_04.png" alt=""></button>
-            <br/>
-            <button><img src="assets/imgs/home_05.png" alt=""></button>
-            <button><img src="assets/imgs/home_06.png" alt=""></button>
-            <button><img src="assets/imgs/home_07.png" alt=""></button>
-            <button><img src="assets/imgs/home_08.png" alt=""></button>
-          </ion-item>
-        </ion-list>
+      <div id="buttons">
+            <div class="button_item">
+            <div  *ngFor="let home of home_button;let id = index" (click)="annex(id)">
+            <button>
+                <img src="{{home.src}}" alt="">
+            </button>
+          </div>
+        </div>
+          </div>
         <div id="active-title">
           <p>······小区热门······</p>
         </div>

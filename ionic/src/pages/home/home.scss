@@ -9,6 +9,24 @@ page-home {
     ion-slides,ion-slide{
         height:auto;
     }
+    .button_item{
+        width:90%;
+        margin:0 auto;
+        text-align: center;
+        box-sizing: border-box;
+        display:flex;
+        flex-flow:row wrap;
+    }
+    .button_item div{
+     margin-top:5px;
+        flex:1;
+    }
+
+    #buttons button{
+        width:75px;
+        background-color: #ffff;
+    }
+
     #slider{
         padding-top:15px; 
         padding-left: 5%;
@@ -18,12 +36,8 @@ page-home {
     #buttons{
         padding-top: 15px;
     }
-    #buttons button{
-        width:24%;
-        background-color: #ffff;
-    }
     #active-title{
-        margin-top: -20px;
+        margin-top: 20px;
         text-align:center !important;
         background-color: #FFbb00;
         line-height:40px;
