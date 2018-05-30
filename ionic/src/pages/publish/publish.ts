@@ -41,7 +41,7 @@ export class PublishPage {
     } 
   }
   publish = [];
-  ionViewDidLoad(){
+  ionViewDidEnter(){
     this.http.get('http://localhost:7000/api/v1/content/',{}).subscribe(data=>{
       console.log(JSON.parse(data['_body']).data);
       this.publish = JSON.parse(data['_body']).data;
@@ -74,7 +74,10 @@ export class PublishPage {
   }
   //点击评论按钮
   myComment(id){
-    this.app.getRootNav().push(PublishCommentPage);
+    this.app.getRootNav().push(PublishCommentPage,{
+      id:this.publish[id]._id
+    });
+    
   }
   //点击进入详情,发送数据到详情页publish-main
   pubMain(id){

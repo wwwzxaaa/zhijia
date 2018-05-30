@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App ,Events, Segment } from 'ionic-angular';
 import { PublishCommentPage } from '../publish-comment/publish-comment';
 import { Http } from '@angular/http';
 
@@ -21,7 +21,8 @@ export class PublishMainPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public events:Events,
-    public http:Http
+    public http:Http,
+    public app:App
   ) {
     //接收数据
     this.id=navParams.get('id');
@@ -30,30 +31,42 @@ export class PublishMainPage {
       this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
     }
   }
-  
-  ionViewDidLoad(){
+
+  id = ''
+  segment_items = []
+  ionViewWillEnter(){
+    //详情区请求
     this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
-      console.log(JSON.parse(data['_body']).data);
+      // console.log(JSON.parse(data['_body']).data);
       this.publish_main = JSON.parse(data['_body']).data;
+      this.segment_items = JSON.parse(data['_body']).data.comments;
+      this.com = this.segment_items.length + 3;
+      // console.log(this.segment_items)
+
+      //评论区请求
+      for(let i=0; i<this.segment_items.length; i++ ){
+        this.http.get('http://localhost:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
+  
+          this.segment_com.unshift({icon:'assets/publish/zhijia.png',name:'Zhijia',article:JSON.parse(data['_body']).data.title,time:JSON.parse(data['_body']).data.created});
+          // console.log(this.segment_items[i])
+          // console.log(JSON.parse(data['_body']).data)
+        }, err => {
+          console.log(err);
+        });
+      }
+  
     },err=>{
       console.log(err);
     });
+
   }
 
-  id = ''
   // 帖子详情
   publish_main=[]
-  title = '';
 
   //默认segment
   card = 'com';
   trans = 3;
-  
-
-  //评论
-  myCom(){
-    this.navCtrl.push(PublishCommentPage);
-  }
 
   //评论列表
   segment_com=[
@@ -62,8 +75,14 @@ export class PublishMainPage {
     {icon:'assets/publish/ubi.jpg',name:'Ubi Soft',article:'新鲜的土豆了解一下？',time:'5月6日'}
   ]
   //评论数量
-  com = this.segment_com.length;
+  com = 0
 
+  //评论
+  myCom(){
+    this.app.getRootNav().push(PublishCommentPage,{
+      id:this.id
+    });
+  }
   
   // 点赞列表
   isgood=[
