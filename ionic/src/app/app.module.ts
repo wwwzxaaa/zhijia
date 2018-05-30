@@ -1,7 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { ToastController} from 'ionic-angular';//引入toast模块
-import { ModalController} from 'ionic-angular';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
