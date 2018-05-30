@@ -19,16 +19,6 @@ export class PublishPage {
     private app:App,
     public http: Http
   ) {
-    // 接收发布页面数据
-    // events.subscribe('user:created',(textarea,time) => {
-    //   var theTime = this.timestampToTime(time);
-    //   this.publish.unshift({
-    //     icon:'assets/publish/zhijia.png',name:'知家官方团队',
-    //     time:theTime,pic:'',article:textarea,good:0
-    //   });
-    //   window.localStorage.setItem('publish',JSON.stringify(this.publish));      
-    // })
-
   }
 
   // 搜索框
@@ -42,6 +32,7 @@ export class PublishPage {
   }
   publish = [];
   ionViewDidEnter(){
+    
     this.http.get('http://localhost:7000/api/v1/content/',{}).subscribe(data=>{
       console.log(JSON.parse(data['_body']).data);
       this.publish = JSON.parse(data['_body']).data;
@@ -49,7 +40,6 @@ export class PublishPage {
       console.log(err);
     });
   }
-  
 
   //默认帖子数据
   // publish=[
@@ -67,6 +57,27 @@ export class PublishPage {
     //   good:8
     // }
   // ]
+
+  //下拉刷新
+  doRefresh(refresher) {
+    setTimeout(() => {
+      this.http.get('http://localhost:7000/api/v1/content/', {}).subscribe(data => {
+        console.log(JSON.parse(data['_body']).data);
+        this.publish = JSON.parse(data['_body']).data;
+      }, err => {
+        console.log(err);
+      });
+      refresher.complete();
+    }, 1000);
+  }
+  //上拉加载
+  // doInfinite(infiniteScroll) {
+  //   console.log('Begin async operation');
+  //   setTimeout(() => {
+  //     console.log('Async operation has ended');
+  //     infiniteScroll.complete();
+  //   }, 500);
+  // }
 
   //点击发布按钮
   myPub(i){
