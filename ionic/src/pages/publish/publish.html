@@ -33,12 +33,12 @@
       <ion-avatar item-start>
         <img src="{{item.icon}}">
       </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.time}}</p>
+      <h2>{{item.author}}</h2>
+      <p>{{item.created}}</p>
     </ion-item>
     <img class="main_img" (tap)="pubMain(id)" src="{{item.pic}}">
     <ion-card-content (tap)="pubMain(id)">
-      <p>{{item.article}}</p>
+      <p>{{item.title}}</p>
     </ion-card-content>
     <ion-row>
       <ion-col>
@@ -50,7 +50,7 @@
       <ion-col>
         <button [ngStyle]="goodColor" (click)="isGoodSwitch(id)" ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
-          <div>{{item.good}} 赞</div>
+          <div>{{item.up}} 赞</div>
         </button>
       </ion-col>
     </ion-row>

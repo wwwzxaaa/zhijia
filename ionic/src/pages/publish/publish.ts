@@ -49,10 +49,9 @@ export class PublishPage {
   }
   publish = [];
   ionViewDidLoad(){
-    this.publish = JSON.parse(window.localStorage.getItem('publish'));
-    this.http.get('assets/json/publish.json',{}).subscribe(data=>{
-      console.log(JSON.parse(data['_body']).publish);
-      this.publish = JSON.parse(data['_body']).publish;
+    this.http.get('http://localhost:7000/api/v1/content/',{}).subscribe(data=>{
+      console.log(JSON.parse(data['_body']).data);
+      this.publish = JSON.parse(data['_body']).data;
     },err=>{
       console.log(err);
     });
