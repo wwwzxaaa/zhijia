@@ -19,16 +19,6 @@ export class PublishPage {
     private app:App,
     public http: Http
   ) {
-    // 接收发布页面数据
-    // events.subscribe('user:created',(textarea,time) => {
-    //   var theTime = this.timestampToTime(time);
-    //   this.publish.unshift({
-    //     icon:'assets/publish/zhijia.png',name:'知家官方团队',
-    //     time:theTime,pic:'',article:textarea,good:0
-    //   });
-    //   window.localStorage.setItem('publish',JSON.stringify(this.publish));      
-    // })
-
   }
 
   // 搜索框
