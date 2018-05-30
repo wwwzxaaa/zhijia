@@ -24,7 +24,7 @@ export class PublishCommentPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PublishCommentPage');
+    
   }
   publishing(textarea){
     if(textarea === ''){

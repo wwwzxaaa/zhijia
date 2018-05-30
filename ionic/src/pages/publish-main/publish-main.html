@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color=zhijia>
-    <ion-title>{{title}}</ion-title>
+    <ion-title>详情</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,17 +15,17 @@
 
 <ion-content>
   <!-- 内容详情 -->
-  <ion-card *ngFor="let item of publish_main;">
+  <ion-card>
     <ion-item>
       <ion-avatar item-start>
-        <img src="{{item.icon}}">
+        <img src="{{publish_main.icon}}">
       </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.time}}</p>
+      <h2>{{publish_main.author}}</h2>
+      <p>{{publish_main.created}}</p>
     </ion-item>
-    <img class="main_img" src="{{item.pic}}">
+    <img class="main_img" src="{{publish_main.pic}}">
     <ion-card-content>
-      <p>{{item.article}}</p>
+      <p>{{publish_main.title}}</p>
     </ion-card-content>
   </ion-card>
 

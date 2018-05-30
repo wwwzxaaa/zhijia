@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { PublishCommentPage } from '../publish-comment/publish-comment';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the PublishMainPage page.
@@ -19,38 +20,33 @@ export class PublishMainPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public events:Events
+    public events:Events,
+    public http:Http
   ) {
     //接收数据
-    this.publish_main[0]=navParams.get('publish');
-    this.title = this.publish_main[0].name;
-    this.isSecondary=!navParams.get('isGood');
+    this.id=navParams.get('id');
+    // this.isSecondary=!navParams.get('isGood');
     if(this.isSecondary==true){
       this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
     }
-    
-    events.subscribe('1',(textarea,time) => {
-      var theTime = this.timestampToTime(time);
-      this.segment_com.unshift({
-        icon:'assets/publish/zhijia.png',name:'知家官方团队',
-        article:textarea,time:theTime
-      });
-      this.com = this.segment_com.length;
-    })
   }
   
+  ionViewDidLoad(){
+    this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
+      console.log(JSON.parse(data['_body']).data);
+      this.publish_main = JSON.parse(data['_body']).data;
+    },err=>{
+      console.log(err);
+    });
+  }
+
+  id = ''
   // 帖子详情
-  publish_main=[
-    // {
-    //   icon:'assets/publish/mht.jpg',name:'Pony Ma',
-    //   pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！'
-    // }
-  ]
+  publish_main=[]
   title = '';
 
   //默认segment
   card = 'com';
-
   trans = 3;
   
 

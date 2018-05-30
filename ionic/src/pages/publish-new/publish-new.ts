@@ -29,17 +29,17 @@ export class PublishNewPage {
       this.AlertWarn();
     }else{
       this.http.post('http://localhost:7000/api/v1/content/',{
-        title:'test03：publish-new创建的内容',
-        content:textarea,
-        from:'5b0caecb93ae2a032460d0d6',
-        "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2FlY2I5M2FlMmEwMzI0NjBkMGQ2IiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzU1ODM1MSwiZXhwIjoxNTI3NTk0MzUxfQ.So8dKu7gXiaDeYOet1OcFGzHIACa1JpjOozBIisSRO0"
+        content:'这是content内容',
+        title:textarea,
+        from:'5b0ca81b93ae2a032460d0d2',
+        token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzYzOTMxNiwiZXhwIjoxNTI3Njc1MzE2fQ.QInCU6Mv-7mEnrry4PlvdA5xWx3QIDe0rg8ffl3La_c"
       }).subscribe(data=>{
       console.log(JSON.parse(data['_body']).data);
     },err=>{
       console.log(err);
     });
       this.navCtrl.pop();
-      this.events.publish('user:created',textarea,Date.now());
+      // this.events.publish('user:created',textarea,Date.now());
     }
   }
 

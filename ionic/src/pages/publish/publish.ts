@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import {Http} from '@angular/http';
+import { Http } from '@angular/http';
 import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
 import { PublishNewPage } from '../publish-new/publish-new';
 import { PublishMainPage } from '../publish-main/publish-main';
 import { PublishCommentPage } from '../publish-comment/publish-comment';
-
-/**
- * Generated class for the PublishPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -27,14 +20,14 @@ export class PublishPage {
     public http: Http
   ) {
     // 接收发布页面数据
-    events.subscribe('user:created',(textarea,time) => {
-      var theTime = this.timestampToTime(time);
-      this.publish.unshift({
-        icon:'assets/publish/zhijia.png',name:'知家官方团队',
-        time:theTime,pic:'',article:textarea,good:0
-      });
-      window.localStorage.setItem('publish',JSON.stringify(this.publish));      
-    })
+    // events.subscribe('user:created',(textarea,time) => {
+    //   var theTime = this.timestampToTime(time);
+    //   this.publish.unshift({
+    //     icon:'assets/publish/zhijia.png',name:'知家官方团队',
+    //     time:theTime,pic:'',article:textarea,good:0
+    //   });
+    //   window.localStorage.setItem('publish',JSON.stringify(this.publish));      
+    // })
 
   }
 
@@ -86,7 +79,7 @@ export class PublishPage {
   //点击进入详情,发送数据到详情页publish-main
   pubMain(id){
     this.app.getRootNav().push(PublishMainPage,{
-      publish:this.publish[id],isGood:this.isGood
+      id:this.publish[id]._id
     });
   }
 
