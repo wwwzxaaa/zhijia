@@ -2,9 +2,6 @@
 <ion-header>
   <ion-navbar #content color="zhijia">
     <ion-title>我的</ion-title>
-    <button ion-button icon-only menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
   </ion-navbar>
 </ion-header>
 
@@ -20,30 +17,6 @@
     </ion-refresher>
   <div class="side-color"></div>
   
-<ion-menu [content]="content" type="overlay">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>设置</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <button ion-item (click)="toSet()">
-        设置个人信息
-      </button>
-      <button ion-item (click)="toCreater()">
-        关于
-      </button>
-    </ion-list>
-    <ion-list>
-      <ion-item (click)="loginOut()">
-        <ion-icon name="md-log-out" item-start></ion-icon>
-          退出登录
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
   <div class="slide-content">
       <img src="assets/imgs/user.jpg" (click)="myperson()" class="slide-img"> 
       <ion-card class="slide-head-card">
@@ -70,6 +43,10 @@
       <h2>
         我的社区    
       </h2>
+    </button>
+    <button ion-item (click)="toSet()">
+        <img src="assets/imgs/timp.jpg" alt="">
+        <h2>编辑个人信息</h2>
     </button>
     <button ion-item (click)="mybtn3()">
       <img src="assets/imgs/setting_04.png" alt="">

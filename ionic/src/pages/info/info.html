@@ -6,12 +6,32 @@
 -->
 <ion-header class="info-header">
 
-  <ion-navbar color="zhijia">
-    <ion-title>私信</ion-title>
+  <ion-navbar #content color="zhijia">
+    <ion-title>消息</ion-title>
+    <button ion-button icon-only menuToggle (click)="show()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 
 </ion-header>
-
+<ion-menu [content]="content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="zhijia">
+      <ion-title>联系人</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div *ngFor="let item of list" class="userlist">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/user.jpg">
+        </ion-thumbnail>
+        <h2 class="info-list-left">账户：{{item.username}}</h2>
+        <p class="info-list-left">昵称：{{item.name}}</p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-menu>
 
 <ion-content>
   <div  class="info-content">
@@ -24,8 +44,6 @@
           <h2 class="info-list-left">{{item.username}}</h2>
           <p class="info-list-left">{{item.information.slice(0,10) + "..."}}</p>
         </div>
-        
-        <!-- <ion-icon class="info-list-icon" name="ios-mail-outline"></ion-icon> -->
         <span class="info-time">{{item.time}}</span>
       </ion-item>
     </ion-list>

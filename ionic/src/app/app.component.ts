@@ -6,14 +6,14 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PersonPage } from '../pages/person/person';
 import { SettingPage } from '../pages/setting/setting';
+import { InfoPage } from '../pages/info/info';
 declare var $:any;
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   showInfo:boolean;
-  rootPage:any = LoginPage;
-
+  rootPage:any = SettingPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

@@ -58,7 +58,7 @@ export class RegPage {
       type: "post",
       url: "http://localhost:7000/api/v1/user/register ",
       dataType: "json",
-      data:{ username: username.value, password: password.value,email:email.value,nickname:this.nickname },
+      data:{ username: username.value, password: password.value,email:email.value,name:name.value},
       success: function(data){
       //接受返回的数据，前端判断采取的动作
       console.log(data);

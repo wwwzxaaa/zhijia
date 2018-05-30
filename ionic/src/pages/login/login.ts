@@ -75,7 +75,6 @@ export class LoginPage {
             //保存local账号密码
             localStorage.setItem('user',username.value);
             localStorage.setItem('psw',password.value);
-            localStorage.setItem('name',name);
             toast.present();
             //验证完成完成跳转
             this.navCtrl.push(TabsPage);

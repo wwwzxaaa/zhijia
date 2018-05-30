@@ -1,46 +1,53 @@
 
 page-info {
 
-*{
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-// header
-.info-header .icon{
-    float: left;
-    margin:6px 5px;
-}
-// content
-.info-content{
-    margin-top: 35px;
-}
-// info list
-.info-list-item{
-    width: 100%;
-    margin-top:-35px;
-    border-bottom:1px solid #ddd;
-}
-img{
-    width:60px;
-    height: 60px;
-    border-radius:30px;
-}
-.info-left-block{
-    float: left;
-     
-}
-.info-list-left{
-    text-align: left;
-}
-.info-list-icon{
-    float: right;
-    margin-top:25px;
-}
-.info-time{
-    float: right;
-    color:#aaa;
-    padding-top:5px;   
-    font-size: 12px;
-}
+    *{
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+    // header
+    .info-header .icon{
+        float: left;
+        margin:6px 5px;
+    }
+    // content
+    .info-content{
+        margin-top: 35px;
+    }
+    // info list
+    .info-list-item{
+        width: 100%;
+        margin-top:-35px;
+        border-bottom:1px solid #ddd;
+    }
+    img{
+        width:60px;
+        height: 60px;
+        border-radius:30px;
+    }
+    .info-left-block{
+        float: left;
+        
+    }
+    .info-list-left{
+        text-align: left;
+    }
+    .info-list-icon{
+        float: right;
+        margin-top:25px;
+    }
+    .info-time{
+        float: right;
+        color:#aaa;
+        padding-top:5px;   
+        font-size: 12px;
+    }
+    .userlist{
+        padding-top: 10px;
+    }
+    .userlist.li{
+        height:50px;
+        padding-top: 5px;
+    }
 }

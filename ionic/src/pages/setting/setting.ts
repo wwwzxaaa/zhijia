@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { AppSettingPage } from '../app-setting/app-setting';
 import { PersonPage } from '../person/person';
-import { LoginPage } from '../login/login';
 /**
  * Generated class for the SettingPage page.
  *
@@ -28,15 +27,15 @@ export class SettingPage {
     this.usersetPsw = setPsw;
     
   }
-  //刷新获取nickname
+  //刷新获取name
   doRefresh(refresher) {
     $.ajax({
       url:'http://localhost:7000/api/v1/user/auth',
       type: 'POST',
       data:{username:this.userData,password:this.usersetPsw},
-      success:(info) => {
-        console.log(info.data);
-        this.showName = info.data[0].nickname;
+      success:(data) => {
+        console.log(data.data);
+        this.showName = data.data[0].name;
         refresher.complete();
       }
     })   
@@ -49,10 +48,6 @@ export class SettingPage {
   }
   toSet(){
     this.navCtrl.push(PersonPage);
-  }
-  loginOut(){
-    localStorage.clear();
-    this.app.getRootNavs()[0].setRoot(LoginPage);
   }
 }
 

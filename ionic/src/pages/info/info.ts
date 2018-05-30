@@ -1,29 +1,56 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { App } from 'ionic-angular';
 /**
  * Generated class for the InfoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+declare var $:any; 
 @IonicPage()
 @Component({
   selector: 'page-info',
   templateUrl: 'info.html',
 })
-export class InfoPage {
 
+export class InfoPage { 
+  list:any; 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoPage');
   }
-
+  goMsg(){
+  }
+  show(){
+    let myuser = localStorage.getItem('user');
+    let mypsw = localStorage.getItem('psw');
+    //获取用户token
+    $.ajax({
+      url: "http://localhost:7000/api/v1/user/auth",
+      type: "post",
+      data:{username: myuser,password:mypsw},
+      success:(data) => {
+        // console.log(data.data);
+        var token=data.data.token;
+        // console.log(token);
+        //将token传入
+        $.ajax({
+          url: "http://localhost:7000/api/v1/user/",
+          type: "get",
+          data:{token:token},
+          success:(data) => {
+            // console.log(data);
+            this.list=data.data;
+          }
+        })
+      }
+    })
+  }
   infolist = [
-    {imgsURL:'../../assets/imgs/info_img.jpg',username:'小明',information:'你好啊！',time:'9:50'},
     {imgsURL:'assets/imgs/_logo.png',username:'知家团队',information:'欢迎使用知家',time:'9:20'},
   ]
 

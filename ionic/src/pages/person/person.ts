@@ -14,17 +14,16 @@ declare var $:any;
   templateUrl: 'person.html',
 })
 export class PersonPage {
-  sendName : string;
-  userId:string;
   constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams) {
-    let sendNick = localStorage.getItem('user');
-    this.sendName = sendNick;
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonPage');
   }
   setting(nickname:HTMLInputElement){
+    let myuser = localStorage.getItem('user');
+    let mypsw = localStorage.getItem('psw');
     let alert = this.alertCtrl.create({
       title: '提示',
       message: '是否确定改为这个昵称?',
@@ -40,15 +39,18 @@ export class PersonPage {
           text: '确定',
           handler: () => {
            //修改默认昵称
-            $.ajax({
-              url:'http://localhost:7000/uploadImg',
-              type: 'POST',
-              data:{sendName:this.sendName,myName:nickname.value},
-              success:(info) => {
-                console.log(info.data);
-              }
-            })
-            this.navCtrl.setRoot(SettingPage);
+           $.ajax({
+            url: "http://localhost:7000/api/v1/user/auth",
+            type: "post",
+            data:{username: myuser,password:mypsw},
+            success:(data) => {
+              console.log(data.data);
+              var id=data.data._id;
+              var token=data.data.token;
+              console.log(id);
+            }
+          })
+          this.navCtrl.setRoot(SettingPage)
           }
         }
       ]
