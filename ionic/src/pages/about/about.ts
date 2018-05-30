@@ -11,27 +11,19 @@ export class AboutPage {
   constructor(public http:Http,public jsonp:Jsonp,public navCtrl: NavController) {
 
   }
-  helloW=[1];
-  ionViewDidLoad() {
-    var HTTP=this.http;
-    var info=[];
-    var content;
-    var list_id;
-    var pic_id;
+  Info=[];
+  getInfo(info){
+    this.Info=info;
+  }
+  ionViewDidEnter() {
+    var HTTP=this.http,info=[],content,list_id,pic_id;
+    var that=this;
     console.log('通知');//页面验证
-
     //后台信息读取
     //_id、title
-    this.http.get('http://localhost:7000/api/v1/content').subscribe(data=>{
-      list_id=JSON.parse(data['_body']).data;
-      //list_id: 
-        //.created  创建时间
-        //._id  每个通知的id
-        //.gallery[?]  图片id
-        //.title  标题
+    HTTP.get('http://localhost:7000/api/v1/content').subscribe(data=>{
+      list_id=JSON.parse(data['_body']).data; //list_id:  .created  创建时间 ._id  每个通知的id .gallery[?]  图片id .title  标题
       getPic();
-    },err=>{
-      console.log(err);
     });
     //图片
     function getPic(){
@@ -41,7 +33,33 @@ export class AboutPage {
       })
     }
     function changeInfo(){
-      function List(id,time,pic_url){this.id=id;this.time=time;this.pic_url=pic_url;}
+      function List(id,time,title,pic_url){this.id=id;this.time=time;this.title=title;this.pic_url=pic_url;}
+      //拼接对象
+      for(var i=0;i<list_id.length;i++){
+      //列表
+        var id=list_id[i]._id;
+        var title=list_id[i].title;//`````````````标题:title
+        var time=list_id[i].created.slice(0,10);//`````````````时间:time
+        var gallery=list_id[i].gallery;
+      //图片
+        var pic_url;//`````````````图片url:pic_url
+        for(var j=0;j<pic_id.length;j++){
+          if(pic_id[j]._id==gallery){
+            pic_url=pic_id[j].url;
+          }
+        }//for2结束
+          info.push(new List(id,time,title,pic_url));
+      }//for1结束
+      that.getInfo(info);
+    }//chengeInfo(){}
+    
+  }//页面加载
+
+  detail(num){
+    console.log(num);
+  }
+  
+ 
     /*属性列表
       list_id[]._id 
       list_id[].created
@@ -52,21 +70,9 @@ export class AboutPage {
       content.content
       content.title
       */
-      //拼接对象
-      for(var i=0;i<list_id.length;i++){
-      //列表
-        var id=list_id[i]._id;
-        var title=list_id[i].title;//`````````````标题:title
-        var time=list_id[i].created;//`````````````时间:time
-        var gallery=list_id[i].gallery;
-      //图片
-        var pic_url;//`````````````图片url:pic_url
-        for(var j=0;j<pic_id.length;j++){
-          if(pic_id[j]._id==gallery){
-            pic_url=pic_id[j].url;
-          }
-        }//for2结束
+     
       //内容
+          //}
       /*
         var the_content;
         var id_url='http://localhost:7000/api/v1/content/'+list_id[i]._id;
@@ -80,24 +86,5 @@ export class AboutPage {
               the_content=content.content;
             });
             */
-          //}
-          info.push(new List(id,time,pic_url));
-      }//for1结束
-      console.log(info);
-      console.log(this.helloW);
-     //this.Info=info;
-     //console.log(this.Info);
-    }//chengeInfo(){}
-  }//页面加载
-  
-  /*
-  info = [
-    {
-      icon: 'assets/about/zhuoda.jpg', name: '卓达物业', time: '2018年5月2日',
-      pic: 'http://localhost:7000/uploaded/files/3_DAYS.jpg', article: '来充钱啊不充钱你怎么变得更强！！！',
-      good: 6
-    }
-  ];
-  */
   
 }
