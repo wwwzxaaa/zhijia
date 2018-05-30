@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App ,Events, Segment } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App ,Events } from 'ionic-angular';
 import { PublishCommentPage } from '../publish-comment/publish-comment';
 import { Http } from '@angular/http';
 
@@ -34,7 +34,7 @@ export class PublishMainPage {
 
   id = ''
   segment_items = []
-  ionViewWillEnter(){
+  ionViewDidEnter(){
     //详情区请求
     this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
       // console.log(JSON.parse(data['_body']).data);
@@ -42,23 +42,24 @@ export class PublishMainPage {
       this.segment_items = JSON.parse(data['_body']).data.comments;
       this.com = this.segment_items.length + 3;
       // console.log(this.segment_items)
+      return this.segment_items
+    },err=>{
+      console.log(err);
+    });
+    
+    //评论区请求
+    
+    setTimeout(() => {
 
-      //评论区请求
-      for(let i=0; i<this.segment_items.length; i++ ){
+      for (let i = 0; i < this.segment_items.length; i++) {
         this.http.get('http://localhost:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
-  
-          this.segment_com.unshift({icon:'assets/publish/zhijia.png',name:'Zhijia',article:JSON.parse(data['_body']).data.title,time:JSON.parse(data['_body']).data.created});
-          // console.log(this.segment_items[i])
-          // console.log(JSON.parse(data['_body']).data)
+          this.segment_com.unshift({ icon: 'assets/publish/zhijia.png', name: 'Zhijia', article: JSON.parse(data['_body']).data.content, time: JSON.parse(data['_body']).data.created });
         }, err => {
           console.log(err);
         });
       }
-  
-    },err=>{
-      console.log(err);
-    });
-
+    }, 100);
+    
   }
 
   // 帖子详情
@@ -115,4 +116,6 @@ export class PublishMainPage {
     // var s = date.getSeconds();
     return   h + m ;
   }
+
 }
+

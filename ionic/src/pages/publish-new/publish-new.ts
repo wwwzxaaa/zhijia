@@ -38,7 +38,10 @@ export class PublishNewPage {
       }, err => {
         console.log(err);
       });
-      this.navCtrl.pop();
+      setTimeout(() => {
+        this.navCtrl.pop();
+      }, 100);
+      
     }
   }
 

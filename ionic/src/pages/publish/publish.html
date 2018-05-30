@@ -27,7 +27,14 @@
 </ion-header>
 
 <ion-content>
-  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+       <ion-refresher-content
+         pullingIcon="arrow-dropdown"
+         pullingText="下拉刷新..."
+         refreshingSpinner="circles"
+         refreshingText="(╯‵□′)╯︵┻━┻...">
+       </ion-refresher-content>
+     </ion-refresher>
   <ion-card *ngFor="let item of publish;let id = index;">
     <ion-item (tap)="pubMain(id)">
       <ion-avatar item-start>
@@ -44,7 +51,7 @@
       <ion-col>
         <button color=zhijia (click)="myComment(id)" ion-button icon-left clear small>
           <ion-icon name="text"></ion-icon>
-          <div>3 评论</div>
+          <div>{{item.comments.length+3}}评论</div>
         </button>
       </ion-col>
       <ion-col>
@@ -56,4 +63,10 @@
     </ion-row>
   </ion-card>
 
+  <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
 </ion-content>
