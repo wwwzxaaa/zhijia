@@ -36,7 +36,7 @@
 <ion-content>
   <div  class="info-content">
     <ion-list class="info-list" *ngFor="let item of infolist">
-      <ion-item class="info-list-item">
+      <ion-item class="info-list-item" (tap)="infoMain(id)">
         <ion-avatar item-start>
           <img class="info-imgs" style="width:60px;height:60px;" src="{{item.imgsURL}}">
         </ion-avatar>

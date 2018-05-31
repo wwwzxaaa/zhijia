@@ -21,6 +21,7 @@ import { RegPage } from '../pages/reg/reg';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
+import { InfoMessagePage } from '../pages/info-message/info-message'
 import { AppSettingPage } from '../pages/app-setting/app-setting';
 import { PersonPage } from '../pages/person/person';
 
@@ -42,6 +43,7 @@ import { PersonPage } from '../pages/person/person';
     PublishCommentPage,
     SettingPage,
     InfoPage,
+    InfoMessagePage,
     AppSettingPage,
     PersonPage
   ],
@@ -72,6 +74,7 @@ import { PersonPage } from '../pages/person/person';
     PublishCommentPage,
     SettingPage,
     InfoPage,
+    InfoMessagePage,
     AppSettingPage,
     PersonPage
   ],

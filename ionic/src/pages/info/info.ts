@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { App } from 'ionic-angular';
+import { InfoMessagePage } from '../info-message/info-message'
+
 /**
  * Generated class for the InfoPage page.
  *
@@ -16,7 +18,11 @@ declare var $:any;
 
 export class InfoPage { 
   list:any; 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public app:App
+  ) {
     
   }
   
@@ -53,5 +59,12 @@ export class InfoPage {
   infolist = [
     {imgsURL:'assets/imgs/_logo.png',username:'知家团队',information:'欢迎使用知家',time:'9:20'},
   ]
+
+
+  infoMain(id){
+    this.app.getRootNav().push(InfoMessagePage,{
+      // id:this.publish[id]._id
+    });
+  }
 
 }
