@@ -55,7 +55,19 @@
     </div>
   </div>
 
-
+  <div *ngFor="let item of message;let id = index;">
+    <div class="right">
+      <div class="right_content">
+        <div class="right_message">
+          {{item.msg}}
+        </div>
+        <div class="right_angle"></div>
+      </div>
+      <div class="right_icon">
+        <img src="assets/publish/mht.jpg" alt="">
+      </div>
+    </div>
+  </div>
   
 </ion-content>
 
@@ -66,14 +78,14 @@
         <ion-icon color="yel" name="md-volume-up"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-input type="text" placeholder="输入聊天内容..."></ion-input>
+    <ion-input [(ngModel)]="sendmsg" type="text" placeholder="输入聊天内容..."></ion-input>
     <ion-buttons end>
       <button ion-button>
         <ion-icon color="yel" name="ios-happy-outline"></ion-icon>
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button>
+      <button ion-button (click)="send()">
         发送
       </button>
     </ion-buttons>

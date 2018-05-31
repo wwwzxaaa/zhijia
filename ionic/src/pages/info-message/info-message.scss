@@ -20,7 +20,7 @@ page-info-message {
             height: 0;
             width: 0;
             border: 8px solid;
-            border-color:  transparent #ccc transparent transparent; 
+            border-color:  transparent #eee transparent transparent; 
             position: relative;
             right: -1px;
             top: 12px;
@@ -28,10 +28,9 @@ page-info-message {
         .left_message{
             overflow: hidden;
             float: left;
-            background: #ccc;
+            background: #eee;
             max-width: 200px;
             padding: 10px;
-            border: 1px solid #ccc;
             border-radius: 10px;
         }
 
@@ -52,7 +51,7 @@ page-info-message {
             height: 0;
             width: 0;
             border: 8px solid;
-            border-color:  transparent  transparent transparent gold; 
+            border-color:  transparent  transparent transparent #fffacd; 
             position: relative;
             right: 1px;
             top: 12px;
@@ -60,10 +59,9 @@ page-info-message {
         .right_message{
             overflow: hidden;
             float: left;
-            background: gold;
+            background: #fffacd;
             width: 200px;
             padding: 10px;
-            border: 1px solid gold;
             border-radius: 10px;
         }
 
@@ -72,8 +70,9 @@ page-info-message {
     ion-footer{
         ion-input{
             box-sizing: border-box;
-            border: 1px solid #333;
-            border-radius: 6px;
+            border-radius: 10px;
+            background: #fff;
+            padding-left:10px; 
         }
     }
 }

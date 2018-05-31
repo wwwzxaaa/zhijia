@@ -22,4 +22,14 @@ export class InfoMessagePage {
     console.log('ionViewDidLoad InfoMessagePage');
   }
 
+  sendmsg:string;
+  send(){
+    this.message.push({msg:this.sendmsg})
+    this.sendmsg = ''
+  }
+
+  message = [
+    {msg:'???'}
+  ]
+
 }
