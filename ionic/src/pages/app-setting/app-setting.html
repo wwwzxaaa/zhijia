@@ -11,51 +11,39 @@
 </ion-header>
 
 <ion-content  class="my_setting">
-    <ion-list class="setting_list">
-        <ion-item>
-          <button>
-            账号与安全
-          </button>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-          <button>
-              新消息提醒
-          </button>
-        </ion-item>
-          <ion-item>
-            <button>
-              勿扰模式
-            </button>
-          </ion-item>
-        <ion-item>
-            <button>
-                通用
-            </button>
-        </ion-item>
-        <ion-item>
-            <button>
-                隐私
-            </button>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-            <button>
-              关于
-            </button>
-          </ion-item>
-        <ion-item>
-          <button>
-           帮助与反馈
-          </button>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-          <ion-item (click)="loginOut()">
-            <ion-icon name="md-log-out" item-start></ion-icon>
-              退出登录
-          </ion-item>
-        </ion-list>
+    <ion-list class="setting_list"> 
+      <button ion-item>
+        账号与安全
+      </button> 
+    </ion-list>
+    <ion-list>
+      <button ion-item>
+        新消息提醒
+      </button>
+      <button ion-item>
+        勿扰模式
+      </button> 
+      <button ion-item>
+        通用
+      </button>
+      <button ion-item>
+        隐私
+      </button>
+    </ion-list>
+    <ion-list>
+      <button ion-item (click)="about()">
+        关于
+      </button>
+      <button ion-item (click)="help()">
+        客服中心
+      </button>
+    </ion-list>
+    
+    <div class="logout">
+      <button ion-button round (click)="loginOut()" color=danger>
+        <ion-icon name="md-log-out" item-start>&nbsp;退出登录</ion-icon>
+      </button>
+    </div>
+      
+
 </ion-content>

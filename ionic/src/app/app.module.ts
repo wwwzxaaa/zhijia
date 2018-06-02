@@ -16,6 +16,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SettingPage } from '../pages/setting/setting';
+import { SetAboutPage } from '../pages/set-about/set-about';
+import { SetHelpPage } from '../pages/set-help/set-help';
 import { LoginPage } from '../pages/login/login';
 import { RegPage } from '../pages/reg/reg';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -42,6 +44,8 @@ import { PersonPage } from '../pages/person/person';
     PublishMainPage,
     PublishCommentPage,
     SettingPage,
+    SetAboutPage,
+    SetHelpPage,
     InfoPage,
     InfoMessagePage,
     AppSettingPage,
@@ -73,6 +77,8 @@ import { PersonPage } from '../pages/person/person';
     PublishMainPage,
     PublishCommentPage,
     SettingPage,
+    SetAboutPage,
+    SetHelpPage,
     InfoPage,
     InfoMessagePage,
     AppSettingPage,

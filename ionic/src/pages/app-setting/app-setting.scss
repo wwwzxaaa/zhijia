@@ -1,6 +1,6 @@
 page-app-setting {
     .my_setting{
-        background-color: lightgray;
+        background-color: #eee;
     }
     .login_out button{
         width: 50%;
@@ -8,17 +8,20 @@ page-app-setting {
         margin: 0 auto;
     }
     ion-list button{
-        width: 100%;
-        text-align:left;
-        font-size: 18px;
-        line-height: 25px;
         background-color: #fff;
     }
-    .setting_list{
-        padding-top: 10px;
+    ion-list{
+        .item-ios{
+            padding-left:0;  
+        }
+        .item-inner{
+            padding-left: 16px;
+        }
     }
-    .setting_list div{
-        padding-left: 8px; 
+    .logout{
+        text-align: center;
+        button{
+            width: 200px;
+        }
     }
-
 }

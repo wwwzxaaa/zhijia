@@ -1,0 +1,47 @@
+page-set-about {
+    .logo{
+        margin: 20px auto;
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    .slogen{
+        text-align: center;
+        margin: 0 auto;
+        color: #aaa;
+        p{
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    ion-list button{
+        width: 100%;
+        text-align:left;
+        font-size: 18px;
+        line-height: 25px;
+        background-color: #fff;
+    }
+    ion-list{
+        .item-ios{
+            padding-left:0;  
+        }
+        .item-inner{
+            padding-left: 16px;
+        }
+        p{
+            float: right;
+        }
+    }
+
+    .about{
+        padding-top: 50px;
+        text-align: center;
+        color: #ccc;
+        a{
+            color: #ccc;
+        }
+    }
+}
