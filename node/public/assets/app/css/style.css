@@ -84,13 +84,26 @@ html, body{
     
 }
 .welcome{
-    min-height: 350px;
+    min-height: 450px;
     
 }
+
+.welcome .down-url{
+    height: 200px;
+    width: 200px;
+    border: 1px solid #fff;
+    margin: 0 auto;
+    background: url('../images/down.png') no-repeat;
+    background-size: contain;
+}
+
 .welcome h1.ui.header {
   margin-top: 3em;
   font-size: 4em;
   font-weight: normal;
+}
+.welcome p{
+    margin-bottom: 5rem;
 }
 .masthead h2 {
   font-size: 1.7em;
@@ -151,4 +164,10 @@ html, body{
     text-align: center;
     color: #ccc;
     font-size: 14px;
+}
+.ten a{
+    color: #ccc;
+}
+.ten a:hover{
+    color: #fff;
 }
