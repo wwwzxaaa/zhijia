@@ -31,20 +31,28 @@ export class PublishPage {
     } 
   }
   publish = [];
+
   ionViewDidEnter(){
     
     this.http.get('http://localhost:7000/api/v1/content/',{}).subscribe(data=>{
-      // console.log(JSON.parse(data['_body']).data);
       this.publish = JSON.parse(data['_body']).data;
+      // console.log(this.publish.length)
 
       //昵称转换author-->username
-      this.http.get('http://localhost:7000/api/v1/user/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzYzOTMxNiwiZXhwIjoxNTI3Njc1MzE2fQ.QInCU6Mv-7mEnrry4PlvdA5xWx3QIDe0rg8ffl3La_c'
-      , {}).subscribe(data => {
-        console.log(JSON.parse(data['_body']).data);
+      for (let i = 0; i < this.publish.length; i++) {
 
-      }, err => {
-        console.log(err);
-      });
+        // let id = '5b0ca81b93ae2a032460d0d2'
+        let id = this.publish[i].author
+        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzYzOTMxNiwiZXhwIjoxNTI3Njc1MzE2fQ.QInCU6Mv-7mEnrry4PlvdA5xWx3QIDe0rg8ffl3La_c'
+        this.http.get('http://localhost:7000/api/v1/user/' + id + '?token=' + token
+          , {}).subscribe(data => {
+            this.publish[i].name = JSON.parse(data['_body']).data.name
+          }, err => {
+            console.log(err);
+          });
+      }
+
+      
 
     },err=>{
       console.log(err);
@@ -72,7 +80,7 @@ export class PublishPage {
   doRefresh(refresher) {
     setTimeout(() => {
       this.http.get('http://localhost:7000/api/v1/content/', {}).subscribe(data => {
-        console.log(JSON.parse(data['_body']).data);
+        // console.log(JSON.parse(data['_body']).data);
         this.publish = JSON.parse(data['_body']).data;
       }, err => {
         console.log(err);
