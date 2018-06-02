@@ -29,7 +29,6 @@ export class PublishMainPage {
     this.id=navParams.get('id');
     this.name = navParams.get('name')
     this.publish_default = navParams.get('main_default')
-    console.log(this.publish_default)
 
     if(this.isSecondary==true){
       this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});

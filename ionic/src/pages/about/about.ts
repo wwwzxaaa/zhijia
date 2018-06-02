@@ -18,7 +18,7 @@ export class AboutPage {
   ionViewDidEnter() {
     var HTTP=this.http,info=[],content,list_id,pic_id;
     var that=this;
-    console.log('通知');//页面验证
+    // console.log('通知');//页面验证
     //后台信息读取
     //_id、title
     HTTP.get('http://localhost:7000/api/v1/content').subscribe(data=>{
