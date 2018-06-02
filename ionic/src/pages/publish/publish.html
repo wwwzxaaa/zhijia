@@ -28,13 +28,9 @@
 
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-       <ion-refresher-content
-         pullingIcon="arrow-dropdown"
-         pullingText="下拉刷新..."
-         refreshingSpinner="circles"
-         refreshingText="(╯‵□′)╯︵┻━┻...">
-       </ion-refresher-content>
-     </ion-refresher>
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新..." refreshingSpinner="circles" refreshingText="(╯‵□′)╯︵┻━┻...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor="let item of publish;let id = index;">
     <ion-item (tap)="pubMain(id)">
       <ion-avatar item-start>
@@ -56,6 +52,34 @@
       </ion-col>
       <ion-col>
         <button [ngStyle]="goodColor" (click)="isGoodSwitch(id)" ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{item.up}} 赞</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngFor="let item of publish_default;let id = index;">
+    <ion-item (tap)="pubMain_default(id)">
+      <ion-avatar item-start>
+        <img src="{{item.icon}}">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>{{item.created}}</p>
+    </ion-item>
+    <img class="main_img" (tap)="pubMain_default(id)" src="{{item.pic}}">
+    <ion-card-content (tap)="pubMain_default(id)">
+      <p>{{item.title}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button color=zhijia (click)="myComment(id)" ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{item.comments}}评论</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button [ngStyle]="goodColor" (click)="isGoodSwitch_default(id)" ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>{{item.up}} 赞</div>
         </button>

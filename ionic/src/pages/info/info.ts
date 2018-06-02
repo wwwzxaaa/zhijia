@@ -57,7 +57,7 @@ export class InfoPage {
     })
   }
   infolist = [
-    {imgsURL:'assets/imgs/_logo.png',username:'知家团队',information:'欢迎使用知家',time:'9:20'},
+    {imgsURL:'assets/publish/my.jpg',username:'Jack Ma',information:'我没有碰过',time:'9:20'},
   ]
 
 

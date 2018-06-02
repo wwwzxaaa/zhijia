@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App ,Events } from 'ionic-angular';
 import { PublishCommentPage } from '../publish-comment/publish-comment';
 import { Http } from '@angular/http';
+import { publish } from 'rxjs/operators';
 
 /**
  * Generated class for the PublishMainPage page.
@@ -26,23 +27,31 @@ export class PublishMainPage {
   ) {
     //接收数据
     this.id=navParams.get('id');
-    // this.isSecondary=!navParams.get('isGood');
+    this.name = navParams.get('name')
+    this.publish_default = navParams.get('main_default')
+    console.log(this.publish_default)
+
     if(this.isSecondary==true){
       this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
     }
   }
 
   id = ''
+  name = ''
   segment_items = []
   ionViewDidEnter(){
     //详情区请求
     this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
       // console.log(JSON.parse(data['_body']).data);
-      this.publish_main = JSON.parse(data['_body']).data;
-      this.segment_items = JSON.parse(data['_body']).data.comments;
+      this.publish_main = JSON.parse(data['_body']).data || this.publish_default;
+      if(JSON.parse(data['_body']).data !== ''){
+        this.segment_items = JSON.parse(data['_body']).data.comments;
+      }
+      
       this.com = this.segment_items.length + 3;
       // console.log(this.segment_items)
       return this.segment_items
+
     },err=>{
       console.log(err);
     });
@@ -64,10 +73,11 @@ export class PublishMainPage {
 
   // 帖子详情
   publish_main=[]
+  publish_default=[]
 
   //默认segment
   card = 'com';
-  trans = 3;
+  trans = 2;
 
   //评论列表
   segment_com=[

@@ -43,7 +43,7 @@ export class PublishPage {
 
         // let id = '5b0ca81b93ae2a032460d0d2'
         let id = this.publish[i].author
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzYzOTMxNiwiZXhwIjoxNTI3Njc1MzE2fQ.QInCU6Mv-7mEnrry4PlvdA5xWx3QIDe0rg8ffl3La_c'
+        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzk0MDE2OCwiZXhwIjoxNTI3OTc2MTY4fQ.LH2L4mIToXUcfGnPVeexUyG05mVWR6C_Dx7wddRUfdY'
         this.http.get('http://localhost:7000/api/v1/user/' + id + '?token=' + token
           , {}).subscribe(data => {
             this.publish[i].name = JSON.parse(data['_body']).data.name
@@ -60,31 +60,26 @@ export class PublishPage {
   }
 
   //默认帖子数据
-  // publish=[
-    // {
-    //   icon:'assets/publish/mht.jpg',name:'Pony Ma',time:'2018年5月2日',
-    //   pic:'assets/publish/main.jpg',article:'来充钱啊不充钱你怎么变得更强！！！',
-    //   good:6
-    // },{
-    //   icon:'assets/publish/my.jpg',name:'Jack Ma',time:'2018年5月2日',
-    //   pic:'assets/publish/alibaba.jpg',article:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
-    //   good:8
-    // },{
-    //   icon:'assets/publish/leijun.jpg',name:'R.U.OK',time:'2018年5月2日',
-    //   pic:'assets/publish/xiaomi.jpg',article:'小米，为发烧而生！Are You OK？',
-    //   good:8
-    // }
-  // ]
+  publish_default=[
+    {
+      icon:'assets/publish/mht.jpg',name:'Pony Ma',created:'2018年5月2日',
+      pic:'assets/publish/main.jpg',title:'来充钱啊不充钱你怎么变得更强！！！',
+      up:6
+    },{
+      icon:'assets/publish/my.jpg',name:'Jack Ma',created:'2018年5月2日',
+      pic:'assets/publish/alibaba.jpg',title:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
+      up:8
+    },{
+      icon:'assets/publish/leijun.jpg',name:'R.U.OK',created:'2018年5月2日',
+      pic:'assets/publish/xiaomi.jpg',title:'小米，为发烧而生！Are You OK？',
+      up:8
+    }
+  ]
 
   //下拉刷新
   doRefresh(refresher) {
     setTimeout(() => {
-      this.http.get('http://localhost:7000/api/v1/content/', {}).subscribe(data => {
-        // console.log(JSON.parse(data['_body']).data);
-        this.publish = JSON.parse(data['_body']).data;
-      }, err => {
-        console.log(err);
-      });
+      this.ionViewDidEnter()
       refresher.complete();
     }, 1000);
   }
@@ -111,7 +106,14 @@ export class PublishPage {
   //点击进入详情,发送数据到详情页publish-main
   pubMain(id){
     this.app.getRootNav().push(PublishMainPage,{
-      id:this.publish[id]._id
+      id:this.publish[id]._id,
+      name:this.publish[id].name
+    });
+  }
+
+  pubMain_default(id){
+    this.app.getRootNav().push(PublishMainPage,{
+      main_default:this.publish_default[id]
     });
   }
 
@@ -126,18 +128,35 @@ export class PublishPage {
         'color': '#FFbb00'
       }
       this.isGood=false;
-      this.publish[id].good++;
+      this.publish[id].up++;
     }else{
       this.goodColor = {
         'color': '#ccc'
       }
       this.isGood=true;
-      if(this.publish[id].good>0){
-        this.publish[id].good--;
+      if(this.publish[id].up>0){
+        this.publish[id].up--;
       }  
     }
   }
   
+  isGoodSwitch_default(id){
+    if(this.isGood==true){
+      this.goodColor = {
+        'color': '#FFbb00'
+      }
+      this.isGood=false;
+      this.publish_default[id].up++;
+    }else{
+      this.goodColor = {
+        'color': '#ccc'
+      }
+      this.isGood=true;
+      if(this.publish_default[id].up>0){
+        this.publish_default[id].up--;
+      }  
+    }
+  }
   
   //时间戳转换时间
   timestampToTime(timestamp) {
