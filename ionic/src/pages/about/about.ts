@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,IonicPage, NavParams,Events,App } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
 import "rxjs/Rx";
 import { PertainAboutPage } from '../pertain-about/pertain-about';
@@ -8,7 +8,7 @@ import { PertainAboutPage } from '../pertain-about/pertain-about';
   templateUrl: 'about.html'
 })
 export class AboutPage {
-  constructor(public http:Http,public jsonp:Jsonp,public navCtrl: NavController) {
+  constructor(public http:Http,public jsonp:Jsonp,public navCtrl: NavController,private app:App) {
 
   }
   Info=[];
@@ -56,7 +56,7 @@ export class AboutPage {
   }//页面加载
 
   detail(num){
-    console.log(num);
+    this.app.getRootNav().push(PertainAboutPage,{id:num});
   }
   
  

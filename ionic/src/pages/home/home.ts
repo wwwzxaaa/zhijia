@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Events } from 'ionic-angular';
 import { App } from 'ionic-angular';
-import { AppSettingPage } from '../app-setting/app-setting';
 import { PertainHomePage } from '../pertain-home/pertain-home';
+import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-home',
@@ -25,6 +25,12 @@ export class HomePage {
   ]
 
   annex(id){
-    this.app.getRootNav().push(PertainHomePage,{id:id});
+    if(id==0){
+      this.app.getRootNav().push(AboutPage);
+    }
+    else if(id==7){}
+    else{
+      this.app.getRootNav().push(PertainHomePage,{id:id});
+    }
   }
 }
