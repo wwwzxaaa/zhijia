@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { App } from 'ionic-angular';
-
 import { ToastController } from 'ionic-angular';//引入toast模块
 import { ModalController } from 'ionic-angular';//模态模块
-import { Http } from '@angular/http';
 import { RegPage } from '../reg/reg';
 import { TabsPage } from '../tabs/tabs';
 import { RegAgrmPage } from '../reg-agrm/reg-agrm';
@@ -45,7 +42,7 @@ export class LoginPage {
       data:{username: username.value, password: password.value},
       //箭头函数的this指向为当前对象
       success:(msg)=>{
-        console.log(msg);
+        // console.log(msg);
         if(msg){
           if(msg.message==false){
             console.log("注册");
@@ -61,7 +58,7 @@ export class LoginPage {
           
             toast.present();
           }else if(msg.success==true){
-            console.log("成功")
+            // console.log("成功")
             let toast = this.toastCtrl.create({
               message: '登录成功!',
               duration: 3000,
@@ -72,7 +69,7 @@ export class LoginPage {
             localStorage.setItem('user_id',msg.data._id);
             
             toast.onDidDismiss(() => {
-              console.log('Dismissed toast');
+              // console.log('Dismissed toast');
             });
             
             //保存local账号密码

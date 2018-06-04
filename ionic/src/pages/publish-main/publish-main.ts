@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App ,Events } from 'ionic-angular';
 import { PublishCommentPage } from '../publish-comment/publish-comment';
 import { Http } from '@angular/http';
-import { publish } from 'rxjs/operators';
 
 /**
  * Generated class for the PublishMainPage page.

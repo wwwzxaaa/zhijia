@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Http,Headers,Jsonp,JsonpModule} from '@angular/http';
-import {Observable} from "rxjs";
+import { Http,Jsonp } from '@angular/http';
 import "rxjs/Rx";
 @Component({
   selector: 'page-about',
@@ -16,7 +15,7 @@ export class AboutPage {
     this.Info=info;
   }
   ionViewDidEnter() {
-    var HTTP=this.http,info=[],content,list_id,pic_id;
+    var HTTP=this.http,info=[],list_id,pic_id;
     var that=this;
     // console.log('通知');//页面验证
     //后台信息读取
