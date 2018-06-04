@@ -28,6 +28,7 @@ export class PublishMainPage {
     //接收数据
     this.id=navParams.get('id');
     this.name = navParams.get('name')
+    this.time = navParams.get('time')
     this.publish_default = navParams.get('main_default')
 
     if(this.isSecondary==true){
@@ -37,16 +38,16 @@ export class PublishMainPage {
 
   id = ''
   name = ''
+  time = ''
+  icon = '/assets/imgs/user.jpg'
   segment_items = []
   ionViewDidEnter(){
     //详情区请求
     this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
-      // console.log(JSON.parse(data['_body']).data);
       this.publish_main = JSON.parse(data['_body']).data || this.publish_default;
       if(JSON.parse(data['_body']).data !== null){
         this.segment_items = JSON.parse(data['_body']).data.comments;
       }
-      
       this.com = this.segment_items.length + 3;
       // console.log(this.segment_items)
       return this.segment_items
@@ -61,7 +62,12 @@ export class PublishMainPage {
 
       for (let i = 0; i < this.segment_items.length; i++) {
         this.http.get('http://localhost:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
-          this.segment_com.unshift({ icon: 'assets/publish/zhijia.png', name: 'Zhijia', article: JSON.parse(data['_body']).data.content, time: JSON.parse(data['_body']).data.created });
+          this.segment_com.unshift({ 
+            icon: '/assets/imgs/user.jpg', 
+            name: this.name, 
+            article: JSON.parse(data['_body']).data.content, 
+            time: this.timeTotime(JSON.parse(data['_body']).data.created)
+          });
         }, err => {
           console.log(err);
         });
@@ -115,16 +121,11 @@ export class PublishMainPage {
   good = this.isgood.length;
   
   //时间戳转换时间
-  timestampToTime(timestamp) {
-    var date = new Date(timestamp);
-    // var Y = date.getFullYear() + '年';
-    // var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '月';
-    // var D = date.getDate() + '日 ';
-    var h = date.getHours() + ':';
-    var m = date.getMinutes();
-    // var s = date.getSeconds();
-    return   h + m ;
+  timeTotime(time){
+    let y = time.slice(5,10)
+    let h = time.slice(11,16)
+    return y+' '+h
   }
-
+  
 }
 

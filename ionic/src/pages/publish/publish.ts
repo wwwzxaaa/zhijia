@@ -41,15 +41,14 @@ export class PublishPage {
       //昵称转换author-->username
       for (let i = 0; i < this.publish.length; i++) {
 
-        // let id = '5b0ca81b93ae2a032460d0d2'
         let id = this.publish[i].author
-        // let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzk0MDE2OCwiZXhwIjoxNTI3OTc2MTY4fQ.LH2L4mIToXUcfGnPVeexUyG05mVWR6C_Dx7wddRUfdY'
         let token = localStorage.getItem('user_token')
-        // console.log(token)
         this.http.get('http://localhost:7000/api/v1/user/' + id + '?token=' + token
           , {}).subscribe(data => {
             this.publish[i].name = JSON.parse(data['_body']).data.name
             this.publish[i].icon = '/assets/imgs/user.jpg'
+            this.publish[i].created = this.timeTotime(this.publish[i].created)
+          
           }, err => {
             console.log(err);
           });
@@ -110,7 +109,8 @@ export class PublishPage {
   pubMain(id){
     this.app.getRootNav().push(PublishMainPage,{
       id:this.publish[id]._id,
-      name:this.publish[id].name
+      name:this.publish[id].name,
+      time:this.publish[id].created
     });
   }
 
@@ -162,15 +162,10 @@ export class PublishPage {
   }
   
   //时间戳转换时间
-  timestampToTime(timestamp) {
-    var date = new Date(timestamp);
-    // var Y = date.getFullYear() + '年';
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '月';
-    var D = date.getDate() + '日 ';
-    var h = date.getHours() + ':';
-    var m = date.getMinutes();
-    // var s = date.getSeconds();
-    return M + D + h + m ;
+  timeTotime(time){
+    let y = time.slice(5,10)
+    let h = time.slice(11,16)
+    return y+' '+h
   }
 
   

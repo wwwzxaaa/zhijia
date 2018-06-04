@@ -40,6 +40,7 @@ export class MyPublishPage {
           , {}).subscribe(data => {
             this.publish[i].name = JSON.parse(data['_body']).data.name
             this.publish[i].icon = '/assets/imgs/user.jpg'
+            this.publish[i].created = this.timeTotime(this.publish[i].created)
           }, err => {
             console.log(err);
           });
@@ -52,17 +53,6 @@ export class MyPublishPage {
 
       console.log(this.myPublish);
     })
-
-    // setTimeout(() => {
-    //   console.log(this.publish)
-    //   for (let i = 0; i < this.publish.length; i++) {
-    //     if (this.publish[i].author == localStorage.getItem('user_id')) {
-    //       this.myPublish.unshift(this.publish[i])
-    //     }
-    //   }
-    // }, 100);
-    
-
   }
 
   myPublish = [
@@ -80,5 +70,12 @@ export class MyPublishPage {
     }, err => {
       console.log(err);
     });
+  }
+
+  //时间戳转换时间
+  timeTotime(time){
+    let y = time.slice(5,10)
+    let h = time.slice(11,16)
+    return y+' '+h
   }
 }
