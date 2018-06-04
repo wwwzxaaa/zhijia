@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Events } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { AppSettingPage } from '../app-setting/app-setting';
 import { PertainHomePage } from '../pertain-home/pertain-home';
@@ -10,7 +10,7 @@ import { PertainHomePage } from '../pertain-home/pertain-home';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private app:App, public navParams: NavParams,public events:Events) {
 
   }
   home_button=[
@@ -25,15 +25,6 @@ export class HomePage {
   ]
 
   annex(id){
-    console.log(id);
-    if(id==0){this.app.getRootNav().push();}
-    if(id==1){}
-    if(id==2){}
-    if(id==3){}
-    if(id==4){}
-    if(id==5){}
-    if(id==6){}
-    if(id==7){}
-    if(id==8){}
+    this.app.getRootNav().push(PertainHomePage,{id:id});
   }
 }
