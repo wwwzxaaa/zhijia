@@ -29,7 +29,10 @@ export class MyApp {
         async: false,
         data:{ username: myuser,password:mypsw },
         success: (data)=>{
-          console.log(data.message);
+
+          localStorage.setItem('user_token',data.data.token)
+
+          // console.log(data.message);
           this.showInfo = data.message;
           this.rootPage=TabsPage;
           return this.showInfo; 

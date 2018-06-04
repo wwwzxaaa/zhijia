@@ -37,7 +37,7 @@ export class PublishCommentPage {
       this.http.post('http://localhost:7000/api/v1/comment/', {
         content: textarea,
         from: this.id,
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzYzOTMxNiwiZXhwIjoxNTI3Njc1MzE2fQ.QInCU6Mv-7mEnrry4PlvdA5xWx3QIDe0rg8ffl3La_c"
+        token: localStorage.getItem('user_token')
       }).subscribe(data => {
         console.log(JSON.parse(data['_body']).data);
       }, err => {

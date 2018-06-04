@@ -67,7 +67,10 @@ export class LoginPage {
               duration: 3000,
               position: 'middle'
             });
-          
+            
+            localStorage.setItem('user_token',msg.data.token);
+            localStorage.setItem('user_id',msg.data._id);
+            
             toast.onDidDismiss(() => {
               console.log('Dismissed toast');
             });
@@ -75,6 +78,7 @@ export class LoginPage {
             //保存local账号密码
             localStorage.setItem('user',username.value);
             localStorage.setItem('psw',password.value);
+            
             toast.present();
             //验证完成完成跳转
             this.navCtrl.push(TabsPage);

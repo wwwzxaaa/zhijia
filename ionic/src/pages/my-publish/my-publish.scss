@@ -1,0 +1,52 @@
+page-my-publish {
+    ion-content{
+        background: #eee!important;
+        .card-ios{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            box-shadow: none;
+            margin-top: 10px; 
+        }
+        ion-card{
+            position: relative;
+            ion-item{
+                
+            }
+            .del{
+                position: absolute;
+                right: 16px;
+                top: 10px;
+                button{
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            .main_img{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            ion-avatar{
+                img{
+                    height: 44px!important;
+                    width: 44px!important;
+                }
+                
+            }
+            ion-card-content p{
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                word-break: break-all;
+            }
+        }
+        ion-row{
+            text-align: center;
+            .col{
+                padding: 0px;
+                border-top:1px solid #eee;
+            }
+        }
+    }
+}

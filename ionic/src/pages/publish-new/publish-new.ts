@@ -31,8 +31,8 @@ export class PublishNewPage {
       this.http.post('http://localhost:7000/api/v1/content/', {
         content: '这是content内容',
         title: textarea,
-        from: '5b0ca81b93ae2a032460d0d2',
-        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWIwY2E4MWI5M2FlMmEwMzI0NjBkMGQyIiwidG9rZW5fdmVyc2lvbiI6MH0sImlhdCI6MTUyNzk0MDE2OCwiZXhwIjoxNTI3OTc2MTY4fQ.LH2L4mIToXUcfGnPVeexUyG05mVWR6C_Dx7wddRUfdY"
+        from: localStorage.getItem('user_id'),
+        token: localStorage.getItem('user_token')
       }).subscribe(data => {
         console.log(JSON.parse(data['_body']).data);
       }, err => {

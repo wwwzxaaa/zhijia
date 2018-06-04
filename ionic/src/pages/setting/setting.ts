@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { AppSettingPage } from '../app-setting/app-setting';
 import { PersonPage } from '../person/person';
+import { MyPublishPage } from '../my-publish/my-publish';
+
 /**
  * Generated class for the SettingPage page.
  *
@@ -39,6 +41,10 @@ export class SettingPage {
         refresher.complete();
       }
     })   
+  }
+
+  mybtn2(){
+    this.app.getRootNav().push(MyPublishPage);
   }
   mybtn3(){
       this.app.getRootNav().push(AppSettingPage);

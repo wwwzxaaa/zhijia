@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegAgrmPage } from '../pages/reg-agrm/reg-agrm';
 import { AboutPage } from '../pages/about/about';
+import { MyPublishPage } from '../pages/my-publish/my-publish';
 import { PublishPage } from '../pages/publish/publish';
 import { PublishNewPage} from '../pages/publish-new/publish-new';
 import { PublishMainPage } from '../pages/publish-main/publish-main';
@@ -43,6 +44,7 @@ import { PersonPage } from '../pages/person/person';
     PublishNewPage,
     PublishMainPage,
     PublishCommentPage,
+    MyPublishPage,
     SettingPage,
     SetAboutPage,
     SetHelpPage,
@@ -76,6 +78,7 @@ import { PersonPage } from '../pages/person/person';
     PublishNewPage,
     PublishMainPage,
     PublishCommentPage,
+    MyPublishPage,
     SettingPage,
     SetAboutPage,
     SetHelpPage,

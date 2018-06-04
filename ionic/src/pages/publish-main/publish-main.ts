@@ -43,7 +43,7 @@ export class PublishMainPage {
     this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
       // console.log(JSON.parse(data['_body']).data);
       this.publish_main = JSON.parse(data['_body']).data || this.publish_default;
-      if(JSON.parse(data['_body']).data !== ''){
+      if(JSON.parse(data['_body']).data !== null){
         this.segment_items = JSON.parse(data['_body']).data.comments;
       }
       
