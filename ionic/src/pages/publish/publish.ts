@@ -34,7 +34,7 @@ export class PublishPage {
 
   ionViewDidEnter(){
     
-    this.http.get('http://localhost:7000/api/v1/content/',{}).subscribe(data=>{
+    this.http.get('http://39.105.139.109:7000/api/v1/content/',{}).subscribe(data=>{
       this.publish = JSON.parse(data['_body']).data;
       // console.log(this.publish.length)
 
@@ -43,7 +43,7 @@ export class PublishPage {
 
         let id = this.publish[i].author
         let token = localStorage.getItem('user_token')
-        this.http.get('http://localhost:7000/api/v1/user/' + id + '?token=' + token
+        this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
           , {}).subscribe(data => {
             this.publish[i].name = JSON.parse(data['_body']).data.name
             this.publish[i].icon = '/assets/imgs/user.jpg'

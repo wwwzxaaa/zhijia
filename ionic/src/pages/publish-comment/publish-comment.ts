@@ -34,7 +34,7 @@ export class PublishCommentPage {
     if(textarea === ''){
       this.AlertWarn();
     }else{     
-      this.http.post('http://localhost:7000/api/v1/comment/', {
+      this.http.post('http://39.105.139.109:7000/api/v1/comment/', {
         content: textarea,
         from: this.id,
         token: localStorage.getItem('user_token')

@@ -56,7 +56,7 @@ export class RegPage {
     let _this = this
     $.ajax({
       type: "post",
-      url: "http://localhost:7000/api/v1/user/register ",
+      url: "http://39.105.139.109:7000/api/v1/user/register ",
       dataType: "json",
       data:{ username: username.value, password: password.value,email:email.value,name:name.value},
       success: function(data){

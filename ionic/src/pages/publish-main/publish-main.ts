@@ -42,7 +42,7 @@ export class PublishMainPage {
   segment_items = []
   ionViewDidEnter(){
     //详情区请求
-    this.http.get('http://localhost:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
+    this.http.get('http://39.105.139.109:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
       this.publish_main = JSON.parse(data['_body']).data || this.publish_default;
       if(JSON.parse(data['_body']).data !== null){
         this.segment_items = JSON.parse(data['_body']).data.comments;
@@ -60,7 +60,7 @@ export class PublishMainPage {
     setTimeout(() => {
 
       for (let i = 0; i < this.segment_items.length; i++) {
-        this.http.get('http://localhost:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
+        this.http.get('http://39.105.139.109:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
           this.segment_com.unshift({ 
             icon: '/assets/imgs/user.jpg', 
             name: this.name, 
