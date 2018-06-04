@@ -21,13 +21,13 @@ export class AboutPage {
     // console.log('通知');//页面验证
     //后台信息读取
     //_id、title
-    HTTP.get('http://localhost:7000/api/v1/content').subscribe(data=>{
+    HTTP.get('http://39.105.139.109:7000/api/v1/content').subscribe(data=>{
       list_id=JSON.parse(data['_body']).data; //list_id:  .created  创建时间 ._id  每个通知的id .gallery[?]  图片id .title  标题
       getPic();
     });
     //图片
     function getPic(){
-      HTTP.get('http://localhost:7000/api/v1/file').subscribe(data=>{
+      HTTP.get('http://39.105.139.109:7000/api/v1/file').subscribe(data=>{
         pic_id=JSON.parse(data['_body']).data;//pic_id: //._id  图片知的id //.url  图片网址
         changeInfo();
       })

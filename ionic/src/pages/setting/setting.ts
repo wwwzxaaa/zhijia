@@ -32,7 +32,7 @@ export class SettingPage {
   //刷新获取name
   doRefresh(refresher) {
     $.ajax({
-      url:'http://localhost:7000/api/v1/user/auth',
+      url:'http://39.105.139.109:7000/api/v1/user/auth',
       type: 'POST',
       data:{username:this.userData,password:this.usersetPsw},
       success:(data) => {

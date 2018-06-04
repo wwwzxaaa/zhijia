@@ -37,7 +37,7 @@ export class LoginPage {
     }  
     //let userinfo: string = '用户名：' + username.value  + '密码：' + password.value;
     $.ajax({
-      url:'http://localhost:7000/api/v1/user/auth',
+      url:'http://39.105.139.109:7000/api/v1/user/auth',
       type: 'POST',
       data:{username: username.value, password: password.value},
       //箭头函数的this指向为当前对象

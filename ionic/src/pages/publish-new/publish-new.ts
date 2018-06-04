@@ -28,7 +28,7 @@ export class PublishNewPage {
     if(textarea === ''){
       this.AlertWarn();
     }else{
-      this.http.post('http://localhost:7000/api/v1/content/', {
+      this.http.post('http://39.105.139.109:7000/api/v1/content/', {
         content: '这是content内容',
         title: textarea,
         from: localStorage.getItem('user_id'),

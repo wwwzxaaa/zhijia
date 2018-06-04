@@ -36,7 +36,7 @@ export class InfoPage {
     let mypsw = localStorage.getItem('psw');
     //获取用户token
     $.ajax({
-      url: "http://localhost:7000/api/v1/user/auth",
+      url: "http://39.105.139.109:7000/api/v1/user/auth",
       type: "post",
       data:{username: myuser,password:mypsw},
       success:(data) => {
@@ -45,7 +45,7 @@ export class InfoPage {
         // console.log(token);
         //将token传入
         $.ajax({
-          url: "http://localhost:7000/api/v1/user/",
+          url: "http://39.105.139.109:7000/api/v1/user/",
           type: "get",
           data:{token:token},
           success:(data) => {
