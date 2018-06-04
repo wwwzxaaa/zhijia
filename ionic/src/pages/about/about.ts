@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
 import "rxjs/Rx";
+import { PertainAboutPage } from '../pertain-about/pertain-about';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
