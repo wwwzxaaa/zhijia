@@ -27,6 +27,7 @@ import { InfoPage } from '../pages/info/info';
 import { InfoMessagePage } from '../pages/info-message/info-message'
 import { AppSettingPage } from '../pages/app-setting/app-setting';
 import { PersonPage } from '../pages/person/person';
+import { PertainHomePage } from '../pages/pertain-home/pertain-home';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { PersonPage } from '../pages/person/person';
     InfoPage,
     InfoMessagePage,
     AppSettingPage,
-    PersonPage
+    PersonPage,
+    PertainHomePage
   ],
   imports: [
     BrowserModule,
@@ -85,7 +87,8 @@ import { PersonPage } from '../pages/person/person';
     InfoPage,
     InfoMessagePage,
     AppSettingPage,
-    PersonPage
+    PersonPage,
+    PertainHomePage
   ],
   providers: [
     StatusBar,
