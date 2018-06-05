@@ -75,12 +75,21 @@
 html, body{
     font-size: 16px;
 }
+
+.pusher{
+    background: url(../images/welcomebg.jpg) no-repeat;
+    background-size: cover;
+}
+.ui.inverted.segment{
+    background: rgba(0, 0, 0, 0.5);
+    
+}
+
 .welcome{
     min-height: 350px;
 }
 .welcome h1.ui.header {
   margin-top: 3em;
-  margin-bottom: 0em;
   font-size: 4em;
   font-weight: normal;
 }
@@ -137,3 +146,10 @@ html, body{
 .post-content table th{
     font-weight: 700;
 }
+
+.ten{
+    margin: 0 auto;
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+} 
