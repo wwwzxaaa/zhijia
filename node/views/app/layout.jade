@@ -24,19 +24,18 @@ html
                             a.ui.primary.button(href='#{adminDir}/user/register') 注册
         .pusher
             .ui.inverted.vertical.masthead.center.aligned.segment
-                .pusher-main
-                    .ui.container
-                        .ui.large.secondary.inverted.pointing.menu
-                            a.item(class=!Path ? 'active' : '',href='/') 首页
-                            a.item(class=Path === 'contact' ? 'active' : '',href='/contact') 留言
-                            .right.item
-                                if (User)
-                                    a.item(href='#{adminDir}') #{User.name}
-                                    a.item(href='#{adminDir}/user/logout') 注销
-                                else
-                                    a.ui.inverted.button(href='#{adminDir}/user/login') 登录
-                                    a.ui.inverted.button(href='#{adminDir}/user/register') 注册
-                    block welcome
+                .ui.container
+                    .ui.large.secondary.inverted.pointing.menu
+                        a.item(class=!Path ? 'active' : '',href='/') 首页
+                        a.item(class=Path === 'contact' ? 'active' : '',href='/contact') 留言
+                        .right.item
+                            if (User)
+                                a.item(href='#{adminDir}') #{User.name}
+                                a.item(href='#{adminDir}/user/logout') 注销
+                            else
+                                a.ui.inverted.button(href='#{adminDir}/user/login') 登录
+                                a.ui.inverted.button(href='#{adminDir}/user/register') 注册
+                block welcome
             
         .page
             block content
@@ -54,15 +53,9 @@ html
                             a.item
                             a.item
                     .ten.wide.column
-                        
-                        p.ui.inverted 基于NodeJs的CMS系统，NodeJs + MongoDB，阿里云服务器
-                        p.ui.inverted
-                            a.item(target='_blank', href='https://github.com/xiaoshan5733') 特别鸣谢 xiaoshan5733  
-                        p.ui.inverted 2018 &copy; 知家制作团队 |  
-                            a.item(target='_blank', href='https://github.com/201505wuzixin/zhijia') 关于我们
-                        
-
-                            
+                        h3.ui.inverted.large.header wenglou
+                        p 基于nodejs的cms系统，nodejs + mongodb
+                        a.item(target='_blank', href='https://github.com/xiaoshan5733/cms') github
         script(src='//cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js')
         script(src='//cdn.jsdelivr.net/semantic-ui/2.2.9/semantic.min.js')
         script(src='//cdn.jsdelivr.net/mustache.js/2.3.0/mustache.min.js')
