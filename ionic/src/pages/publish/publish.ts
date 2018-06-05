@@ -36,22 +36,31 @@ export class PublishPage {
     
     this.http.get('http://39.105.139.109:7000/api/v1/content/',{}).subscribe(data=>{
       this.publish = JSON.parse(data['_body']).data;
-      // console.log(this.publish.length)
+      // console.log(this.publish)
 
       //昵称转换author-->username
       for (let i = 0; i < this.publish.length; i++) {
-
+        this.publish[i].icon = '/assets/imgs/user.jpg'
         let id = this.publish[i].author
         let token = localStorage.getItem('user_token')
         this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
           , {}).subscribe(data => {
             this.publish[i].name = JSON.parse(data['_body']).data.name
-            this.publish[i].icon = '/assets/imgs/user.jpg'
+            
             this.publish[i].created = this.timeTotime(this.publish[i].created)
-          
           }, err => {
             console.log(err);
           });
+
+          //content内容显示
+          let _id = this.publish[i]._id
+          this.http.get('http://39.105.139.109:7000/api/v1/content/' + _id, {}).subscribe(data => {
+            this.publish[i].content = JSON.parse(data['_body']).data.content
+        
+          }, err => {
+            console.log(err);
+          });
+          
       }
 
       
@@ -65,15 +74,15 @@ export class PublishPage {
   publish_default=[
     {
       icon:'assets/publish/mht.jpg',name:'Pony Ma',created:'2018年5月2日',
-      pic:'assets/publish/main.jpg',title:'来充钱啊不充钱你怎么变得更强！！！',
+      pic:'assets/publish/main.jpg',content:'来充钱啊不充钱你怎么变得更强！！！',
       up:6
     },{
       icon:'assets/publish/my.jpg',name:'Jack Ma',created:'2018年5月2日',
-      pic:'assets/publish/alibaba.jpg',title:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
+      pic:'assets/publish/alibaba.jpg',content:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
       up:8
     },{
       icon:'assets/publish/leijun.jpg',name:'R.U.OK',created:'2018年5月2日',
-      pic:'assets/publish/xiaomi.jpg',title:'小米，为发烧而生！Are You OK？',
+      pic:'assets/publish/xiaomi.jpg',content:'小米，为发烧而生！Are You OK？',
       up:8
     }
   ]
