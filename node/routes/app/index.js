@@ -6,6 +6,7 @@ let index = require('../../controllers/app/index')
 
 //首页
 router.route('/contact').all(index.contact);
+router.route('/down').all(index.down);
 router.route('/').all(index.index);
 
 module.exports = function(app) {

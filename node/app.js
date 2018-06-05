@@ -60,7 +60,7 @@ if (config.env === 'production') {
 
 //定义全局字段
 app.locals = {
-    title: config.title || 'CMS',
+    title: config.title || '知家',
     pretty: true,
     moment: moment,
     _: _,

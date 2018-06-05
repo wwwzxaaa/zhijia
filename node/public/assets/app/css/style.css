@@ -75,14 +75,34 @@
 html, body{
     font-size: 16px;
 }
+
+.pusher{
+    background: url(../images/welcomebg.jpg) no-repeat;
+    background-size: cover;
+}
+.ui.inverted.segment{
+    background: rgba(0, 0, 0, 0.5);
+    
+}
+
 .welcome{
-    min-height: 350px;
+    min-height: 650px;
+}
+.welcome .down-url{
+    height: 200px;
+    width: 200px;
+    border: 1px solid #fff;
+    margin: 0 auto;
+    background: url('../images/down.png') no-repeat 50% 50%;
+    background-size: contain;
 }
 .welcome h1.ui.header {
   margin-top: 3em;
-  margin-bottom: 0em;
   font-size: 4em;
   font-weight: normal;
+}
+.welcome p{
+    margin-bottom: 5rem;
 }
 .masthead h2 {
   font-size: 1.7em;
@@ -137,3 +157,10 @@ html, body{
 .post-content table th{
     font-weight: 700;
 }
+
+.ten a{
+    color: #ccc;
+}
+.ten a:hover{
+    color: #fff;
+} 

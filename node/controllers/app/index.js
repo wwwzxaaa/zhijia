@@ -1,6 +1,8 @@
 'use strict';
 
-let  mongoose = require('mongoose')
+let mongoose = require('mongoose')
+let fs = require('fs')
+let path = require('path')
 let Content = mongoose.model('Content')
 let Message = mongoose.model('Message')
 let Category = mongoose.model('Category')
@@ -87,5 +89,29 @@ exports.contact = function(req, res) {
         })
         
     }
-    
-}
+};
+
+exports.down = function(req, res, next){
+    let currDir = path.normalize(req.query.dir),
+        fileName = req.query.name,
+        currFile = path.join(currDir,fileName),
+        fReadStream;
+
+    fs.exists(currFile,function(exist) {
+        if(exist){
+            res.set({
+                "Content-type":"application/octet-stream",
+                "Content-Disposition":"attachment;filename="+encodeURI(fileName)
+            });
+            fReadStream = fs.createReadStream(currFile);
+            fReadStream.on("data",(chunk) => res.write(chunk,"binary"));
+            fReadStream.on("end",function () {
+                res.end();
+            });
+        }else{
+            res.set("Content-type","text/html");
+            res.send("file not exist!");
+            res.end();
+        }
+    });
+}; 
