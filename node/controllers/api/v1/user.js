@@ -133,6 +133,7 @@ exports.create = async function(req, res) {
     try {
         let role = await roleService.findOne({status: 202})
         obj.roles = [role._id]
+        obj.reg_ip = core.getIp(req)
         data = await userService.create(obj)
     } catch (e) {
         //error = e.message
@@ -156,7 +157,8 @@ exports.update = async function(req, res) {
         let isAdmin = req.Roles && req.Roles.indexOf('admin') > -1;
         let item = await userService.findById(id)
         let isAuthor = !!(item.author && ((item.author + '') === (req.user._id + '')))
-        if(!isAdmin && !isAuthor) {
+        let isMine = (item._id + '') === (req.user._id + '')
+        if(!isAdmin && !isAuthor && !isMine) {
             error = '没有权限'
         } else {
             data = await userService.findByIdAndUpdate(id, obj, {new: true})

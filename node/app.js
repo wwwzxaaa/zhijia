@@ -60,7 +60,7 @@ if (config.env === 'production') {
 
 //定义全局字段
 app.locals = {
-    title: config.title || '知家-尽知家事',
+    title: config.title || 'CMS',
     pretty: true,
     moment: moment,
     _: _,
@@ -96,11 +96,7 @@ core.walk(appPath + '/routes/api', 'middlewares', function(path) {
 app.use(csrf());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-    res.header('X-Powered-By', '3.2.1');
-    res.header('X-Powered-By', 'zhijia');
+    res.header('X-Powered-By', 'wengqianshan');
     if (req.csrfToken) {
         res.cookie('TOKEN', req.csrfToken())
     }
