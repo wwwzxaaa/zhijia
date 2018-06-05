@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { App } from 'ionic-angular';
-
-/**
- * Generated class for the PertainAboutPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Http,Jsonp } from '@angular/http';
 
 @IonicPage()
 @Component({
@@ -16,14 +10,15 @@ import { App } from 'ionic-angular';
 })
 export class PertainAboutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app:App) {
-    this.id=navParams.get('id');
+  constructor(public http:Http,public jsonp:Jsonp,public navCtrl: NavController, public navParams: NavParams,private app:App) {
+    this.info=navParams.get('info');
   }
 
   ionViewDidLoad() {
-    console.log(this.id);
+    console.log(this.info);
+
   }
-  id;
+  info;
       /*
         var the_content;
         var id_url='http://localhost:7000/api/v1/content/'+list_id[i]._id;

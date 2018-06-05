@@ -11,3 +11,5 @@ import { PertainAboutPage } from './pertain-about';
   ],
 })
 export class PertainAboutPageModule {}
+
+

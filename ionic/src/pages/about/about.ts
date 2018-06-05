@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController,IonicPage, NavParams,Events,App } from 'ionic-angular';
+import { NavController,IonicPage, NavParams,App } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
 import "rxjs/Rx";
 import { PertainAboutPage } from '../pertain-about/pertain-about';
+declare var $:any; 
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -42,10 +43,10 @@ export class AboutPage {
         var time=list_id[i].created.slice(0,10);//`````````````时间:time
         var gallery=list_id[i].gallery;
       //图片
-        var pic_url;//`````````````图片url:pic_url
+        var pic_url=undefined;//`````````````图片url:pic_url
         for(var j=0;j<pic_id.length;j++){
           if(pic_id[j]._id==gallery){
-            pic_url=pic_id[j].url;
+              pic_url=pic_id[j].url;
           }
         }//for2结束
           info.push(new List(id,time,title,pic_url));
@@ -56,7 +57,7 @@ export class AboutPage {
   }//页面加载
 
   detail(num){
-    this.app.getRootNav().push(PertainAboutPage,{id:num});
+    this.app.getRootNav().push(PertainAboutPage,{info:this.Info[num]});
   }
   
  

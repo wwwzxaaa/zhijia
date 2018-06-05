@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController} from 'ionic-angular';
-import { SettingPage } from '../setting/setting';
 /**
  * Generated class for the PersonPage page.
  *
