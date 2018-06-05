@@ -44,6 +44,16 @@ export class MyPublishPage {
           }, err => {
             console.log(err);
           });
+
+          //content内容显示
+          let _id = this.publish[i]._id
+          this.http.get('http://39.105.139.109:7000/api/v1/content/' + _id, {}).subscribe(data => {
+            this.publish[i].content = JSON.parse(data['_body']).data.content
+        
+          }, err => {
+            console.log(err);
+          });
+          
       }
       for (let i = 0; i < this.publish.length; i++) {
         if (this.publish[i].author == localStorage.getItem('user_id')) {

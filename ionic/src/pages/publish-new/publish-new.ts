@@ -29,8 +29,8 @@ export class PublishNewPage {
       this.AlertWarn();
     }else{
       this.http.post('http://39.105.139.109:7000/api/v1/content/', {
-        content: '这是content内容',
-        title: textarea,
+        title: '这是title内容',
+        content: textarea,
         from: localStorage.getItem('user_id'),
         token: localStorage.getItem('user_token')
       }).subscribe(data => {

@@ -22,7 +22,7 @@ export class MyApp {
       //验证用户信息,跳过登录页
       $.ajax({
         type: "post",
-        url: "http://localhost:7000/api/v1/user/auth",
+        url: "http://39.105.139.109:7000/api/v1/user/auth",
         dataType: "json",
         async: false,
         data:{ username: myuser,password:mypsw },
