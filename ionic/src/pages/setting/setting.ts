@@ -37,7 +37,7 @@ export class SettingPage {
       data:{username:this.userData,password:this.usersetPsw},
       success:(data) => {
         console.log(data.data);
-        this.showName = data.data[0].name;
+        this.showName = data.data.name;
         refresher.complete();
       }
     })   
