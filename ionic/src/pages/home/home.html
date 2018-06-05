@@ -12,14 +12,17 @@
         <ion-slide><img src="assets/imgs/home_slide1.jpg" alt=""></ion-slide>
       </ion-slides>
       <div id="buttons">
-            <div class="button_item">
-            <div  *ngFor="let home of home_button;let id = index" (click)="annex(id)">
-            <button>
-                <img src="{{home.src}}" alt="">
-            </button>
-          </div>
+            <ul class="button_item1">
+            <li *ngFor="let home1 of home_button1;let id = index" (click)="annex(id)">
+                <img src="{{home1.src}}" alt="">
+            </li>
+            </ul>
+            <ul class="button_item1">
+                <li *ngFor="let home2 of home_button2;let id = index" (click)="annex(id+4)">
+                    <img src="{{home2.src}}" alt="">
+                </li>
+            </ul>
         </div>
-          </div>
         <div id="active-title">
           <p>······小区热门······</p>
         </div>

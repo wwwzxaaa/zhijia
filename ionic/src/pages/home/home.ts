@@ -13,11 +13,13 @@ export class HomePage {
   constructor(public navCtrl: NavController,private app:App, public navParams: NavParams,public events:Events) {
 
   }
-  home_button=[
+  home_button1=[
     {src:'assets/imgs/home_01.png'},
     {src:'assets/imgs/home_02.png'},
     {src:'assets/imgs/home_03.png'},
-    {src:'assets/imgs/home_04.png'},
+    {src:'assets/imgs/home_04.png'}
+  ]
+  home_button2=[
     {src:'assets/imgs/home_05.png'},
     {src:'assets/imgs/home_06.png'},
     {src:'assets/imgs/home_07.png'},

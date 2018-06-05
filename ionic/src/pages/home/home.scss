@@ -1,4 +1,8 @@
 page-home {
+    *{
+        padding:0;
+        margin:0;
+    }
     ion-header{
         color:#ffff;
     }
@@ -9,22 +13,27 @@ page-home {
     ion-slides,ion-slide{
         height:auto;
     }
-    .button_item{
-        width:90%;
-        margin:0 auto;
+    .button_item1{
+        width:100%;
+        margin: 0 auto;
         text-align: center;
-        box-sizing: border-box;
-        display:flex;
-        flex-flow:row wrap;
     }
-    .button_item div{
-     margin-top:5px;
-        flex:1;
+    .button_item1 li{
+        display: inline;
     }
-
-    #buttons button{
-        width:75px;
-        background-color: #ffff;
+    .button_item1 li img{
+        height:63px;
+    }
+    .button_item2{
+        width:100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .button_item2 li{
+        display: inline;
+    }
+    .button_item2 li img{
+        height:63px;
     }
 
     #slider{
