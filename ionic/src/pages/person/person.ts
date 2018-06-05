@@ -22,8 +22,8 @@ export class PersonPage {
     console.log('ionViewDidLoad PersonPage');
   }
   setting(nickname:HTMLInputElement){
-    let myuser = localStorage.getItem('user');
-    let mypsw = localStorage.getItem('psw');
+    let id = localStorage.getItem('user_id');
+    let token = localStorage.getItem('user_token');
     let alert = this.alertCtrl.create({
       title: '提示',
       message: '是否确定改为这个昵称?',
@@ -40,27 +40,13 @@ export class PersonPage {
           handler: () => {
            //修改默认昵称
            $.ajax({
-            url: "http://localhost:7000/api/v1/user/auth",
+            url: 'http://39.105.139.109:7000/api/v1/user/'+id+'/update',
             type: "post",
-            data:{username: myuser,password:mypsw},
+            data:{id:id,token:token,name:nickname.value},
             success:(data) => {
-              console.log(data.data);
-              var id=data.data._id;
-              var token=data.data.token;
-              var myname=data.data.name;
-              console.log(id);
-              $.ajax({
-                url: 'http://localhost:7000/api/v1/user/'+id+'/update',
-                type: "post",
-                data:{id:id,token:token},
-                success:(data) => {
-                  myname=nickname.value;
-                  console.log(myname);
-                }
-              })
+              console.log(data);
             }
           })
-          this.navCtrl.setRoot(SettingPage)
           }
         }
       ]

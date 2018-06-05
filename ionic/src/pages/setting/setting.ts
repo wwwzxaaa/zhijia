@@ -24,23 +24,26 @@ export class SettingPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private app:App) {
     let userInfo = localStorage.getItem('user');
     let setPsw = localStorage.getItem('psw');
-    
+
     this.userData = userInfo;
     this.usersetPsw = setPsw;
     
   }
   //刷新获取name
   doRefresh(refresher) {
+    let id = localStorage.getItem('user_id');
+    let token = localStorage.getItem('user_token');
     $.ajax({
-      url:'http://39.105.139.109:7000/api/v1/user/auth',
-      type: 'POST',
-      data:{username:this.userData,password:this.usersetPsw},
+      url: 'http://39.105.139.109:7000/api/v1/user/'+id,
+      type: "get",
+      data:{id:id,token:token},
       success:(data) => {
-        console.log(data.data);
+        console.log(data);
         this.showName = data.data.name;
         refresher.complete();
       }
-    })   
+    }) 
+     
   }
 
   mybtn2(){
