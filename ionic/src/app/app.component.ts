@@ -38,7 +38,8 @@ export class MyApp {
       if (this.showInfo === false) {  
         this.rootPage = LoginPage;  
       } 
-      statusBar.styleDefault();
+      statusBar.overlaysWebView(false);
+      statusBar.backgroundColorByHexString('#aa7700');
       splashScreen.hide();
     });
   }
