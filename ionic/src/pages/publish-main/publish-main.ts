@@ -63,10 +63,20 @@ export class PublishMainPage {
         this.http.get('http://39.105.139.109:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
           this.segment_com.unshift({ 
             icon: '/assets/imgs/user.jpg', 
-            name: this.name, 
+            // name: this.idToname(JSON.parse(data['_body']).data.author), 
+            name:'',
             article: JSON.parse(data['_body']).data.content, 
-            time: this.timeTotime(JSON.parse(data['_body']).data.created)
+            time: this.timeTotime(JSON.parse(data['_body']).data.created)           
           });
+          console.log(this.segment_com)
+          let token = localStorage.getItem('user_token')
+          let id = JSON.parse(data['_body']).data.author
+          this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
+            , {}).subscribe(data => {
+              this.segment_com[i].name = JSON.parse(data['_body']).data.name
+            }, err => {
+              console.log(err);
+            });
         }, err => {
           console.log(err);
         });
@@ -126,5 +136,21 @@ export class PublishMainPage {
     return y+' '+h
   }
   
+  // idToname(id){
+  //   //id转昵称
+  //   console.log(id)
+  //   let token = localStorage.getItem('user_token')
+  //   let author = ''
+  //   this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
+  //     , {}).subscribe(data => {
+  //       author = JSON.parse(data['_body']).data.name
+  //       this.name = author
+  //       // console.log(author)
+  //     }, err => {
+  //       console.log(err);
+  //     });
+  //     console.log(author)
+  //   return author
+  // }
 }
 
