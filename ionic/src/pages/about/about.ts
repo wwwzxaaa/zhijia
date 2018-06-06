@@ -34,7 +34,7 @@ export class AboutPage {
       })
     }
     function changeInfo(){
-      function List(id,time,title,pic_url){this.id=id;this.time=time;this.title=title;this.pic_url=pic_url;}
+      function List(id,time,title,pic_url,gallery){this.id=id;this.time=time;this.title=title;this.pic_url=pic_url;this.gallery=gallery;}
       //拼接对象
       for(var i=0;i<list_id.length;i++){
       //列表
@@ -45,11 +45,11 @@ export class AboutPage {
       //图片
         var pic_url=undefined;//`````````````图片url:pic_url
         for(var j=0;j<pic_id.length;j++){
-          if(pic_id[j]._id==gallery){
+          if(pic_id[j]._id==gallery[0]){
               pic_url=pic_id[j].url;
           }
         }//for2结束
-          info.push(new List(id,time,title,pic_url));
+          info.push(new List(id,time,title,pic_url,gallery));
       }//for1结束
       that.getInfo(info);
     }//chengeInfo(){}
@@ -86,6 +86,12 @@ export class AboutPage {
               //._id  每个通知的id
               the_content=content.content;
             });
+
+            通知二级页面：用id拿内容content.content，about的Info里添加list_id[].gallery项，起名gallery申请文件接口拿图写入数组。
+            content部分：
+            头像-名称-时间-标题
+            <div>{{内容}}
+            <div *ngfor><img src="{{gallery.src}}">
             */
   
 }
