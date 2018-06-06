@@ -1,3 +1,13 @@
 page-pertain-about {
-
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .titile,.gallery{
+        text-align: center;
+        padding-top:20px;
+    }
+    .content{
+        padding: 10px 20px;
+    }
 }
