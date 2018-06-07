@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule, JsonpModule } from '@angular/http';
-
+import { Geolocation } from '@ionic-native/geolocation';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -29,7 +29,7 @@ import { AppSettingPage } from '../pages/app-setting/app-setting';
 import { PersonPage } from '../pages/person/person';
 import { PertainHomePage } from '../pages/pertain-home/pertain-home';
 import { PertainAboutPage } from '../pages/pertain-about/pertain-about';
-
+import { MapPage } from '../pages/map/map';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,8 @@ import { PertainAboutPage } from '../pages/pertain-about/pertain-about';
     AppSettingPage,
     PersonPage,
     PertainHomePage,
-    PertainAboutPage
+    PertainAboutPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -91,11 +92,13 @@ import { PertainAboutPage } from '../pages/pertain-about/pertain-about';
     AppSettingPage,
     PersonPage,
     PertainHomePage,
-    PertainAboutPage
+    PertainAboutPage,
+    MapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

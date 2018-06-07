@@ -3,13 +3,13 @@ import { IonicPage, NavController, NavParams,Events } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { PertainHomePage } from '../pertain-home/pertain-home';
 import { AboutPage } from '../about/about';
-
+import { MapPage } from '../map/map';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  myplace : string;
   constructor(public navCtrl: NavController,private app:App, public navParams: NavParams,public events:Events) {
 
   }
@@ -34,5 +34,9 @@ export class HomePage {
     else{
       this.app.getRootNav().push(PertainHomePage,{id:id});
     }
+  }
+  goMap(){
+    console.log('map');
+    this.navCtrl.setRoot(MapPage);
   }
 }
