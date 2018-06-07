@@ -38,7 +38,7 @@ export class PublishMainPage {
   id = ''
   name = ''
   time = ''
-  icon = '/assets/imgs/user.jpg'
+  icon = 'assets/imgs/user.jpg'
   segment_items = []
   ionViewDidEnter(){
     //详情区请求
@@ -62,7 +62,7 @@ export class PublishMainPage {
       for (let i = 0; i < this.segment_items.length; i++) {
         this.http.get('http://39.105.139.109:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
           this.segment_com.unshift({ 
-            icon: '/assets/imgs/user.jpg', 
+            icon: 'assets/imgs/user.jpg', 
             name:'',
             article: JSON.parse(data['_body']).data.content, 
             time: this.timeTotime(JSON.parse(data['_body']).data.created)           
@@ -72,7 +72,7 @@ export class PublishMainPage {
           let id = JSON.parse(data['_body']).data.author
           this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
             , {}).subscribe(data => {
-              this.segment_com[i].name = JSON.parse(data['_body']).data.name
+              this.segment_com[this.segment_items.length-i-1].name = JSON.parse(data['_body']).data.name
             }, err => {
               console.log(err);
             });

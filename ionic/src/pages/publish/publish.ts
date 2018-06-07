@@ -40,7 +40,7 @@ export class PublishPage {
 
       //昵称转换author-->username
       for (let i = 0; i < this.publish.length; i++) {
-        this.publish[i].icon = '/assets/imgs/user.jpg'
+        this.publish[i].icon = 'assets/imgs/user.jpg'
         let id = this.publish[i].author
         let token = localStorage.getItem('user_token')
         this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
