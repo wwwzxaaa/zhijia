@@ -39,7 +39,7 @@ export class MyPublishPage {
         this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
           , {}).subscribe(data => {
             this.publish[i].name = JSON.parse(data['_body']).data.name
-            this.publish[i].icon = '/assets/imgs/user.jpg'
+            this.publish[i].icon = 'assets/imgs/user.jpg'
             this.publish[i].created = this.timeTotime(this.publish[i].created)
           }, err => {
             console.log(err);
