@@ -47,7 +47,7 @@ export class PublishMainPage {
       if(JSON.parse(data['_body']).data !== null){
         this.segment_items = JSON.parse(data['_body']).data.comments;
       }
-      this.com = this.segment_items.length + 3;
+      this.com = this.segment_items.length;
       // console.log(this.segment_items)
       return this.segment_items
 
@@ -58,7 +58,6 @@ export class PublishMainPage {
     //评论区请求
     
     setTimeout(() => {
-
       for (let i = 0; i < this.segment_items.length; i++) {
         this.http.get('http://39.105.139.109:7000/api/v1/comment/' + this.segment_items[i], {}).subscribe(data => {
           this.segment_com.unshift({ 
@@ -68,20 +67,26 @@ export class PublishMainPage {
             time: this.timeTotime(JSON.parse(data['_body']).data.created)           
           });
           // console.log(this.segment_com)
-          let token = localStorage.getItem('user_token')
-          let id = JSON.parse(data['_body']).data.author
-          this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
-            , {}).subscribe(data => {
-              this.segment_com[this.segment_items.length-i-1].name = JSON.parse(data['_body']).data.name
-            }, err => {
-              console.log(err);
-            });
+          setTimeout(() => {
+            let token = localStorage.getItem('user_token')
+            let id = JSON.parse(data['_body']).data.author
+            this.http.get('http://39.105.139.109:7000/api/v1/user/' + id + '?token=' + token
+              , {}).subscribe(data => {
+                this.segment_com[this.segment_items.length-i-1].name = JSON.parse(data['_body']).data.name
+              }, err => {
+                console.log(err);
+              });
+          }, 100);
+          
         }, err => {
           console.log(err);
         });
       }
+      this.segment_com.splice(0,this.segment_items.length)
+  
     }, 100);
-    
+  
+  
   }
 
   // 帖子详情
@@ -94,9 +99,9 @@ export class PublishMainPage {
 
   //评论列表
   segment_com=[
-    {icon:'assets/publish/my.jpg',name:'Jack Ma',article:'我对钱没有兴趣！',time:'8:16'},
-    {icon:'assets/publish/lqd.jpg',name:'Richard Liu',article:'我不知道，我脸盲=-=！',time:'5月8日'},
-    {icon:'assets/publish/ubi.jpg',name:'Ubi Soft',article:'新鲜的土豆了解一下？',time:'5月6日'}
+    // {icon:'assets/publish/my.jpg',name:'Jack Ma',article:'我对钱没有兴趣！',time:'8:16'},
+    // {icon:'assets/publish/lqd.jpg',name:'Richard Liu',article:'我不知道，我脸盲=-=！',time:'5月8日'},
+    // {icon:'assets/publish/ubi.jpg',name:'Ubi Soft',article:'新鲜的土豆了解一下？',time:'5月6日'}
   ]
   //评论数量
   com = 0
@@ -135,5 +140,19 @@ export class PublishMainPage {
     return y+' '+h
   }
   
+  //数组查重
+  // delRepeat(arr){
+  //   for(let i=0; i<arr.length-1; i++){
+  //     let oldArr = arr[i]
+  //     for(let j=i+1; j<arr.length; j++){
+  //       if(oldArr.name == arr[j].name){
+  //         arr.splice(j,1);
+  //         j--;
+  //       }
+  //     }
+  //   }
+  //   return arr
+  // }
+
 }
 
