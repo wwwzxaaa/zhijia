@@ -7,9 +7,6 @@
 <ion-header>
 
   <ion-navbar color="zhijia">
-      <button ion-button icon-only (click)="back()" color="zhijia">
-          <ion-icon name="arrow-back"></ion-icon>
-        </button>
     <ion-title>注册</ion-title>
   </ion-navbar>
 
@@ -41,7 +38,7 @@
           <ion-input type="password" #repassword [formControl]="password" clearInput=true [(ngModel)]="secondIn"></ion-input>
         </ion-item>
     </div>
-    <div class="inp"><input type="checkbox" id="check"><a href="" (click)="goWe()">接受服务条款并同意知家获取用户信息</a></div>
+    <div class="inp"><input type="checkbox" id="check"><a (click)="goWe()">接受服务条款并同意知家获取用户信息</a></div>
     <div class="allbtn">
         <button class="btn" (click)="toRegister(reusername, repassword,email,name)" block>注册</button>
     </div>

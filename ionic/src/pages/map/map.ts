@@ -1,6 +1,7 @@
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the MapPage page.
  *
@@ -23,7 +24,7 @@ export class MapPage {
   marker: any;//标记
   geolocation1: any;
   myIcon: any;
-  constructor(private geolocation: Geolocation) {
+  constructor(private geolocation: Geolocation,public navCtrl: NavController,) {
     this.myIcon = new BMap.Icon("assets/icon/favicon.ico", new BMap.Size(30, 30));
   }
 
@@ -43,22 +44,38 @@ export class MapPage {
     this.map.addOverlay(marker);
     map.centerAndZoom(point, 18);//设置中心和地图显示级别
   }
-
-  // getLocationByBrowser() {
-  //   let geolocation1 = this.geolocation1 = new BMap.Geolocation();
-  //   geolocation1.getCurrentPosition((r) => {
-  //     let mk = this.marker = new BMap.Marker(r.point, { icon: this.myIcon });
-  //     if (geolocation1.getStatus() == BMAP_STATUS_SUCCESS) {
-  //       this.map.addOverlay(mk);
-  //       this.map.panTo(r.point, 16);
-  //       console.log('浏览器定位：您的位置是 ' + r.point.lng + ',' + r.point.lat);
-  //     }
-  //     else {
-  //       alert('failed' + this.geolocation1.getStatus());
-  //     }
-  //   }, { enableHighAccuracy: false })
-  // }
-
+  getLocationByBrowser(mycity) {
+    let geolocation1 = this.geolocation1 = new BMap.Geolocation();
+    geolocation1.getCurrentPosition((r) => {
+      let mk = this.marker = new BMap.Marker(r.point, { icon: this.myIcon });
+      if (geolocation1.getStatus() == BMAP_STATUS_SUCCESS) {
+        this.map.addOverlay(mk);
+        this.map.panTo(r.point, 16);
+        console.log('浏览器定位：您的位置是 ' + r.point.lng + ',' + r.point.lat);   
+      }
+      else {
+        alert('failed' + this.geolocation1.getStatus());
+      }
+      var lngLat = new BMap.Point(r.point.lng,r.point.lat);//指定的经度和纬度创建一个地理点坐标。
+      var geoc =new BMap.Geocoder();//创建一个地址解析器的实例.对指定的坐标点进行反地址解析。
+        geoc.getLocation(lngLat, (rs)=>{
+              var addComp = rs.addressComponents;
+              var province = addComp.province;//省
+              var city = addComp.city;//市
+              var district = addComp.district;//区或县
+              console.log(city+district);
+              var myplace=city+district;
+              this.navCtrl.setRoot(HomePage,{mycity:myplace});
+      })
+    }, { enableHighAccuracy: false })  
+  }
+ 
+  getLocationByCity() {
+    let city = "河北师大";
+    if (city != "") {
+      this.map.centerAndZoom(city, 16);      // 用城市名设置地图中心点
+    }
+  }
   getLocationByIp() {
     let myCity = new BMap.LocalCity();
     myCity.get(result => {
@@ -67,34 +84,4 @@ export class MapPage {
       console.log("当前定位城市:" + cityName);
     });
   }
-  getLocationByCity() {
-    let city = "石家庄";
-    if (city != "") {
-      this.map.centerAndZoom(city, 16);      // 用城市名设置地图中心点
-    }
-  }
-  getLocationByLatLon() {
-    let point = new BMap.Point(113.38028471135, 23.129702256122);
-    let marker = this.marker = new BMap.Marker(point, { icon: this.myIcon });
-    this.map.addOverlay(marker);
-    this.map.centerAndZoom(point, 16);
-  }
-  getLocation() {
-    this.geolocation.getCurrentPosition().then((resp) => {
-      let locationPoint = new BMap.Point(resp.coords.longitude, resp.coords.latitude);
-      let convertor = new BMap.Convertor();
-      let pointArr = [];
-      pointArr.push(locationPoint);
-      convertor.translate(pointArr, 1, 5, (data) => {
-        if (data.status === 0) {
-          let marker = this.marker = new BMap.Marker(data.points[0], { icon: this.myIcon });
-          this.map.panTo(data.points[0]);
-          marker.setPosition(data.points[0]);
-          this.map.addOverlay(marker);
-        }
-      })
-      console.log('GPS定位：您的位置是 ' + resp.coords.longitude + ',' + resp.coords.latitude);
-    })
-  }
-
 }

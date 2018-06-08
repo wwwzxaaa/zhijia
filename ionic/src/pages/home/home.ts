@@ -10,8 +10,11 @@ import { MapPage } from '../map/map';
 })
 export class HomePage {
   myplace : string;
+  params;
+  cityname="";
   constructor(public navCtrl: NavController,private app:App, public navParams: NavParams,public events:Events) {
-
+    this.params= navParams.get('mycity');
+    this.cityname=this.params;
   }
   home_button1=[
     {src:'assets/imgs/home_01.png'},
@@ -37,6 +40,7 @@ export class HomePage {
   }
   goMap(){
     console.log('map');
-    this.navCtrl.setRoot(MapPage);
+    this.navCtrl.push(MapPage);
   }
+
 }

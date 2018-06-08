@@ -44,7 +44,7 @@ export class LoginPage {
       success:(msg)=>{
         // console.log(msg);
         if(msg){
-          if(msg.message==false){
+          if(msg.success==false){
             console.log("注册");
             let toast = this.toastCtrl.create({
               message: '账号密码错误!没有账号请前往注册!',
@@ -89,8 +89,7 @@ export class LoginPage {
   }
   //弹出注册页
   goReg(){
-    let modal = this.modalCtrl.create(RegPage);
-    modal.present();
+    this.navCtrl.push(RegPage);
   }
   goFind(){
     this.navCtrl.push(RegAgrmPage);

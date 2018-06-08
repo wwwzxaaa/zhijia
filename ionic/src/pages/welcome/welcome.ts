@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { RegPage } from '../reg/reg';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -19,7 +19,9 @@ export class WelcomePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
+    // console.log('ionViewDidLoad WelcomePage');
   }
-
+  goReg(){
+    this.navCtrl.setRoot(RegPage);
+  }
 }

@@ -11,7 +11,8 @@ declare var $:any;
 })
 export class MyApp {
   showInfo:boolean;
-  rootPage:any = LoginPage;
+  rootPage:any;
+  // = LoginPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -28,8 +29,8 @@ export class MyApp {
         data:{ username: myuser,password:mypsw },
         success: (data)=>{
           // localStorage.setItem('user_token',data.data.token)
-          // console.log(data.message);
-          this.showInfo = data.message;
+          console.log(data);
+          this.showInfo = data.success;
           this.rootPage=TabsPage;
           return this.showInfo; 
         }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';//模态模块
 import { LoginPage } from '../login/login'
 import { WelcomePage } from '../welcome/welcome'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
@@ -29,7 +30,8 @@ export class RegPage {
   constructor(private formBuilder: FormBuilder, 
     public viewCtrl: ViewController,
     private toastCtrl: ToastController,
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
     public navParams: NavParams) {
       this.loginForm = formBuilder.group({
         username: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(11), Validators.required, Validators.pattern("/^[a-zA-z]\w{5,10}$/")])],
@@ -42,10 +44,7 @@ export class RegPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegPage');
-  }
-  back(){
-    this.navCtrl.setRoot(LoginPage);
+    // console.log('ionViewDidLoad RegPage');
   }
   goWe(){
     this.navCtrl.push(WelcomePage);
@@ -53,17 +52,17 @@ export class RegPage {
   toRegister(username: HTMLInputElement, password: HTMLInputElement,email: HTMLInputElement,name: HTMLInputElement){
     if($("#check").is(":checked")){
     //将this的指向改为正确的,一下toast组件使用
-    let _this = this
+    let _this = this;
     $.ajax({
       type: "post",
-      url: "http://39.105.139.109:7000/api/v1/user/register ",
+      url: "http://39.105.139.109:7000/api/v1/user/register",
       dataType: "json",
       data:{ username: username.value, password: password.value,email:email.value,name:name.value},
       success: function(data){
       //接受返回的数据，前端判断采取的动作
       console.log(data);
       if(data){
-          if(data.message==false){
+          if(data.success==false){
             //已被注册的话显示toast组件
             let toast = _this.toastCtrl.create({
               message: '该账号已经被注册了!',
@@ -85,8 +84,10 @@ export class RegPage {
             toast.onDidDismiss(() => {
               console.log('Dismissed toast');
             });
- 
+
             toast.present();
+
+            _this.navCtrl.setRoot(LoginPage);
           }else{
             alert("注册失败");
           }
