@@ -26,7 +26,7 @@ export class MyPublishPage {
 
   publish = []
 
-  ionViewDidEnter() {
+  ionViewDidLoad() {
 
     this.http.get('http://39.105.139.109:7000/api/v1/content/',{}).subscribe(data=>{
       this.publish = JSON.parse(data['_body']).data;
@@ -61,7 +61,7 @@ export class MyPublishPage {
         }
       }
 
-      console.log(this.myPublish);
+      // console.log(this.myPublish);
     })
   }
 

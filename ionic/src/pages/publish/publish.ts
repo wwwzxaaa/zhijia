@@ -75,15 +75,15 @@ export class PublishPage {
     {
       icon:'assets/publish/mht.jpg',name:'Pony Ma',created:'2018年5月2日',
       pic:'assets/publish/main.jpg',content:'来充钱啊不充钱你怎么变得更强！！！',
-      up:6,comments:'3'
+      up:6,comments:'0'
     },{
       icon:'assets/publish/my.jpg',name:'Jack Ma',created:'2018年5月2日',
       pic:'assets/publish/alibaba.jpg',content:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
-      up:8,comments:'3'
+      up:8,comments:'0'
     },{
       icon:'assets/publish/leijun.jpg',name:'R.U.OK',created:'2018年5月2日',
       pic:'assets/publish/xiaomi.jpg',content:'小米，为发烧而生！Are You OK？',
-      up:8,comments:'3'
+      up:8,comments:'0'
     }
   ]
 
