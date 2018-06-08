@@ -31,7 +31,7 @@
     <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新..." refreshingSpinner="circles" refreshingText="QAQ...">
     </ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let item of publish;let id = index;" class="animated fadeIn">
+  <ion-card *ngFor="let item of publish;let id = index;" class="animated fadeInUp">
     <ion-item (tap)="pubMain(id)">
       <ion-avatar item-start>
         <img src="{{item.icon}}">
