@@ -38,7 +38,11 @@
           <ion-input type="password" #repassword [formControl]="password" clearInput=true [(ngModel)]="secondIn"></ion-input>
         </ion-item>
     </div>
-    <div class="inp"><input type="checkbox" id="check"><a (click)="goWe()">接受服务条款并同意知家获取用户信息</a></div>
+    <div class="inp">
+        <!-- <input type="checkbox" id="check"> -->
+        <ion-checkbox color="zhijia" [(ngModel)]="check"></ion-checkbox>
+        <a (click)="goWe()">接受服务条款并同意知家获取用户信息</a>
+    </div>
     <div class="allbtn">
         <button class="btn" (click)="toRegister(reusername, repassword,email,name)" block>注册</button>
     </div>

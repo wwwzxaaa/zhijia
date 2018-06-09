@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-slides autoplay="2000" loop="true" id="slider">
+    <ion-slides autoplay="2000" centeredSlides="true" loop="true" id="slider">
         <ion-slide><img src="assets/imgs/home_slide.png" alt=""></ion-slide>
         <ion-slide><img src="assets/imgs/home_slide2 .jpg" alt=""></ion-slide>
         <ion-slide><img src="assets/imgs/home_slide1.jpg" alt=""></ion-slide>
@@ -19,7 +19,7 @@
                 <img src="{{home1.src}}" alt="">
             </li>
             </ul>
-            <ul class="button_item1">
+            <ul class="button_item2">
                 <li *ngFor="let home2 of home_button2;let id = index" (click)="annex(id+4)">
                     <img src="{{home2.src}}" alt="">
                 </li>
@@ -30,9 +30,9 @@
         </div>
         <ion-list id="active">
           <ion-item>
-                  <img src="assets/imgs/home_09.png">
-                  <ion-icon name="arrow-dropright"></ion-icon>
-                  <h1>第一届知识竞赛</h1>
+            <img src="assets/imgs/home_09.png">
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <h1>第一届知识竞赛</h1>
           </ion-item>
           <ion-item>
             <img src="assets/imgs/home_09.png">

@@ -11,8 +11,11 @@ page-publish {
             height: 1.8em;
         }
     }
+    .content-ios{
+        background: #eee;
+    }
     ion-content{
-        background: #eee!important;
+        
         .card-ios{
             width: 100%;
             margin-left: 0;

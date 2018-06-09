@@ -17,8 +17,9 @@ page-home {
         padding-right:5%; 
     }
     ion-slides,ion-slide{
-        height:auto;
+        height:auto; 
     }
+
     .button_item1{
         width:100%;
         margin: 0 auto;
@@ -26,6 +27,7 @@ page-home {
     }
     .button_item1 li{
         display: inline;
+        padding: 6px;
     }
     .button_item1 li img{
         height:63px;
@@ -33,21 +35,18 @@ page-home {
     .button_item2{
         width:100%;
         margin: 0 auto;
+        padding-top: 12px;
         text-align: center;
+        
     }
     .button_item2 li{
         display: inline;
+        padding: 6px;
     }
     .button_item2 li img{
         height:63px;
     }
 
-    #slider{
-        padding-top:15px; 
-        padding-left: 5%;
-        margin-right: 5%;
-        width: 95%;
-    }
     #buttons{
         padding-top: 15px;
     }

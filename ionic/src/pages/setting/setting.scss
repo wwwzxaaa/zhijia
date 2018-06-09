@@ -31,16 +31,20 @@
             border:5px solid #fff;
         }
     } 
-   #set-list{
-    clear: both;
-    margin: 0;
-   }
-   #set-list h2{
-       padding-top: 5px;
-   }
-   #set-list img{
-       float: left;
-       width: 30px;
-       margin-right: 30px;
-   }
+    #set-list{
+        clear: both;
+        margin: 10px 0;
+    }
+    #set-list h2{
+        padding-top: 5px;
+    }
+    #set-list img{
+        float: left;
+        width: 30px;
+        margin-right: 30px;
+    }
+    ion-list{
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #aaa;
+    }
 }

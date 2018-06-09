@@ -49,8 +49,11 @@ export class RegPage {
   goWe(){
     this.navCtrl.push(WelcomePage);
   }
+  check:boolean;
+  
   toRegister(username: HTMLInputElement, password: HTMLInputElement,email: HTMLInputElement,name: HTMLInputElement){
-    if($("#check").is(":checked")){
+    // if($("#check").is(":checked")){
+      if(this.check == true){
     //将this的指向改为正确的,一下toast组件使用
     let _this = this;
     $.ajax({
