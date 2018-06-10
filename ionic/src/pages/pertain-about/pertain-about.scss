@@ -3,11 +3,18 @@ page-pertain-about {
         padding: 0;
         margin: 0;
     }
-    .titile,.gallery{
+    .title{
         text-align: center;
-        padding-top:20px;
+        padding-top:10px;
+    }
+    h2{
+        padding: 10px;
     }
     .content{
         padding: 10px 20px;
+        p{
+            text-indent: 28px;
+            color: #666;
+        }
     }
 }

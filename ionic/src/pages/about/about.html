@@ -7,15 +7,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let item of Info;let id = index;" (click)="detail(id)">
+  <ion-card *ngFor="let item of info;let id = index;" (click)="main(id)">
     <ion-item>
       <ion-avatar item-start>
         <img src="assets/about/wuye.jpg">
       </ion-avatar>
-      <h2>小区物业</h2>
-      <p>{{item.time}}</p>
+      <h2>神兴小区物业</h2>
+      <p>{{item.created}}</p>
     </ion-item>
-    <img class="main_img" src="{{item.pic_url}}">
+    <img class="main_img" src="assets/imgs/info.png">
     <ion-card-content>
       <p>{{item.title}}</p>
     </ion-card-content>

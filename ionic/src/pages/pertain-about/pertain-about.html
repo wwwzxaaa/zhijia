@@ -14,16 +14,11 @@
 
 
 <ion-content>
-  <div class="titile">
+  <div class="title">
       <h2>{{info.title}}</h2>
-      <p>{{info.time}}</p>
+      <p>{{info.created}}</p>
   </div>
   <div class="content">
-    <p>{{content}}</p>
-  </div>
-  <div class="gallery">
-    <div *ngFor="let url of url_list;let id = index;">
-    <img src="{{url}}" alt="">
-    </div>
+    <p>{{info.content}}</p>
   </div>
 </ion-content>
