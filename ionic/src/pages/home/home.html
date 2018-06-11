@@ -9,36 +9,42 @@
 
 <ion-content>
     <ion-slides autoplay="2000" centeredSlides="true" loop="true" id="slider">
-        <ion-slide><img src="assets/imgs/home_slide.png" alt=""></ion-slide>
-        <ion-slide><img src="assets/imgs/home_slide2 .jpg" alt=""></ion-slide>
-        <ion-slide><img src="assets/imgs/home_slide1.jpg" alt=""></ion-slide>
-      </ion-slides>
-      <div id="buttons">
-            <ul class="button_item1">
-            <li *ngFor="let home1 of home_button1;let id = index" (click)="annex(id)">
-                <img src="{{home1.src}}" alt="">
-            </li>
-            </ul>
-            <ul class="button_item2">
-                <li *ngFor="let home2 of home_button2;let id = index" (click)="annex(id+4)">
-                    <img src="{{home2.src}}" alt="">
-                </li>
-            </ul>
-        </div>
-        <div id="active-title">
-          <p>······小区热门······</p>
-        </div>
-        <ion-list id="active">
-          <ion-item>
-            <img src="assets/imgs/home_09.png">
-            <ion-icon name="arrow-dropright"></ion-icon>
-            <h1>第一届知识竞赛</h1>
-          </ion-item>
-          <ion-item>
-            <img src="assets/imgs/home_09.png">
-            <ion-icon name="arrow-dropright"></ion-icon>
-            <h1>第二届知识竞赛</h1>
-          </ion-item>
-        </ion-list>
-      
+      <ion-slide>
+        <img src="assets/home/nav1.jpg" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/home/nav2.png" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/home/nav3.jpg" alt="">
+      </ion-slide>
+    </ion-slides>
+    <div id="buttons">
+      <ul class="button_item1">
+        <li *ngFor="let home1 of home_button1;let id = index" (click)="annex(id)">
+          <img src="{{home1.src}}" alt="">
+        </li>
+      </ul>
+      <ul class="button_item2">
+        <li *ngFor="let home2 of home_button2;let id = index" (click)="annex(id+4)">
+          <img src="{{home2.src}}" alt="">
+        </li>
+      </ul>
+    </div>
+    <div id="active-title">
+      <p>-- 附近热门 --</p>
+    </div>
+    
+    <div class="card-background-page">
+      <ion-card>
+        <img src="assets/home/ad2.jpg" />
+        <!-- <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">41 Listings</div> -->
+      </ion-card>
+      <ion-card>
+        <img src="assets/home/ad1.jpg" />
+        <!-- <div class="card-title">São Paulo</div>
+                <div class="card-subtitle">41 Listings</div> -->
+      </ion-card>
+    </div>
 </ion-content>

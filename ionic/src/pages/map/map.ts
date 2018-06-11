@@ -1,4 +1,4 @@
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { HomePage } from '../home/home';
@@ -24,7 +24,10 @@ export class MapPage {
   marker: any;//标记
   geolocation1: any;
   myIcon: any;
-  constructor(private geolocation: Geolocation,public navCtrl: NavController,) {
+  constructor(
+    private geolocation: Geolocation,
+    public navCtrl: NavController
+  ) {
     this.myIcon = new BMap.Icon("assets/icon/favicon.ico", new BMap.Size(30, 30));
   }
 

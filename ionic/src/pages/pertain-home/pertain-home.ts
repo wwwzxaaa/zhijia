@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Events,App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the PertainHomePage page.
@@ -15,7 +15,10 @@ import { IonicPage, NavController, NavParams,Events,App } from 'ionic-angular';
 })
 export class PertainHomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private app:App,public events:Events) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams
+  ) {
     this.id=navParams.get('id');
   }
 

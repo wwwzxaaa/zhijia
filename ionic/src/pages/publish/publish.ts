@@ -20,7 +20,7 @@ export class PublishPage {
     public http: Http
   ) {
   }
-
+  
   // 搜索框
   mySea = false;
   mySearch(){
@@ -62,30 +62,12 @@ export class PublishPage {
           });
           
       }
-
-      
-
     },err=>{
       console.log(err);
     });
   }
 
-  //默认帖子数据
-  publish_default=[
-    {
-      icon:'assets/publish/mht.jpg',name:'Pony Ma',created:'2018年5月2日',
-      pic:'assets/publish/main.jpg',content:'来充钱啊不充钱你怎么变得更强！！！',
-      up:6,comments:'0'
-    },{
-      icon:'assets/publish/my.jpg',name:'Jack Ma',created:'2018年5月2日',
-      pic:'assets/publish/alibaba.jpg',content:'我对钱没有兴趣！我最后悔的就是创立了阿里巴巴！！',
-      up:8,comments:'0'
-    },{
-      icon:'assets/publish/leijun.jpg',name:'R.U.OK',created:'2018年5月2日',
-      pic:'assets/publish/xiaomi.jpg',content:'小米，为发烧而生！Are You OK？',
-      up:8,comments:'0'
-    }
-  ]
+
 
   //下拉刷新
   doRefresh(refresher) {
@@ -123,11 +105,6 @@ export class PublishPage {
     });
   }
 
-  pubMain_default(id){
-    this.app.getRootNav().push(PublishMainPage,{
-      main_default:this.publish_default[id]
-    });
-  }
 
   //点赞
   isGood:boolean=true;
@@ -148,24 +125,6 @@ export class PublishPage {
       this.isGood=true;
       if(this.publish[id].up>0){
         this.publish[id].up--;
-      }  
-    }
-  }
-  
-  isGoodSwitch_default(id){
-    if(this.isGood==true){
-      this.goodColor = {
-        'color': '#FFbb00'
-      }
-      this.isGood=false;
-      this.publish_default[id].up++;
-    }else{
-      this.goodColor = {
-        'color': '#ccc'
-      }
-      this.isGood=true;
-      if(this.publish_default[id].up>0){
-        this.publish_default[id].up--;
       }  
     }
   }

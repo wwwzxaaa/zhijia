@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App, Events } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { PertainAboutPage } from '../pertain-about/pertain-about';
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -10,7 +11,7 @@ export class AboutPage {
   constructor(
     public http:Http,
     public navCtrl: NavController,
-    private app:App
+    public app:App
   ) {
 
   }

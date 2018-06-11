@@ -28,7 +28,6 @@ export class PublishMainPage {
     this.id=navParams.get('id');
     this.name = navParams.get('name')
     this.time = navParams.get('time')
-    this.publish_default = navParams.get('main_default')
 
     if(this.isSecondary==true){
       this.isgood.push({src:'assets/publish/zhijia.png',name:'Zhijia'});
@@ -43,10 +42,8 @@ export class PublishMainPage {
   ionViewDidEnter(){
     //详情区请求
     this.http.get('http://39.105.139.109:7000/api/v1/content/'+this.id,{}).subscribe(data=>{
-      this.publish_main = JSON.parse(data['_body']).data || this.publish_default;
-      if(JSON.parse(data['_body']).data !== null){
-        this.segment_items = JSON.parse(data['_body']).data.comments;
-      }
+      this.publish_main = JSON.parse(data['_body']).data;
+      this.segment_items = JSON.parse(data['_body']).data.comments;
       this.com = this.segment_items.length;
       // console.log(this.segment_items)
       return this.segment_items
@@ -82,11 +79,14 @@ export class PublishMainPage {
           console.log(err);
         });
       }
-      this.segment_com.splice(0,this.segment_items.length)
   
     }, 100);
   
   
+  }
+
+  ionViewDidLeave(){
+    this.segment_com = []
   }
 
   // 帖子详情
@@ -139,20 +139,5 @@ export class PublishMainPage {
     let h = time.slice(11,16)
     return y+' '+h
   }
-  
-  //数组查重
-  // delRepeat(arr){
-  //   for(let i=0; i<arr.length-1; i++){
-  //     let oldArr = arr[i]
-  //     for(let j=i+1; j<arr.length; j++){
-  //       if(oldArr.name == arr[j].name){
-  //         arr.splice(j,1);
-  //         j--;
-  //       }
-  //     }
-  //   }
-  //   return arr
-  // }
-
 }
 
