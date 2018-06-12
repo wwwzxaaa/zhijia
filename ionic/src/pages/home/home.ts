@@ -6,6 +6,7 @@ import { AboutPage } from '../about/about';
 import { MapPage } from '../map/map';
 import { PayPage } from '../pay/pay';
 import { FixPage } from '../fix/fix';
+import { RepairPage } from '../repair/repair';
 
 @Component({
   selector: 'page-home',
@@ -42,6 +43,10 @@ export class HomePage {
     else if(id==6){
       this.app.getRootNav().push(FixPage);
     }
+    else if(id == 2){
+      this.app.getRootNav().push(RepairPage);
+    }
+    else if(id==7){}
     else{
       this.app.getRootNav().push(PertainHomePage,{id:id});
     }
