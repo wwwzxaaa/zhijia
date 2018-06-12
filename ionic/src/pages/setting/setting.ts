@@ -4,6 +4,7 @@ import { App } from 'ionic-angular';
 import { AppSettingPage } from '../app-setting/app-setting';
 import { PersonPage } from '../person/person';
 import { MyPublishPage } from '../my-publish/my-publish';
+import { PayPage } from '../pay/pay';
 
 /**
  * Generated class for the SettingPage page.
@@ -45,7 +46,9 @@ export class SettingPage {
     }) 
      
   }
-
+  mybtn1(){
+    this.app.getRootNav().push(PayPage);
+  }
   mybtn2(){
     this.app.getRootNav().push(MyPublishPage);
   }

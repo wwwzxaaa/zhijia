@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { PayPage } from '../pages/pay/pay';
+import { FixPage } from '../pages/fix/fix';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegAgrmPage } from '../pages/reg-agrm/reg-agrm';
 import { AboutPage } from '../pages/about/about';
@@ -56,7 +58,9 @@ import { MapPage } from '../pages/map/map';
     PersonPage,
     PertainHomePage,
     PertainAboutPage,
-    MapPage
+    MapPage,
+    PayPage,
+    FixPage
   ],
   imports: [
     BrowserModule,
@@ -93,7 +97,9 @@ import { MapPage } from '../pages/map/map';
     PersonPage,
     PertainHomePage,
     PertainAboutPage,
-    MapPage
+    MapPage,
+    PayPage,
+    FixPage
   ],
   providers: [
     StatusBar,

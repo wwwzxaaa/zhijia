@@ -4,6 +4,8 @@ import { App } from 'ionic-angular';
 import { PertainHomePage } from '../pertain-home/pertain-home';
 import { AboutPage } from '../about/about';
 import { MapPage } from '../map/map';
+import { PayPage } from '../pay/pay';
+import { FixPage } from '../fix/fix';
 
 @Component({
   selector: 'page-home',
@@ -34,7 +36,12 @@ export class HomePage {
     if(id==0){
       this.app.getRootNav().push(AboutPage);
     }
-    else if(id==7){}
+    else if(id==1){
+      this.app.getRootNav().push(PayPage);
+    }
+    else if(id==6){
+      this.app.getRootNav().push(FixPage);
+    }
     else{
       this.app.getRootNav().push(PertainHomePage,{id:id});
     }

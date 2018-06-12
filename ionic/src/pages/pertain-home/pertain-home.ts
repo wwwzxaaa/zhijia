@@ -27,11 +27,11 @@ export class PertainHomePage {
   }
   info=[
     {},
-    {src:"assets/imgs/home_02.png"},
+    // {src:"assets/imgs/home_02.png"},
     {src:"assets/imgs/home_03.png"},
     {src:"assets/imgs/home_04.png"},
     {src:"assets/imgs/home_05.png"},
-    {src:"assets/imgs/home_06.png"},
+    // {src:"assets/imgs/home_06.png"},
     {src:"assets/imgs/home_07.png"}
   ]
  id;
