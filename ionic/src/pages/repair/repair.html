@@ -1,0 +1,36 @@
+<!--
+  Generated template for the RepairPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color=zhijia>
+    <ion-title>报事报修</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding> 
+  <ion-input type="text" placeholder="您的问题……"></ion-input>    
+  <textarea name="" id="" cols="30" rows="10" placeholder="详细描述您的问题……"></textarea>  
+
+  <ion-list>
+    <ion-item>
+      <ion-label>日期</ion-label>
+      <ion-datetime displayFormat="YYYY MMM DD"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>时间</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <ion-buttons>
+    <button ion-button color=zhijia (click)="confirm()">提交</button>
+  </ion-buttons>
+  
+
+</ion-content>

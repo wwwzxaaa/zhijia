@@ -1,0 +1,22 @@
+page-repair {
+    .content-ios{
+
+    }
+    ion-input{
+        border-bottom: 1px solid #ccc;
+        padding-left: 5px;
+    }
+    textarea{
+        margin-top: 20px;
+        width: 100%;
+        border: none;
+        // border-bottom: 1px solid #ccc;
+    }
+
+    ion-buttons{
+        text-align: center;
+        button{
+            width: 280px;
+        }
+    }
+}

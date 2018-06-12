@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 
@@ -20,7 +20,8 @@ export class MyPublishPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public http:Http
+    public http:Http,
+    public alertCtrl:AlertController
   ) {
   }
 
@@ -71,15 +72,35 @@ export class MyPublishPage {
   
 
   del(id){
-    
-    this.http.post('http://39.105.139.109:7000/api/v1/content/'+ this.myPublish[id]._id +'/destroy', {
-      token: localStorage.getItem('user_token')
-    }).subscribe(data => {
-      // console.log(JSON.parse(data['_body']));
-      this.myPublish.splice(id,1)
-    }, err => {
-      console.log(err);
+    const confirm = this.alertCtrl.create({
+      title: '确定删除吗?',
+      message: '',
+      buttons: [
+        {
+          text: '取消',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: '同意',
+          handler: () => {
+            console.log('Agree clicked');
+            this.http.post('http://39.105.139.109:7000/api/v1/content/' + this.myPublish[id]._id + '/destroy', {
+              token: localStorage.getItem('user_token')
+            }).subscribe(data => {
+              // console.log(JSON.parse(data['_body']));
+              this.myPublish.splice(id, 1)
+            }, err => {
+              console.log(err);
+            });
+          }
+        }
+      ]
     });
+    confirm.present();
+    
+    
   }
 
   //时间戳转换时间

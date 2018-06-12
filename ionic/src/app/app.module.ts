@@ -21,6 +21,7 @@ import { SetAboutPage } from '../pages/set-about/set-about';
 import { SetHelpPage } from '../pages/set-help/set-help';
 import { LoginPage } from '../pages/login/login';
 import { RegPage } from '../pages/reg/reg';
+import { RepairPage } from '../pages/repair/repair';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InfoPage } from '../pages/info/info';
@@ -38,6 +39,7 @@ import { MapPage } from '../pages/map/map';
     WelcomePage,
     LoginPage,
     RegPage,
+    RepairPage,
     AboutPage,
     ContactPage,
     HomePage,
@@ -75,6 +77,7 @@ import { MapPage } from '../pages/map/map';
     RegAgrmPage,
     LoginPage,
     RegPage,
+    RepairPage,
     AboutPage,
     ContactPage,
     HomePage,
