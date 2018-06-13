@@ -1,4 +1,42 @@
 page-login {
+    .toolbar-background-ios{
+        background: transparent;
+        border:none!important;
+    }
+
+    .content-ios{
+        background: url('/assets/login/bg.png');
+        background-size: contain;
+    }
+
+    .item-ios{
+        background: rgba(255, 255, 255, 0.3);
+        padding-left: 0px;
+        margin-top: 10px;
+        .item-inner{
+            border-bottom: none!important;
+        }
+        border: none!important;
+        input{
+            padding-left: 16px;
+            border: none;
+        }
+        input::placeholder{
+            color: #888;
+        }
+    }
+    .list{
+        margin-top: 30px;
+    }
+
+    .others{
+        text-align: center;
+        margin-top: 100px;
+        button{
+            border: none;
+        }
+    }
+
     .pic img{
         width:100px;
         height:100px;
@@ -6,21 +44,20 @@ page-login {
     }
     .pic{
         text-align:center;
-        padding-top:50px;
-    }
-    .list{
-        padding-top:15px;
+        padding-top:30px;
     }
     .abtn{
         text-align: center;
-        padding-top:5px;
+        padding-bottom:20px;
     }
     .btn{
         font-size: 20px;
         width:250px;
         height:50px;
         border-radius: 50px;
-        background: #FFbb00;
+        border: 1px solid #333;
+        // background: #FFbb00;
+        background: transparent;
     }
     .fg{
         padding-top:10px;
@@ -28,8 +65,10 @@ page-login {
     }
     .reg{
         text-decoration: none;
+        color: #333;
     }
     .gf{
         float:right;
+        color: #333;
     }
 }

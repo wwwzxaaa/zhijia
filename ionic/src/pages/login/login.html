@@ -4,29 +4,27 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!-- <ion-header>
 
-  <ion-navbar color="zhijia">
+  <ion-navbar>
     <ion-title>登录</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
 
 <ion-content padding>
   <div class="pic">
-    <img src="assets/imgs/zhijia.png" alt="">
+    <img src="{{ico}}" alt="">
   </div>
   <ion-list class="list">
 
       <ion-item>
-        <ion-label floating>用户名</ion-label>
-        <ion-input type="text"#username></ion-input>
+        <ion-input (ionFocus)="userIco()" (ionBlur)="loginIco()" type="text"#username placeholder="用户名"></ion-input>
       </ion-item>
     
       <ion-item>
-        <ion-label floating>密码</ion-label>
-        <ion-input type="password" #password></ion-input>
+        <ion-input (ionFocus)="pswIco()" (ionBlur)="loginIco()" type="password" #password placeholder="密码"></ion-input>
       </ion-item>
     
     </ion-list>
@@ -37,4 +35,14 @@
     <a (click)="goReg()" class="reg">注册账号</a>
     <a (click)="goFind()" class="gf">忘记密码?</a>
   </div>
+
+  <div class="others">
+    <button ion-button outline color=dark icon-only>
+      <ion-icon name="logo-twitter"></ion-icon>
+    </button>
+    <button ion-button outline color=dark icon-only>
+      <ion-icon name="logo-facebook"></ion-icon>
+    </button>
+  </div>
+
 </ion-content>

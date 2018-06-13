@@ -27,8 +27,22 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    
   }
+
+  ico = 'assets/login/login-ico.png'
+  userIco() {
+    console.log("user")
+    this.ico = 'assets/login/user-ico.png'
+  }
+  pswIco(){
+    console.log("psw")
+    this.ico = 'assets/login/psw-ico.png'
+  }
+  loginIco(){
+    this.ico = 'assets/login/login-ico.png'
+  }
+
   logIn(username: HTMLInputElement, password: HTMLInputElement) {
     if(username.value==null){
         alert('用户名不能为空');
