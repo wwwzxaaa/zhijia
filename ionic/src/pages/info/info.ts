@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { App } from 'ionic-angular';
 import { InfoMessagePage } from '../info-message/info-message'
+import { ChatPage } from '../chat/chat';
 
 /**
  * Generated class for the InfoPage page.
@@ -18,6 +19,10 @@ declare var $:any;
 
 export class InfoPage { 
   list:any; 
+  
+  index:number;
+  myid:any;
+  mylist:any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -25,36 +30,59 @@ export class InfoPage {
   ) {
     
   }
-  
+
   ionViewDidLoad() {
     // console.log('ionViewDidLoad InfoPage');
   }
-  goMsg(){
-  }
+
   show(){
     let myuser = localStorage.getItem('user');
     let mypsw = localStorage.getItem('psw');
-    //获取用户token
+    // 获取用户token
     $.ajax({
       url: "http://39.105.139.109:7000/api/v1/user/auth",
       type: "post",
       data:{username: myuser,password:mypsw},
       success:(data) => {
-        // console.log(data.data);
         var token=data.data.token;
-        // console.log(token);
-        //将token传入
         $.ajax({
           url: "http://39.105.139.109:7000/api/v1/user/",
           type: "get",
           data:{token:token},
           success:(data) => {
-            // console.log(data);
             this.list=data.data;
           }
         })
       }
     })
+  }
+
+  goChat(i){
+    //将this的指向改为正确的,一下toast组件使用
+    let that = this;
+    let myuser = localStorage.getItem('user');
+    let mypsw = localStorage.getItem('psw');
+    $.ajax({
+      url: "http://39.105.139.109:7000/api/v1/user/auth",
+      type: "post",
+      data:{username: myuser,password:mypsw},
+      success:(data) => {
+        var token=data.data.token;
+        $.ajax({
+          url: "http://39.105.139.109:7000/api/v1/user/",
+          type: "get",
+          data:{token:token},
+          success:(data) => {
+            this.list=data.data;
+            this.index=i;
+            // this.myid=data.data[i]._id;
+            this.mylist=data.data[i];
+            console.log(this.mylist);
+            that.navCtrl.push(ChatPage,{mylist:this.mylist});
+          }
+        })
+      }
+    }) 
   }
   infolist = [
     {imgsURL:'assets/publish/my.jpg',username:'Jack Ma',information:'我没有碰过',time:'9:20'},
@@ -66,5 +94,6 @@ export class InfoPage {
       // id:this.publish[id]._id
     });
   }
+
 
 }

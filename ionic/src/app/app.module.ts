@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 
 import { PayPage } from '../pages/pay/pay';
 import { PaymoneyPage } from '../pages/paymoney/paymoney';
+import { ChatPage } from '../pages/chat/chat';
 import { FixPage } from '../pages/fix/fix';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegAgrmPage } from '../pages/reg-agrm/reg-agrm';
@@ -64,7 +65,8 @@ import { MapPage } from '../pages/map/map';
     MapPage,
     PayPage,
     FixPage,
-    PaymoneyPage
+    PaymoneyPage,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -105,7 +107,8 @@ import { MapPage } from '../pages/map/map';
     MapPage,
     PayPage,
     FixPage,
-    PaymoneyPage
+    PaymoneyPage,
+    ChatPage
   ],
   providers: [
     StatusBar,
