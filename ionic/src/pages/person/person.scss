@@ -1,14 +1,13 @@
 page-person {
     #title{
         width: 100%;
-        height: 250px;
+        height: 170px;
         text-align: center;
-        //background-color: gainsboro;
-        background: url(../assets/imgs/wallpaper.jpeg)
+        background: url(../assets/imgs/wallpaper.jpeg);
     }
     #title img{
         margin-top: 50px;
-        width: 30%;
+        width: 20%;
         border-radius: 50%;
     }
     #title p{
@@ -16,18 +15,5 @@ page-person {
     }
     #data{
         text-align: center;
-    }
-    #third-party{
-        width: 40%;
-        margin-left: 30%;
-        position:absolute;
-        bottom:0;
-    }
-    .set{
-        font-size:18px;
-        color:balck;
-    }
-    .setname{
-        font-size:15px!important;
     }
 }

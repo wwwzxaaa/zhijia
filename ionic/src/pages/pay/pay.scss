@@ -1,7 +1,10 @@
 page-pay {
     *{
         padding:0;
-        margin:0;
+        margin:0;   
+    }
+    .content{
+        background:rgb(230, 228, 228);
     }
     .tit{
         width:100%;
@@ -16,9 +19,10 @@ page-pay {
     }
     .tab{
         width:100%;
-        height:140px;
+        height:150px;
         margin-top:20px;
         margin-bottom: 30px;
+        background:#fff;
     }
     .tab li{
         width:25%;
@@ -26,7 +30,6 @@ page-pay {
         float: left;  
         list-style: none; 
         text-align:center;
-        border:1px solid #e6e6e6;
         margin:0 auto;
     }
     .tab li img{
@@ -36,27 +39,8 @@ page-pay {
     .tab li p{
         margin:0 auto;
     }
-    .btn{
+    .a{
         text-align: center;
-        height:50px;
-    }
-    .cek{
-        line-height: 50px;
-        height:50px;
-    }
-    .btn img{
-        width:100px;
-        height:50px;
-    }
-    .allbtn{
-        margin-top:5px;
-        text-align: center;
-    }
-    .btn1{
-        font-size: 20px;
-        width:250px;
-        height:50px;
-        border-radius: 50px;
-        background: #FFbb00;
+        padding-top:20px;
     }
 }

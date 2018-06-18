@@ -6,6 +6,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { PayPage } from '../pages/pay/pay';
+import { PaymoneyPage } from '../pages/paymoney/paymoney';
 import { FixPage } from '../pages/fix/fix';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegAgrmPage } from '../pages/reg-agrm/reg-agrm';
@@ -62,7 +63,8 @@ import { MapPage } from '../pages/map/map';
     PertainAboutPage,
     MapPage,
     PayPage,
-    FixPage
+    FixPage,
+    PaymoneyPage
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,8 @@ import { MapPage } from '../pages/map/map';
     PertainAboutPage,
     MapPage,
     PayPage,
-    FixPage
+    FixPage,
+    PaymoneyPage
   ],
   providers: [
     StatusBar,

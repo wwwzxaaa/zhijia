@@ -13,13 +13,13 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="content">
 <div class="tit">
   <h2>新增缴费</h2>
   <a class="tit1">缴费记录</a>
 </div>
 
-<div class="tab">
+<div class="tab" (click)="pay()">
     <li><img src="assets/imgs/shui.png" alt=""><p>水费</p></li>
     <li><img src="assets/imgs/dianfei.png" alt=""><p>电费</p></li>
     <li><img src="assets/imgs/hot.png" alt=""><p>燃气费</p></li>
@@ -29,13 +29,7 @@
     <li><img src="assets/imgs/wuyefei.png" alt=""><p>物业费</p></li>
     <li><img src="assets/imgs/nuanqi.png" alt=""><p>暖气费</p></li>
 </div>
-
-  <div class="btn">
-    <input type="checkbox" class="cek">
-    <img src="assets/imgs/zhifubao.jpg" alt="">
-  </div>
-
-  <div class="allbtn">
-    <button class="btn1" block>支付</button>
-  </div>
+<div class="a">
+  <a>缴费代扣  |  户号管理  |  帮助中心</a>
+</div>
 </ion-content>

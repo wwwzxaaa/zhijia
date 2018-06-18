@@ -1,0 +1,71 @@
+<!--
+  Generated template for the PaymoneyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="zhijia">
+    <ion-title>新增缴费账户</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <ion-label>选择缴费类型</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="a">水费</ion-option>
+          <ion-option value="b">电费</ion-option>
+          <ion-option value="c">燃气费</ion-option>
+          <ion-option value="d">有线电视</ion-option>
+          <ion-option value="e">固话</ion-option>
+          <ion-option value="f">宽带</ion-option>
+          <ion-option value="g">物业费</ion-option>
+          <ion-option value="h">暖气费</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>选择缴费月份</ion-label>
+          <ion-select [(ngModel)]="month">
+            <ion-option value="a">1月</ion-option>
+            <ion-option value="b">2月</ion-option>
+            <ion-option value="c">3月</ion-option>
+            <ion-option value="d">4月</ion-option>
+            <ion-option value="e">5月</ion-option>
+            <ion-option value="f">6月</ion-option>
+            <ion-option value="g">7月</ion-option>
+            <ion-option value="h">8月</ion-option>
+            <ion-option value="h">9月</ion-option>
+            <ion-option value="h">10月</ion-option>
+            <ion-option value="h">11月</ion-option>
+            <ion-option value="h">12月</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>缴费单位</ion-label>
+            <ion-select [(ngModel)]="place">
+                <ion-option value="a">自来水公司</ion-option>
+                <ion-option value="b">省电力公司</ion-option>
+                <ion-option value="d">省潜能燃气公司</ion-option>
+                <ion-option value="c">神兴小区物业</ion-option>
+            </ion-select>
+        </ion-item>
+         <ion-item>
+           <ion-label>缴费金额</ion-label>
+           <ion-input type="number"></ion-input>
+         </ion-item>
+        
+  </ion-list>
+  <div class="inp">
+      <ion-checkbox color="zhijia" [(ngModel)]="check" class="cek"></ion-checkbox>
+      <img src="assets/imgs/zhifubao.jpg" alt="">
+  </div>
+
+  <ion-buttons>
+      <button ion-button color=zhijia (click)="goPay()">支付</button>
+    </ion-buttons>
+</ion-content>

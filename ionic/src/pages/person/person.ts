@@ -20,7 +20,7 @@ export class PersonPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonPage');
   }
-  setting(nickname:HTMLInputElement){
+  setting(nickname:HTMLInputElement,myemail:HTMLInputElement,mybirth:HTMLInputElement){
     let id = localStorage.getItem('user_id');
     let token = localStorage.getItem('user_token');
     let alert = this.alertCtrl.create({
@@ -41,7 +41,7 @@ export class PersonPage {
            $.ajax({
             url: 'http://39.105.139.109:7000/api/v1/user/'+id+'/update',
             type: "post",
-            data:{id:id,token:token,name:nickname.value},
+            data:{id:id,token:token,name:nickname.value,email:myemail.value},
             success:(data) => {
               console.log(data);
             }

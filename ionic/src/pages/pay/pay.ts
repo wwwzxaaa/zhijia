@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { PaymoneyPage } from '../paymoney/paymoney';
 /**
  * Generated class for the PayPage page.
  *
@@ -21,5 +21,7 @@ export class PayPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PayPage');
   }
-
+  pay(){
+    this.navCtrl.push(PaymoneyPage);
+  }
 }
