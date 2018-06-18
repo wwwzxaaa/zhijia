@@ -14,8 +14,8 @@
 
 
 <ion-content padding> 
-  <ion-input type="text" placeholder="您的问题……"></ion-input>    
-  <textarea name="" id="" cols="30" rows="10" placeholder="详细描述您的问题……"></textarea>  
+  <ion-input type="text" placeholder="您的地址……" #name></ion-input>    
+  <textarea name="" id="" cols="30" rows="10" placeholder="详细描述您的问题……" #content></textarea>  
 
   <ion-list>
     <ion-item>
@@ -29,7 +29,7 @@
   </ion-list>
 
   <ion-buttons>
-    <button ion-button color=zhijia (click)="confirm()">提交</button>
+    <button ion-button color=zhijia (click)="confirm(name,content)">提交</button>
   </ion-buttons>
   
 
