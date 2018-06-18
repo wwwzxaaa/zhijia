@@ -42,7 +42,7 @@ export class MapPage {
           enableContinuousZoom: true //连续缩放效果，默认禁用
         }
       );//创建地图实例
-    let point = new BMap.Point(113.38028471135, 23.129702256122);//坐标可以通过百度地图坐标拾取器获取
+    let point = new BMap.Point(114.576978,38.036752);//坐标可以通过百度地图坐标拾取器获取
     let marker = new BMap.Marker(point);
     this.map.addOverlay(marker);
     map.centerAndZoom(point, 18);//设置中心和地图显示级别
@@ -63,7 +63,6 @@ export class MapPage {
       var geoc =new BMap.Geocoder();//创建一个地址解析器的实例.对指定的坐标点进行反地址解析。
         geoc.getLocation(lngLat, (rs)=>{
               var addComp = rs.addressComponents;
-              var province = addComp.province;//省
               var city = addComp.city;//市
               var district = addComp.district;//区或县
               console.log(city+district);

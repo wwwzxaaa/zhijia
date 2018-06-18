@@ -157,7 +157,9 @@ html, body{
 .post-content table th{
     font-weight: 700;
 }
-
+.footer{
+    text-align: center;
+}
 .ten a{
     color: #ccc;
 }

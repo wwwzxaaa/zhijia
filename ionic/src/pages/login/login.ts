@@ -32,11 +32,11 @@ export class LoginPage {
 
   ico = 'assets/login/login-ico.png'
   userIco() {
-    console.log("user")
+    // console.log("user")
     this.ico = 'assets/login/user-ico.png'
   }
   pswIco(){
-    console.log("psw")
+    // console.log("psw")
     this.ico = 'assets/login/psw-ico.png'
   }
   loginIco(){
@@ -61,7 +61,7 @@ export class LoginPage {
           if(msg.success==false){
             console.log("注册");
             let toast = this.toastCtrl.create({
-              message: '账号密码错误!没有账号请前往注册!',
+              message: '账号密码错误!',
               duration: 3000,
               position: 'middle'
             });
