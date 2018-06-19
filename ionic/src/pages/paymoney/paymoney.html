@@ -17,7 +17,7 @@
   <ion-list>
       <ion-item>
         <ion-label>选择缴费类型</ion-label>
-        <ion-select [(ngModel)]="gender">
+        <ion-select [(ngModel)]="gender" cancelText="取消" okText="确定">
           <ion-option value="a">水费</ion-option>
           <ion-option value="b">电费</ion-option>
           <ion-option value="c">燃气费</ion-option>
@@ -30,7 +30,7 @@
       </ion-item>
       <ion-item>
           <ion-label>选择缴费月份</ion-label>
-          <ion-select [(ngModel)]="month">
+          <ion-select [(ngModel)]="month" cancelText="取消" okText="确定">
             <ion-option value="a">1月</ion-option>
             <ion-option value="b">2月</ion-option>
             <ion-option value="c">3月</ion-option>
@@ -47,7 +47,7 @@
         </ion-item>
         <ion-item>
             <ion-label>缴费单位</ion-label>
-            <ion-select [(ngModel)]="place">
+            <ion-select [(ngModel)]="place" cancelText="取消" okText="确定">
                 <ion-option value="a">自来水公司</ion-option>
                 <ion-option value="b">省电力公司</ion-option>
                 <ion-option value="d">省潜能燃气公司</ion-option>
@@ -56,7 +56,7 @@
         </ion-item>
          <ion-item>
            <ion-label>缴费金额</ion-label>
-           <ion-input type="number"></ion-input>
+           <ion-input type="text"></ion-input>
          </ion-item>
         
   </ion-list>
