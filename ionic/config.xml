@@ -89,6 +89,6 @@
     <plugin name="hewz.plugins.baidu-location" spec="https://github.com/hewz/cordova-baidu-location">
         <variable name="API_KEY" value="4mSlGnWDld3SKgpoX72MCXMwlFrgytxb" />
     </plugin>
-    <plugin name="cordova-plugin-geolocation" spec="git+https://github.com/apache/cordova-plugin-geolocation.git" />
     <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-geolocation" spec="git+https://github.com/apache/cordova-plugin-geolocation.git" />
 </widget>
