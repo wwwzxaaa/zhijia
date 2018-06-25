@@ -34,6 +34,7 @@ import { PertainHomePage } from '../pages/pertain-home/pertain-home';
 import { PertainAboutPage } from '../pages/pertain-about/pertain-about';
 import { MapPage } from '../pages/map/map';
 import { TalkPage } from '../pages/talk/talk';
+import { PaymoneyPage } from '../pages/paymoney/paymoney';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { TalkPage } from '../pages/talk/talk';
     MapPage,
     PayPage,
     FixPage,
-    TalkPage
+    TalkPage,
+    PaymoneyPage
   ],
   imports: [
     BrowserModule,
@@ -105,7 +107,8 @@ import { TalkPage } from '../pages/talk/talk';
     MapPage,
     PayPage,
     FixPage,
-    TalkPage
+    TalkPage,
+    PaymoneyPage
   ],
   providers: [
     StatusBar,
