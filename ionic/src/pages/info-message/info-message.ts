@@ -29,7 +29,7 @@ export class InfoMessagePage {
   }
 
   message = [
-    {msg:'我点一下“发送”就能发送消息你怕不怕！'}
+    // {msg:'我点一下“发送”就能发送消息你怕不怕！'}
   ]
 
 }

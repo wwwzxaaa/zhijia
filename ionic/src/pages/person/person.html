@@ -12,9 +12,20 @@
 <div id="data">
   <p>···编辑资料···</p>
 </div>
-<ion-item class="set">
-    <ion-label class="setname" stacked>昵称设置:</ion-label>
-    <ion-input #nickname type="text" placeholder="请输入昵称"></ion-input>
-</ion-item>
-<button ion-button full round color="zhijia" (click)="setting(nickname)" class="btn">提交修改</button>
+<div class="list">
+  <ion-item>
+    <ion-label class="setname" stacked>昵称:</ion-label>
+    <ion-input #nickname type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="setname" stacked>邮箱:</ion-label>
+    <ion-input #email type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="setname" stacked>生日:</ion-label>
+    <ion-datetime displayFormat="YYYY MMM DD" #birth></ion-datetime>
+  </ion-item>
+</div>
+
+<button ion-button full round color="zhijia" (click)="setting(nickname,email,birth)" class="btn">提交修改</button>
 </ion-content>

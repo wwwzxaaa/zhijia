@@ -1,0 +1,38 @@
+page-talk {
+    *{
+        padding:0;
+        margin:0;
+    }
+    .til{
+        width:100%;
+        height:180px;
+    }
+    .img{
+        padding-top:50px;
+        width:26%;
+        margin-left: 37%;
+    }
+    .list{
+        width:100%;
+        height:100px;
+        padding-top:20px;
+    }
+    .p{
+        font-size:18px;
+        color:#000;
+    }
+    .allbtn{
+        position:fixed; 
+        bottom:10px;
+        width:100%;
+        height:50px;
+    }
+    .btn1{
+        float: left;
+        width:49%;
+    }
+    .btn2{
+        width:49%;
+        display: block;
+    }
+}

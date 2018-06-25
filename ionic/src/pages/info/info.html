@@ -22,7 +22,7 @@
   </ion-header>
   <ion-content>
     <div *ngFor="let item of list" class="userlist">
-      <ion-item>
+      <ion-item *ngFor="let item of list;let i=index"  (click)="goMes(i)">
         <ion-thumbnail item-start>
           <img src="assets/imgs/user.jpg">
         </ion-thumbnail>
@@ -42,7 +42,7 @@
         </ion-avatar>
         <div class="info-left-block">
           <h2 class="info-list-left">{{item.username}}</h2>
-          <p class="info-list-left">{{item.information.slice(0,10) + "..."}}</p>
+          <p class="info-list-left">{{item.information}}</p>
         </div>
         <span class="info-time">{{item.time}}</span>
       </ion-item>
