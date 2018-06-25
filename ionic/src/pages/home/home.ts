@@ -20,19 +20,12 @@ export class HomePage {
     this.params= navParams.get('mycity');
     this.cityname=this.params;
   }
-  home_button1=[
+   home_button1=[
     {src:'assets/imgs/home_01.png'},
     {src:'assets/imgs/home_02.png'},
     {src:'assets/imgs/home_03.png'},
-    {src:'assets/imgs/home_04.png'}
+    {src:'assets/imgs/home_07.png'}
   ]
-  home_button2=[
-    {src:'assets/imgs/home_05.png'},
-    {src:'assets/imgs/home_06.png'},
-    {src:'assets/imgs/home_07.png'},
-    {src:'assets/imgs/home_08.png'}
-  ]
-
   annex(id){
     if(id==0){
       this.app.getRootNav().push(AboutPage);
@@ -40,15 +33,11 @@ export class HomePage {
     else if(id==1){
       this.app.getRootNav().push(PayPage);
     }
-    else if(id==6){
+    else if(id==3){
       this.app.getRootNav().push(FixPage);
     }
-    else if(id == 2){
+    else if(id==2){
       this.app.getRootNav().push(RepairPage);
-    }
-    else if(id==7){}
-    else{
-      this.app.getRootNav().push(PertainHomePage,{id:id});
     }
   }
   goMap(){
