@@ -19,7 +19,9 @@ page-home {
     ion-slides,ion-slide{
         height:auto; 
     }
-
+    .button_item2 a{
+        text-decoration:none; 
+    }
     .button_item1{
         width:100%;
         margin: 0 auto;
