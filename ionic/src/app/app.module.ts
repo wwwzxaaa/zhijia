@@ -35,6 +35,8 @@ import { PertainAboutPage } from '../pages/pertain-about/pertain-about';
 import { MapPage } from '../pages/map/map';
 import { TalkPage } from '../pages/talk/talk';
 import { PaymoneyPage } from '../pages/paymoney/paymoney';
+import { MymesPage } from '../pages/mymes/mymes';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +68,8 @@ import { PaymoneyPage } from '../pages/paymoney/paymoney';
     PayPage,
     FixPage,
     TalkPage,
-    PaymoneyPage
+    PaymoneyPage,
+    MymesPage
   ],
   imports: [
     BrowserModule,
@@ -108,7 +111,8 @@ import { PaymoneyPage } from '../pages/paymoney/paymoney';
     PayPage,
     FixPage,
     TalkPage,
-    PaymoneyPage
+    PaymoneyPage,
+    MymesPage
   ],
   providers: [
     StatusBar,

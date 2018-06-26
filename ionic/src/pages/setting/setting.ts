@@ -5,6 +5,7 @@ import { AppSettingPage } from '../app-setting/app-setting';
 import { PersonPage } from '../person/person';
 import { MyPublishPage } from '../my-publish/my-publish';
 import { PayPage } from '../pay/pay';
+import { MymesPage } from '../mymes/mymes';
 
 /**
  * Generated class for the SettingPage page.
@@ -56,7 +57,7 @@ export class SettingPage {
       this.app.getRootNav().push(AppSettingPage);
   }
   myperson(){
-    this.app.getRootNav().push(PersonPage);
+    this.app.getRootNav().push(MymesPage);
   }
   toSet(){
     this.navCtrl.push(PersonPage);

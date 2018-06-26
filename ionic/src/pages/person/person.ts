@@ -43,7 +43,7 @@ export class PersonPage {
             type: "post",
             data:{id:id,token:token,name:nickname.value,email:email.value},
             success:(data) => {
-              console.log(data);
+              // console.log(data);
             }
           })
           }

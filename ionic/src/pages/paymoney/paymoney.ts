@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {TabsPage } from '../tabs/tabs';
+import { App } from 'ionic-angular';
 /**
  * Generated class for the PaymoneyPage page.
  *
@@ -16,11 +17,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class PaymoneyPage {
   gender: string = "a";
   month: string ="a";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private app:App,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymoneyPage');
   }
-
+  goHome(){
+    this.app.getRootNav().setRoot(TabsPage);
+  }
 }
