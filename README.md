@@ -40,4 +40,9 @@ Github：[https://github.com/liangziyue]()
 
  
 运行效果：  
-<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/denglu.png" width="25%" height="25%" />
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/qidong.png" width="25%" height="25%" />  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/denglu.png" width="25%" height="25%" />   
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/shouye.png" width="25%" height="25%" />  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/tongzhi.png" width="25%" height="25%" />  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/guangchang.png" width="25%" height="25%" />  
+
