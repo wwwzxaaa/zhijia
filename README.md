@@ -3,7 +3,7 @@
  [Github](https://gihtub.com/201505wuzixin/zhijia)  
  [HostedRedmine](http://10.7.1.5/)  
  
- 1.1 项目简介 
+ 1.1项目简介  
 知家项目是一款面向城市小区业主以及物业，集物业管理，小区公告，业主论坛，  
 家庭服务，生活缴费于一体的社区交流 APP。  
   
