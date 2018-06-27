@@ -38,6 +38,10 @@ Github：[https://github.com/zhangshans3]()
 Email：[907977545@qq.com]()  
 Github：[https://github.com/liangziyue]()   
  
+视频演示：  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/ddd.gif" width="25%" height="25%" />    
+
+ 
 
  
 运行效果：  
@@ -51,7 +55,7 @@ Github：[https://github.com/liangziyue]()
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/xiaoxi.png" width="25%" height="25%" />   
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/shezhi.png" width="25%" height="25%" />   
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/tuichu.png" width="25%" height="25%" />    
-<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/ddd.gif" width="25%" height="25%" />   
+
 
 
 
