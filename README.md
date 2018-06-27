@@ -44,5 +44,7 @@ Github：[https://github.com/liangziyue]()
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/denglu.png" width="25%" height="25%" />   
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/shouye.png" width="25%" height="25%" />  
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/tongzhi.png" width="25%" height="25%" />  
-<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/guangchang.png" width="25%" height="25%" />  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/guangchang.png" width="25%" height="25%" />  <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/tongzhi.png" width="25%" height="25%" />  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/liaotian.png" width="25%" height="25%" />  <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/xiaoxi.png" width="25%" height="25%" />  <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/shezhi.png" width="25%" height="25%" />  
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/tuichu.png" width="25%" height="25%" />  
 
