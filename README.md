@@ -21,7 +21,7 @@
 ### 1.3项目成员  
 吴子鑫（产品经理，代码开发）  
       Email：[1123116007@qq.com](123)  
-      Github：[https://github.com/201505wuzixin]()   
+      Github：[https://github.com/201505wuzixin/]()   
 吴晓桐（UI设计师，客户端代码开发）  
 Email：[974124343@qq.com](123)  
 Github：[https://github.com/WuXiaoTon]()  
