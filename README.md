@@ -16,3 +16,23 @@
 •	物业缴费：选择缴纳月费，即可通过微信、支付宝等平台支付物业费。  
 •	生活服务：代取快递，家庭保洁，上门洗车等  
 •	投诉建议：对物业公司的意见或建议都可发布提交，从而物业部门予以改进。  
+
+项目成员  
+吴子鑫（产品经理，代码开发）  
+Email[(1123116007@qq.com)](123)  
+Github[(https://github.com/201505wuzixin)]()   
+吴晓桐（UI设计师，客户端代码开发）  
+Email[（974124343@qq.com）](123)  
+Github[(https://github.com/WuXiaoTon)]()  
+马占文（服务端代码开发，测试）  
+Email[（mazw2016@hotmail.com）]()  
+Github[(https://github.com/Mxtzz)]()  
+耿浩洋(客户端代码开发，测试)  
+Email[（1098485613@qq.com）]()  
+Github[(https://github.com/genghaoyang)]()  
+张珊珊（测试）  
+Email[（1046105096@qq.com）]()  
+Github[(https://github.com/zhangshans3)]()  
+梁子悦（测试）  
+Email[（907977545@qq.com）]()  
+Github[(https://github.com/liangziyue)]() 
