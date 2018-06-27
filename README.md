@@ -38,4 +38,4 @@ Email：[907977545@qq.com]()
 Github：[https://github.com/liangziyue]()   
  
 运行效果：  
-![Image text](https://github.com/201505wuzixin/zhijia/blob/master/IMG/denglu.png)
+<img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/denglu.png" width="25%" height="25%" />
