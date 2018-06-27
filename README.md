@@ -35,4 +35,7 @@ Email：[1046105096@qq.com]()
 Github：[https://github.com/zhangshans3]()  
 梁子悦（测试）  
 Email：[907977545@qq.com]()  
-Github：[https://github.com/liangziyue]() 
+Github：[https://github.com/liangziyue]()   
+ 
+运行效果：  
+![]（https://github.com/201505wuzixin/zhijia/blob/master/IMG/denglu.png）
