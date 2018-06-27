@@ -15,7 +15,7 @@ import { App } from 'ionic-angular';
   templateUrl: 'paymoney.html',
 })
 export class PaymoneyPage {
-  gender: string = "a";
+  gender: string = "d";
   month: string ="a";
   constructor(private app:App,public navCtrl: NavController, public navParams: NavParams) {
   }

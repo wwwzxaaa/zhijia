@@ -18,6 +18,8 @@ declare var $:any;
 
 export class InfoPage { 
   list:any; 
+  mylist:any;
+  index:number;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -65,8 +67,9 @@ export class InfoPage {
             data:{token:token},
             success:(data) => {
               this.list=data.data;
-              var userId=this.list[i]._id;
-              this.app.getRootNav().push(TalkPage,{id:userId});
+              this.mylist=this.list[i];
+              // console.log(this.list);
+              this.app.getRootNav().push(TalkPage,{list:this.mylist});
             }
           })
         }
