@@ -19,20 +19,20 @@
 
 项目成员  
 吴子鑫（产品经理，代码开发）  
-      Email[(1123116007@qq.com)](123)  
-      Github[(https://github.com/201505wuzixin)]()   
+      Email：[1123116007@qq.com](123)  
+      Github：[https://github.com/201505wuzixin]()   
 吴晓桐（UI设计师，客户端代码开发）  
-Email[（974124343@qq.com）](123)  
-Github[(https://github.com/WuXiaoTon)]()  
+Email：[974124343@qq.com](123)  
+Github：[https://github.com/WuXiaoTon]()  
 马占文（服务端代码开发，测试）  
-Email[（mazw2016@hotmail.com）]()  
-Github[(https://github.com/Mxtzz)]()  
+Email：[mazw2016@hotmail.com]()  
+Github：[https://github.com/Mxtzz]()  
 耿浩洋(客户端代码开发，测试)  
-Email[（1098485613@qq.com）]()  
-Github[(https://github.com/genghaoyang)]()  
+Email：[1098485613@qq.com]()  
+Github：[https://github.com/genghaoyang]()  
 张珊珊（测试）  
-Email[（1046105096@qq.com）]()  
-Github[(https://github.com/zhangshans3)]()  
+Email：[1046105096@qq.com]()  
+Github：[https://github.com/zhangshans3]()  
 梁子悦（测试）  
-Email[（907977545@qq.com）]()  
-Github[(https://github.com/liangziyue)]() 
+Email：[907977545@qq.com]()  
+Github：[https://github.com/liangziyue]() 
