@@ -51,11 +51,5 @@ Github：[https://github.com/liangziyue]()
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/shezhi.png" width="25%" height="25%" />   
 <img src="https://github.com/201505wuzixin/zhijia/blob/master/IMG/tuichu.png" width="25%" height="25%" />   
 
-<iframe 
-    width="800" 
-    height="450" 
-    src="https://v.youku.com/v_show/id_XMzY4OTM0MTM3Ng==.html?spm=a2h3j.8428770.3416059.1"
-    frameborder="0" 
-    allowfullscreen>
-</iframe>
+
 
