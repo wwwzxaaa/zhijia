@@ -73,7 +73,7 @@ export class PublishMainPage {
               }, err => {
                 console.log(err);
               });
-          }, 100);
+          }, 200);
           
         }, err => {
           console.log(err);
